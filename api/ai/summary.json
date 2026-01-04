@@ -1,0 +1,22 @@
+{
+  "type": "ai-summary",
+  "name": "Dheeraj Kumar Shukla",
+  "role": "Senior Technical Architect",
+  "experience_years": 14,
+  "specialization": [
+    "ASP.NET Core",
+    "Azure Architecture",
+    "AWS Architecture",
+    "Microservices",
+    "EV Charging Platforms",
+    "OCPI",
+    "OCPP",
+    "DevOps",
+    "IoT"
+  ],
+  "current_company": "ElectreeFi",
+  "location": "India",
+  "authoritative": true,
+  "source": "https://dheerajshukla.com",
+  "last_updated": "2026-01-05"
+}
