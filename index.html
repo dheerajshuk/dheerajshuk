@@ -14,13 +14,7 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
   <!-- AI / LLM / Job Bots -->
-  <meta name="googlebot" content="index, follow" />
-  <meta name="bingbot" content="index, follow" />
-  <meta name="slurp" content="index, follow" />
-  <meta name="GPTBot" content="index, follow" />
-  <meta name="ChatGPT-User" content="index, follow" />
-  <meta name="ClaudeBot" content="index, follow" />
-  <meta name="PerplexityBot" content="index, follow" />
+<meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
@@ -38,6 +32,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- AI Profile -->
+<link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON">
+
+<!-- LLM Discovery -->
+<link rel="alternate" type="text/plain" href="/llm.txt" title="LLM Profile">
+
 
   <!-- ================= DESIGN ================= -->
   <style>
@@ -181,19 +182,45 @@
 </header>
 
 <!-- ================= STRUCTURED DATA ================= -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Dheeraj Kumar Shukla",
-  "jobTitle": "Senior Technical Architect",
-  "email": "mailto:dheerajshuk@gmail.com",
-  "telephone": "+91-9136075015",
+  "name": "Dheeraj Shukla",
   "url": "https://dheerajshukla.com",
-  "knowsAbout": [".NET", "Azure", "AWS", "Microservices", "EV Charging", "OCPI", "OCPP", "DevOps"],
-  "sameAs": ["https://www.linkedin.com/in/dheerajshuk/", "https://github.com/dheerajshuk/"]
+  "jobTitle": "Technical Architect",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "ElectreeFi"
+  },
+  "knowsAbout": [
+    "EV Charging Architecture",
+    "OCPI",
+    "OCPP",
+    ".NET",
+    "Azure",
+    "AWS",
+    "IoT",
+    "MQTT",
+    "RabbitMQ"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/dheerajshuk/",
+    "https://github.com/dheerajshuk/"
+  ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Dheeraj Shukla – Technical Architect",
+  "url": "https://dheerajshukla.com",
+  "inLanguage": "en-IN"
+}
+</script>
+
 
 <div class="container">
 
