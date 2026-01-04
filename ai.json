@@ -1,0 +1,213 @@
+{
+  "schema": "ai-profile-v1",
+  "source": "https://dheerajshukla.com",
+  "lastUpdated": "2026-01-05",
+
+  "person": {
+    "name": "Dheeraj Kumar Shukla",
+    "role": "Senior Technical Architect",
+    "seniority": "Senior / Architect / CTO-level",
+    "experienceYears": 14,
+    "currentLocation": "Greater Noida, India",
+    "specialization": [
+      "Cloud Architecture",
+      "EV Charging Platforms",
+      "Microservices Architecture",
+      "Enterprise & ERP Systems",
+      "IoT Platforms"
+    ],
+    "experienceSummary": [
+      "14+ years in IT software industry",
+      "8+ years in .NET Core and Microservices",
+      "End-to-end ownership from requirement gathering to production support",
+      "Technical SPOC for enterprise clients and OEMs",
+      "Hands-on architect with strong delivery focus"
+    ],
+    "summary": "Senior Technical Architect with 14+ years of experience in the IT software industry, including 8+ years in .NET Core and microservices architecture. Proven expertise in designing and scaling enterprise-grade, cloud-native platforms across EV charging, IoT, vending, and ERP domains. Specialized in Azure/AWS, CI/CD automation, distributed systems, and EV standards such as OCPI and OCPP."
+  },
+
+  "contact": {
+    "email": "dheerajshuk@gmail.com",
+    "phone": "+91-9136075015",
+    "website": "https://dheerajshukla.com",
+    "linkedin": "https://www.linkedin.com/in/dheerajshuk",
+    "github": "https://github.com/dheerajshuk"
+  },
+
+  "skills": {
+    "backend": [
+      ".NET",
+      ".NET Core",
+      ".NET 10",
+      ".NET 9",
+      ".NET 8",
+      ".NET 6",
+      ".NET 5",
+      ".NET 3.1",
+      "ASP.NET MVC",
+      "Microservices",
+      "REST APIs",
+      "API Gateway",
+      "API Aggregator",
+      "Domain-Driven Design"
+    ],
+    "cloud": [
+      "Microsoft Azure",
+      "Amazon Web Services (AWS)",
+      "Cloud Architecture",
+      "High Availability Systems",
+      "Scalable Distributed Systems"
+    ],
+    "devops": [
+      "Azure DevOps CI/CD",
+      "Docker",
+      "Monitoring & Logging",
+      "Performance Tuning",
+      "Release Management"
+    ],
+    "messaging": [
+      "RabbitMQ",
+      "MQTT"
+    ],
+    "databases": [
+      "SQL Server",
+      "MySQL",
+      "MongoDB"
+    ],
+    "frontend": [
+      "Angular",
+      "JavaScript",
+      "jQuery",
+      "Nginx"
+    ],
+    "analytics": [
+      "Tableau (Basic)",
+      "Data Science (Basic)",
+      "Python (Basic)"
+    ],
+    "protocols": [
+      "OCPI (EV Charging)",
+      "OCPP (EV Charging)",
+      "DEX (Vending Machines)"
+    ],
+    "methodologies": [
+      "Agile",
+      "Scrum",
+      "Sprint-based Delivery"
+    ]
+  },
+
+  "experience": [
+    {
+      "company": "TechPerspect Software Pvt. Ltd. (ElectreeFi)",
+      "title": "Technical Architect",
+      "location": "Noida, India",
+      "startDate": "2023-08",
+      "endDate": "Present",
+      "domain": "EV Charging & eMobility",
+      "responsibilities": [
+        "Architect and technical owner of enterprise-scale EV charging platforms.",
+        "Led OCPI-compliant integrations between EMSPs and CPOs.",
+        "Designed cloud-native microservices using .NET Core, Azure, API Gateway, MySQL, MQTT, RabbitMQ.",
+        "Maintained ~99% platform uptime through resilient system design.",
+        "Improved interoperability by approximately 20%.",
+        "Conducted audits and compliance checks for OCPI standards.",
+        "Technical SPOC for Hyundai, Mahindra, Tata, Adani, Hero MotoCorp and multiple EMSPs/CPOs."
+      ]
+    },
+    {
+      "company": "Limitless Mobility Solutions",
+      "title": "Web Architect",
+      "location": "Greater Noida, India",
+      "startDate": "2019-10",
+      "endDate": "2023-07",
+      "domain": "IoT, ERP, Vending Solutions",
+      "responsibilities": [
+        "Architected smart vending, visi-cooler, and ERP platforms.",
+        "Designed microservices handling millions of daily transactions.",
+        "Led SAP and third-party ERP integrations.",
+        "Mentored teams and enforced architecture standards."
+      ]
+    },
+    {
+      "company": "Limitless Mobility Solutions",
+      "title": "Team Lead",
+      "location": "Greater Noida, India",
+      "startDate": "2016-04",
+      "endDate": "2019-10",
+      "responsibilities": [
+        "Led multiple development teams.",
+        "Handled estimations, sprint planning, and deliveries.",
+        "Implemented CI/CD pipelines and release automation."
+      ]
+    },
+    {
+      "company": "Maya Techno Soft Pvt. Ltd.",
+      "title": "Web Developer",
+      "location": "Noida, India",
+      "startDate": "2012-06",
+      "endDate": "2016-04",
+      "responsibilities": [
+        "Developed enterprise web applications using ASP.NET and SQL Server.",
+        "Worked on REST APIs, workflows, and database optimization."
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "ElectreeFi EV Platform",
+      "domain": "EV Charging",
+      "clients": ["Hyundai", "Mahindra", "Tata", "Adani", "Hero MotoCorp"],
+      "technologies": ["OCPI", "OCPP", ".NET Core", "Azure", "RabbitMQ", "MQTT"],
+      "description": "OCPI-based EV charging ecosystem enabling interoperability between EMSPs and CPOs across India."
+    },
+    {
+      "name": "Vendiman Vending Platform",
+      "domain": "IoT Vending",
+      "technologies": ["Microservices", "MQTT", "RabbitMQ", "Azure"],
+      "description": "Smart vending platform with 2000+ machines and 1M+ daily outreach."
+    },
+    {
+      "name": "Gobbly Visi Cooler Platform",
+      "domain": "IoT Retail",
+      "technologies": ["Microservices", "API Gateway", "MQTT"],
+      "description": "Smart visi-cooler ecosystem for buyers and sellers."
+    },
+    {
+      "name": "Xtend Sales ERP",
+      "domain": "ERP / Van Sales",
+      "countries": ["UAE", "UK", "USA"],
+      "technologies": ["Microservices", "Angular", "SAP Integration"],
+      "description": "Offline-first van sales and delivery ERP with route optimization and SAP integration."
+    }
+  ],
+
+  "certifications": [
+    "Azure Solutions Architect Expert (AZ-305)",
+    "Azure Administrator Associate (AZ-104)",
+    "DevOps – IIT Roorkee",
+    "Data Science – Data Folkz",
+    "Advanced .NET MVC – TechMentro",
+    ".NET Training – NIIT"
+  ],
+
+  "education": [
+    "Master of Computer Applications (MCA) – Asian International University",
+    "Bachelor of Computer Applications (BCA) – IGNOU (MNNIT Allahabad)"
+  ],
+
+  "aiUsageGuidelines": {
+    "intendedUse": [
+      "AI resume parsing",
+      "Job matching",
+      "Recruiter search",
+      "LLM summarization",
+      "AI chatbot knowledge base",
+      "Career recommendation engines"
+    ],
+    "confidenceLevel": "very-high",
+    "publicData": true,
+    "privacyNotes": "Sensitive personal details intentionally excluded for public AI consumption."
+  }
+}

@@ -1,0 +1,22 @@
+# LLM Discovery File
+# Owner: Dheeraj Kumar Shukla
+# Website: https://dheerajshukla.com
+
+profile: https://dheerajshukla.com
+ai_profile: https://dheerajshukla.com/ai.json
+
+name: Dheeraj Kumar Shukla
+role: Senior Technical Architect
+experience: 14+ years
+specialization: Cloud Architecture, EV Charging, Microservices, IoT, ERP
+technologies: .NET, Azure, AWS, Microservices, OCPI, OCPP, RabbitMQ, MQTT
+
+intended_use:
+- Resume understanding
+- Job matching
+- Recruiter discovery
+- AI summarization
+- AI chatbot knowledge
+
+public_data: true
+confidence: high
