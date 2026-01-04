@@ -13,8 +13,7 @@
   <meta name="author" content="Dheeraj Kumar Shukla" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-  <!-- AI / LLM / Job Bots -->
-<meta name="robots" content="index, follow">
+
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
@@ -40,7 +39,7 @@
 <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON">
 
 <!-- LLM Discovery -->
-<link rel="alternate" type="text/plain" href="/llm.txt" title="LLM Profile">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile">
 
 
   <!-- ================= DESIGN ================= -->
@@ -182,35 +181,38 @@
     <a class="btn" href="mailto:dheerajshuk@gmail.com">Contact Me</a>
     <a class="btn secondary" href="#experience">View Experience</a>
   </div>
-</header>
-
-<!-- ================= STRUCTURED DATA ================= -->
+  <!-- ================= STRUCTURED DATA ================= -->
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Dheeraj Shukla",
+  "@id": "https://dheerajshukla.com/#person",
+  "name": "Dheeraj Kumar Shukla",
   "url": "https://dheerajshukla.com",
-  "jobTitle": "Technical Architect",
+  "jobTitle": "Senior Technical Architect",
+  "description": "Senior Technical Architect with 14+ years of experience in .NET, Cloud Architecture, EV Charging platforms (OCPI/OCPP), Microservices, DevOps and Enterprise Systems.",
   "worksFor": {
     "@type": "Organization",
     "name": "ElectreeFi"
   },
   "knowsAbout": [
-    "EV Charging Architecture",
+    "ASP.NET Core",
+    ".NET",
+    "Azure Architecture",
+    "AWS Architecture",
+    "Microservices",
+    "EV Charging",
     "OCPI",
     "OCPP",
-    ".NET",
-    "Azure",
-    "AWS",
     "IoT",
     "MQTT",
-    "RabbitMQ"
+    "RabbitMQ",
+    "DevOps"
   ],
   "sameAs": [
     "https://www.linkedin.com/in/dheerajshuk/",
-    "https://github.com/dheerajshuk/"
+    "https://github.com/dheerajshuk"
   ]
 }
 </script>
@@ -218,12 +220,18 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Dheeraj Shukla – Technical Architect",
+  "@id": "https://dheerajshukla.com/#website",
   "url": "https://dheerajshukla.com",
+  "name": "Dheeraj Shukla – Senior Technical Architect",
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://dheerajshukla.com/#person"
+  },
   "inLanguage": "en-IN"
 }
 </script>
 
+</header>
 
 <div class="container">
 
