@@ -4,23 +4,39 @@
   <!-- Main Profile Page -->
   <url>
     <loc>https://dheerajshukla.com/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
+  </url>
+
+  <!-- Beckn Protocol Page -->
+  <url>
+    <loc>https://dheerajshukla.com/beckn-by-dheeraj-shukla.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- OCPI Protocol Page -->
+  <url>
+    <loc>https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <!-- AI Structured Profile -->
   <url>
     <loc>https://dheerajshukla.com/ai.json</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.90</priority>
   </url>
 
   <!-- LLM Discovery -->
   <url>
-    <loc>https://dheerajshukla.com/llm.txt</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://dheerajshukla.com/llms.txt</loc>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
@@ -28,7 +44,7 @@
   <!-- Robots -->
   <url>
     <loc>https://dheerajshukla.com/robots.txt</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.70</priority>
   </url>

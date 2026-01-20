@@ -2,7 +2,7 @@
   "documents": [
     {
       "id": "profile-core",
-      "content": "Dheeraj Kumar Shukla is a Senior Technical Architect with 14+ years of experience in .NET, cloud architecture, EV charging platforms using OCPI and OCPP, microservices, DevOps, and IoT systems.",
+      "content": "Dheeraj Kumar Shukla is a Technical Architect with 14+ years of experience in .NET and ASP.NET Core, Azure/AWS cloud architecture, microservices, API Gateway, CI/CD, and system integration. He specializes in EV charging platforms using OCPI 2.2.1 and OCPP, Beckn protocol (BPP and BAP), IoT messaging with MQTT/RabbitMQ, and ERP integrations with SQL Server and MySQL.",
       "source": "https://dheerajshukla.com",
       "confidence": "high"
     }

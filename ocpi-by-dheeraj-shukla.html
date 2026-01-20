@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dheeraj Shukla OCPI Expert | OCPI 2.2.1 Detailed Guide</title>
+  <meta name="description" content="Expert guide by Dheeraj Shukla on OCPI 2.2.1: modules, flows, commands, credentials, routing, error codes, and version history based on the official OCPI 2.2.1-d2 document." />
+  <meta name="keywords" content="Dheeraj Shukla OCPI Expert, OCPI 2.2.1, Open Charge Point Interface, EV roaming, CPO, eMSP, sessions, CDRs, tariffs, tokens, commands, charging profiles, hub client info, OCPI errors" />
+  <meta name="author" content="Dheeraj Kumar Shukla" />
+  <meta name="subject" content="OCPI 2.2.1 detailed explanation and implementation overview" />
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#050816" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="application-name" content="Dheeraj Kumar Shukla" />
+  <meta name="generator" content="Dheeraj Shukla OCPI Expert Page" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="en-IN" />
+  <meta name="revisit-after" content="7 days" />
+  <link rel="canonical" href="https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html" />
+  <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Dheeraj Shukla OCPI Expert | OCPI 2.2.1 Detailed Guide" />
+  <meta property="og:description" content="Expert guide to OCPI 2.2.1: modules, flows, commands, routing, and version history based on the official OCPI 2.2.1-d2 document." />
+  <meta property="og:url" content="https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html" />
+  <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dheeraj Shukla OCPI Expert | OCPI 2.2.1 Detailed Guide" />
+  <meta name="twitter:description" content="Expert guide to OCPI 2.2.1: modules, flows, commands, routing, and version history based on the official OCPI 2.2.1-d2 document." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --card: #0f172a;
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,.15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+      background: radial-gradient(900px 400px at 10% -10%, #1e293b 0%, transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    header {
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #c7d2fe;
+    }
+    .container { max-width: 1100px; margin: auto; padding: 30px 22px 80px; }
+    section { margin-bottom: 50px; }
+    h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 70px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 4px;
+    }
+    .card {
+      background: linear-gradient(180deg, #0b1229, var(--card));
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: #dbeafe; }
+    .meta-line { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+    footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    .back-link { display: inline-block; margin-top: 14px; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Dheeraj Shukla OCPI Expert | OCPI 2.2.1 Detailed Guide",
+    "description": "Expert guide to OCPI 2.2.1 modules, flows, commands, routing, and version history based on the official OCPI 2.2.1-d2 document.",
+    "url": "https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html",
+    "author": {
+      "@type": "Person",
+      "name": "Dheeraj Kumar Shukla"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Dheeraj Kumar Shukla"
+    },
+    "mainEntityOfPage": "https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html",
+    "inLanguage": "en-IN",
+    "datePublished": "2026-01-20",
+    "dateModified": "2026-01-20",
+    "keywords": "OCPI 2.2.1, Open Charge Point Interface, EV roaming, CPO, eMSP, sessions, CDRs, tariffs, tokens, commands, charging profiles"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does OCPI stand for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OCPI stands for Open Charge Point Interface."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is OCPI 2.2.1-d2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OCPI 2.2.1-d2 is a documentation revision for OCPI 2.2.1; documentation revisions clarify the spec without changing message content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which modules are core in OCPI 2.2.1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Core modules include Versions, Credentials, Locations, Sessions, CDRs, Tariffs, Tokens, Commands, ChargingProfiles, and HubClientInfo."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dheeraj Kumar Shukla",
+    "url": "https://dheerajshukla.com",
+    "jobTitle": "Technical Architect",
+    "knowsAbout": [
+      "OCPI 2.2.1",
+      "EV roaming",
+      "CPO",
+      "eMSP",
+      "CDRs",
+      "Tariffs",
+      "Smart Charging"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/dheerajshuk/",
+      "https://github.com/dheerajshuk"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Dheeraj Shukla OCPI Expert</h1>
+    <p>
+      Expert guide to OCPI 2.2.1 (Open Charge Point Interface) with module‑level detail,
+      routing patterns, and version history based on the official OCPI 2.2.1‑d2 document.
+    </p>
+    <a class="back-link" href="index.html">← Back to profile</a>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Executive Summary</h2>
+      <div class="card">
+        <p>
+          OCPI 2.2.1 is the Open Charge Point Interface specification for EV roaming.
+          The official document defines modules, message routing, credentials exchange,
+          and data objects that enable interoperable charging ecosystems.
+        </p>
+        <p class="meta-line">Source: OCPI 2.2.1-d2 (EVRoaming Foundation)</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Documentation Revisions (d2)</h2>
+      <div class="card">
+        <p>
+          OCPI documentation revisions (d2, d3, d4) do not change message content or add new fields.
+          They clarify descriptions and fix documentation issues. OCPI 2.2.1-d2 is a documentation
+          update to the OCPI 2.2.1 protocol version.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Version History Highlights</h2>
+      <div class="card">
+        <ul>
+          <li><strong>2.2.1-d2 (2023-09-07):</strong> Documentation update.</li>
+          <li><strong>2.2.1 (2021-10-06):</strong> Final release with CDR and connector updates, additional types, and improved descriptions.</li>
+          <li><strong>2.2 (2019-09-30):</strong> Added roaming hubs, multiple roles, and smart charging support.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>OCPI 2.2.1 Core Modules</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Versions</td><td>Discover supported OCPI versions and endpoints.</td></tr>
+            <tr><td>Credentials</td><td>Exchange credentials and register parties.</td></tr>
+            <tr><td>Locations</td><td>Publish charging locations, EVSEs, and connectors.</td></tr>
+            <tr><td>Sessions</td><td>Real‑time charging session lifecycle (push/pull).</td></tr>
+            <tr><td>CDRs</td><td>Charge Detail Records for billing and settlement.</td></tr>
+            <tr><td>Tariffs</td><td>Pricing structures and restrictions.</td></tr>
+            <tr><td>Tokens</td><td>Authorization tokens and real‑time auth.</td></tr>
+            <tr><td>Commands</td><td>Remote commands like start/stop/reserve/unlock.</td></tr>
+            <tr><td>ChargingProfiles</td><td>Smart charging profiles and topologies.</td></tr>
+            <tr><td>HubClientInfo</td><td>Hub connectivity and client status scenarios.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Push & Pull Data Exchange</h2>
+      <div class="card">
+        <p>
+          OCPI supports push and pull models across multiple modules, including Locations,
+          Sessions, CDRs, Tariffs, and Tokens. This allows parties to choose between
+          event-driven updates or on-demand retrieval based on integration needs.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Commands Module (Remote Actions)</h2>
+      <div class="card">
+        <ul>
+          <li>StartSession</li>
+          <li>StopSession</li>
+          <li>UnlockConnector</li>
+          <li>ReserveNow</li>
+          <li>CancelReservation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>ChargingProfiles Module (Smart Charging)</h2>
+      <div class="card">
+        <ul>
+          <li>Smart charging topologies for eMSP, CPO, and SCSP scenarios.</li>
+          <li>Flows for setting, updating, and removing charging profiles.</li>
+          <li>Interfaces for active charging profile retrieval.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Routing and Message Headers</h2>
+      <div class="card">
+        <p>
+          OCPI defines message routing guidance, routing headers, and scenarios such as
+          broadcast push, open routing requests, and hub-based distribution.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error Code Families</h2>
+      <div class="card">
+        <ul>
+          <li><strong>2xxx:</strong> Client errors.</li>
+          <li><strong>3xxx:</strong> Server errors.</li>
+          <li><strong>4xxx:</strong> Hub errors.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Implementation Checklist</h2>
+      <div class="card">
+        <ul>
+          <li>Start with Versions and Credentials modules to register and negotiate endpoints.</li>
+          <li>Implement Locations, Sessions, and CDRs to support discovery and billing.</li>
+          <li>Define Tariffs and Tokens for pricing and authorization flows.</li>
+          <li>Use Commands and ChargingProfiles for remote actions and smart charging.</li>
+          <li>Validate routing headers and error codes across hub and direct integrations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Official Reference</h2>
+      <div class="card">
+        <ul>
+          <li><a href="https://evroaming.org/wp-content/uploads/2024/11/OCPI-2.2.1-d2.pdf" target="_blank" rel="noopener">OCPI 2.2.1-d2 Official Specification (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 Dheeraj Kumar Shukla · Dheeraj Shukla OCPI Expert</p>
+  </footer>
+</body>
+</html>

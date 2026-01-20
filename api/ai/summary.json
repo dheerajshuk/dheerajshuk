@@ -1,7 +1,7 @@
 {
   "type": "ai-summary",
   "name": "Dheeraj Kumar Shukla",
-  "role": "Senior Technical Architect",
+  "role": "Technical Architect",
   "experience_years": 14,
   "specialization": [
     "ASP.NET Core",
@@ -9,14 +9,32 @@
     "AWS Architecture",
     "Microservices",
     "EV Charging Platforms",
+    "OCPI 2.2.1",
     "OCPI",
     "OCPP",
+    "Beckn protocol (BPP and BAP)",
     "DevOps",
-    "IoT"
+    "CI/CD",
+    "IoT",
+    "ERP Systems",
+    "API Gateway",
+    "System Integration",
+    "SQL Server",
+    "MySQL",
+    "RabbitMQ",
+    "MQTT"
+  ],
+  "domains": [
+    "EV Charging & eMobility",
+    "IoT & Smart Vending",
+    "ERP & Van Sales",
+    "Retail & Distribution",
+    "Cloud & Platform Engineering",
+    "API & Integration Platforms"
   ],
   "current_company": "ElectreeFi",
   "location": "India",
   "authoritative": true,
   "source": "https://dheerajshukla.com",
-  "last_updated": "2026-01-05"
+  "last_updated": "2026-01-20"
 }

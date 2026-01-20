@@ -1,11 +1,11 @@
 {
   "schema": "ai-profile-v1",
   "source": "https://dheerajshukla.com",
-  "lastUpdated": "2026-01-05",
+  "lastUpdated": "2026-01-20",
 
   "person": {
     "name": "Dheeraj Kumar Shukla",
-    "role": "Senior Technical Architect",
+    "role": "Technical Architect",
     "seniority": "Senior / Architect / CTO-level",
     "experienceYears": 14,
     "currentLocation": "Greater Noida, India",
@@ -14,7 +14,11 @@
       "EV Charging Platforms",
       "Microservices Architecture",
       "Enterprise & ERP Systems",
-      "IoT Platforms"
+      "IoT Platforms",
+      "System Integration",
+      "Solution Architecture",
+      "DevOps & CI/CD",
+      "API & Integration Design"
     ],
     "experienceSummary": [
       "14+ years in IT software industry",
@@ -23,7 +27,7 @@
       "Technical SPOC for enterprise clients and OEMs",
       "Hands-on architect with strong delivery focus"
     ],
-    "summary": "Senior Technical Architect with 14+ years of experience in the IT software industry, including 8+ years in .NET Core and microservices architecture. Proven expertise in designing and scaling enterprise-grade, cloud-native platforms across EV charging, IoT, vending, and ERP domains. Specialized in Azure/AWS, CI/CD automation, distributed systems, and EV standards such as OCPI and OCPP."
+    "summary": "Technical Architect with 14+ years of experience in the IT software industry, including 8+ years in .NET Core and microservices architecture. Proven expertise in designing and scaling enterprise-grade, cloud-native platforms across EV charging, IoT, vending, and ERP domains. Specialized in Azure/AWS, CI/CD automation, distributed systems, API integration, and EV standards such as OCPI 2.2.1, OCPP, and Beckn protocol (BPP and BAP)."
   },
 
   "contact": {
@@ -38,8 +42,6 @@
     "backend": [
       ".NET",
       ".NET Core",
-      ".NET 10",
-      ".NET 9",
       ".NET 8",
       ".NET 6",
       ".NET 5",
@@ -47,6 +49,7 @@
       "ASP.NET MVC",
       "Microservices",
       "REST APIs",
+      "Web Services",
       "API Gateway",
       "API Aggregator",
       "Domain-Driven Design"
@@ -60,6 +63,7 @@
     ],
     "devops": [
       "Azure DevOps CI/CD",
+      "CI/CD Pipelines",
       "Docker",
       "Monitoring & Logging",
       "Performance Tuning",
@@ -72,10 +76,14 @@
     "databases": [
       "SQL Server",
       "MySQL",
-      "MongoDB"
+      "MongoDB",
+      "Schema Design",
+      "Stored Procedures",
+      "Triggers"
     ],
     "frontend": [
       "Angular",
+      "Angular 9",
       "JavaScript",
       "jQuery",
       "Nginx"
@@ -87,15 +95,28 @@
     ],
     "protocols": [
       "OCPI (EV Charging)",
+      "OCPI 2.2.1",
       "OCPP (EV Charging)",
+      "Beckn protocol (BPP and BAP)",
       "DEX (Vending Machines)"
     ],
     "methodologies": [
       "Agile",
       "Scrum",
-      "Sprint-based Delivery"
+      "Sprint-based Delivery",
+      "Requirement Gathering",
+      "Estimations & Planning",
+      "Technical Documentation"
     ]
   },
+  "domains": [
+    "EV Charging & eMobility",
+    "IoT & Smart Vending",
+    "ERP & Van Sales",
+    "Retail & Distribution",
+    "Cloud & Platform Engineering",
+    "API & Integration Platforms"
+  ],
 
   "experience": [
     {
@@ -180,6 +201,12 @@
       "countries": ["UAE", "UK", "USA"],
       "technologies": ["Microservices", "Angular", "SAP Integration"],
       "description": "Offline-first van sales and delivery ERP with route optimization and SAP integration."
+    },
+    {
+      "name": "Sales ERP (Dubai)",
+      "domain": "ERP / Van Sales",
+      "technologies": ["ASP.NET", "SQL Server", "JavaScript"],
+      "description": "Offline-first van sales platform with POD printing, payment collection, and delivery workflows."
     }
   ],
 
@@ -194,7 +221,7 @@
 
   "education": [
     "Master of Computer Applications (MCA) – Asian International University",
-    "Bachelor of Computer Applications (BCA) – IGNOU (MNNIT Allahabad)"
+    "Bachelor of Computer Applications (BCA)"
   ],
 
   "aiUsageGuidelines": {

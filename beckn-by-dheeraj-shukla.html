@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dheeraj Shukla Beckn Expert | Beckn Protocol (BPP and BAP) for EV Charging</title>
+  <meta name="description" content="Expert guide by Dheeraj Shukla on Beckn protocol (BPP and BAP) for EV charging interoperability, aligned with the UBC Technical Specification Document and UBC EV Sandbox." />
+  <meta name="keywords" content="Dheeraj Shukla Beckn Expert, Beckn protocol (BPP and BAP), BAP, BPP, EV charging, OCPI, interoperability, UBC Technical Specification Document, UBC EV Sandbox, eMSP, CPO, EVSE, registry, discovery, booking, session management, pricing, CDR" />
+  <meta name="author" content="Dheeraj Kumar Shukla" />
+  <meta name="subject" content="Beckn protocol (BPP and BAP) for EV charging interoperability" />
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="theme-color" content="#050816" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="application-name" content="Dheeraj Kumar Shukla" />
+  <meta name="generator" content="Dheeraj Shukla Beckn Expert Page" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="en-IN" />
+  <meta name="revisit-after" content="7 days" />
+  <link rel="canonical" href="https://dheerajshukla.com/beckn-by-dheeraj-shukla.html" />
+  <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Dheeraj Shukla Beckn Expert | Beckn Protocol (BPP and BAP)" />
+  <meta property="og:description" content="Expert guide to Beckn protocol (BPP and BAP) for EV charging interoperability, aligned with UBC TSD and EV Sandbox." />
+  <meta property="og:url" content="https://dheerajshukla.com/beckn-by-dheeraj-shukla.html" />
+  <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dheeraj Shukla Beckn Expert | Beckn Protocol (BPP and BAP)" />
+  <meta name="twitter:description" content="Expert guide to Beckn protocol (BPP and BAP) for EV charging interoperability, aligned with UBC TSD and EV Sandbox." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --card: #0f172a;
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: rgba(148,163,184,.15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+      background: radial-gradient(900px 400px at 10% -10%, #1e293b 0%, transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    header {
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    header p {
+      max-width: 900px;
+      margin: 0 auto;
+      color: #c7d2fe;
+    }
+    .container { max-width: 1100px; margin: auto; padding: 30px 22px 80px; }
+    section { margin-bottom: 50px; }
+    h2 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 70px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 4px;
+    }
+    .card {
+      background: linear-gradient(180deg, #0b1229, var(--card));
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: #dbeafe; }
+    .meta-line { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+    footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    .back-link { display: inline-block; margin-top: 14px; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Dheeraj Shukla Beckn Expert | Beckn Protocol (BPP and BAP) for EV Charging",
+    "description": "Expert guide on Beckn protocol (BPP and BAP) for EV charging interoperability, aligned with UBC Technical Specification Document and EV Sandbox.",
+    "url": "https://dheerajshukla.com/beckn-by-dheeraj-shukla.html",
+    "about": [
+      "Beckn protocol (BPP and BAP)",
+      "EV charging interoperability",
+      "OCPI",
+      "eMSP",
+      "CPO",
+      "EVSE"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Dheeraj Kumar Shukla"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Dheeraj Kumar Shukla"
+    },
+    "mainEntityOfPage": "https://dheerajshukla.com/beckn-by-dheeraj-shukla.html",
+    "inLanguage": "en-IN",
+    "datePublished": "2026-01-20",
+    "dateModified": "2026-01-20",
+    "keywords": "Beckn protocol (BPP and BAP), BAP, BPP, EV charging, OCPI, interoperability, UBC TSD, UBC EV Sandbox"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dheeraj Kumar Shukla",
+    "url": "https://dheerajshukla.com",
+    "jobTitle": "Technical Architect",
+    "knowsAbout": [
+      "Beckn protocol (BPP and BAP)",
+      "EV charging",
+      "OCPI",
+      "Microservices",
+      "Cloud Architecture"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/dheerajshuk/",
+      "https://github.com/dheerajshuk"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dheerajshukla.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Dheeraj Shukla Beckn Expert",
+        "item": "https://dheerajshukla.com/beckn-by-dheeraj-shukla.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Beckn protocol (BPP and BAP) in EV charging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beckn protocol (BPP and BAP) defines how buyer applications (BAPs) and provider platforms (BPPs) interoperate to enable discovery, booking, and session management across EV charging networks, aligned with OCPI for CPO communication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are eMSPs and CPOs mapped in the UBC EV model?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the UBC EV charging model, eMSPs are mapped to BAPs and CPOs are mapped to BPPs to enable decentralized discovery and charging transactions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the UBC EV Sandbox used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The UBC EV Sandbox is a test environment to validate Beckn protocol message flows, integration behavior, and interoperability before production deployment."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Dheeraj Shukla Beckn Expert</h1>
+    <p>
+      Expert, EV‑charging focused guide to Beckn protocol (BPP and BAP) enabling
+      interoperable discovery, booking, pricing, and session management across multiple
+      charge point operators and e‑mobility platforms.
+    </p>
+    <a class="back-link" href="index.html">← Back to profile</a>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Executive Summary</h2>
+      <div class="card">
+        <p>
+          Beckn protocol (BPP and BAP) enables a decentralized EV charging network where any
+          buyer app can discover and book charging services from any provider platform. The UBC
+          Technical Specification Document formalizes EV charging semantics on Beckn while keeping
+          interoperability with OCPI for CPO communication.
+        </p>
+        <p class="meta-line">Last updated: 20 Jan 2026</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Scope and Alignment with OCPI</h2>
+      <div class="card">
+        <ul>
+          <li>Discovery and booking across multiple CPOs without a centralized marketplace.</li>
+          <li>Real-time availability and pricing aligned with OCPI-based systems.</li>
+          <li>Session management and billing coordination between Beckn and OCPI.</li>
+          <li>Focus on EV charging interoperability rather than physical infrastructure standards.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Terminology (UBC EV)</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Acronym</th>
+              <th>Meaning</th>
+              <th>EV Context</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BAP</td>
+              <td>Buyer Application Platform</td>
+              <td>Consumer-facing app; mapped to eMSPs</td>
+            </tr>
+            <tr>
+              <td>BPP</td>
+              <td>Buyer Provider Platform</td>
+              <td>Provider platform; mapped to CPOs</td>
+            </tr>
+            <tr>
+              <td>NO</td>
+              <td>Network Operator</td>
+              <td>Network governance and registry</td>
+            </tr>
+            <tr>
+              <td>CDS</td>
+              <td>Catalog Discovery Service</td>
+              <td>Enables discovery across BPPs</td>
+            </tr>
+            <tr>
+              <td>EVSE</td>
+              <td>Electric Vehicle Supply Equipment</td>
+              <td>Individual charging station unit</td>
+            </tr>
+            <tr>
+              <td>OCPI</td>
+              <td>Open Charge Point Interface</td>
+              <td>eMSP–CPO communication standard</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conventions Used</h2>
+      <div class="card">
+        <p>
+          The UBC TSD uses standard requirement language to clarify intent:
+          MUST (required), MUST NOT (prohibited), SHOULD (recommended), and MAY (optional).
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Actors and Responsibilities</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>BAP (Buyer Application Platform)</strong>
+          <p>Initiates discovery, booking, payments, and user actions for EV drivers.</p>
+        </div>
+        <div class="card">
+          <strong>BPP (Buyer Provider Platform)</strong>
+          <p>Publishes services, responds to requests, and manages charging sessions.</p>
+        </div>
+        <div class="card">
+          <strong>NO (Network Operator)</strong>
+          <p>Onboarding, registry, and network-level governance for participants.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Intended Audience</h2>
+      <div class="card">
+        <ul>
+          <li>Consumer application developers (BAPs) building EV driver-facing apps.</li>
+          <li>eMSPs and aggregators mapping services across multiple CPOs.</li>
+          <li>Charge Point Operators (CPOs) exposing charging services as BPPs.</li>
+          <li>System architects designing scalable, interoperable EV ecosystems.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Transaction Lifecycle (BAP ↔ BPP)</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Discovery:</strong> BAP searches and receives catalogs of chargers and pricing.</li>
+          <li><strong>Selection & Booking:</strong> BAP selects an EVSE and confirms reservation.</li>
+          <li><strong>Charging Session:</strong> Session starts, updates are exchanged, and status is tracked.</li>
+          <li><strong>Completion:</strong> BPP issues the final session update and CDR for billing.</li>
+        </ul>
+        <p>
+          Beckn protocol uses asynchronous request/response flows with callbacks (`on_*`) to
+          keep networks reliable and scalable.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Session Management and Updates</h2>
+      <div class="card">
+        <p>
+          The UBC TSD outlines how active sessions can be updated or terminated. A BAP can send
+          a session update (for example, stop charging), and the BPP responds with a final update
+          and Charge Detail Record (CDR) for accurate billing and reconciliation.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error Handling Guidance</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Schema errors:</strong> Returned as NACK when validation fails.</li>
+          <li><strong>Value/logic errors:</strong> Returned in the corresponding callback response.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Implementation Checklist</h2>
+      <div class="card">
+        <ul>
+          <li>Implement discovery, booking, session, and completion flows per UBC semantics.</li>
+          <li>Map internal eMSP and CPO systems to Beckn BAP and BPP roles.</li>
+          <li>Integrate OCPI for real-time availability, pricing, and session states.</li>
+          <li>Validate payloads and callbacks using the UBC EV Sandbox.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>UBC EV Sandbox</h2>
+      <div class="card">
+        <p>
+          The UBC EV Sandbox provides a practical environment for validating Beckn protocol (BPP and BAP)
+          flows for EV charging, enabling teams to test integration behavior, message exchanges, and
+          network interoperability before production.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <div class="card">
+        <p><strong>What is Beckn protocol (BPP and BAP) in EV charging?</strong></p>
+        <p>It defines how buyer applications (BAPs) and provider platforms (BPPs) interoperate for discovery, booking, and session management while staying aligned with OCPI.</p>
+        <p><strong>How are eMSPs and CPOs mapped?</strong></p>
+        <p>In the UBC EV charging model, eMSPs map to BAPs and CPOs map to BPPs.</p>
+        <p><strong>Why use the UBC EV Sandbox?</strong></p>
+        <p>It provides a safe environment to validate message flows, callbacks, and interoperability before production rollout.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Official References</h2>
+      <div class="card">
+        <ul>
+          <li><a href="https://github.com/bhim/ubc-tsd/blob/main/docs/UBC-Technical-Specification-Document.md" target="_blank" rel="noopener">UBC Technical Specification Document (EV Charging)</a></li>
+          <li><a href="https://github.com/bhim/ubc-ev-sandbox" target="_blank" rel="noopener">UBC EV Sandbox (GitHub)</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 Dheeraj Kumar Shukla · Dheeraj Shukla Beckn Expert</p>
+  </footer>
+</body>
+</html>

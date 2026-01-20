@@ -6,10 +6,11 @@ profile: https://dheerajshukla.com
 ai_profile: https://dheerajshukla.com/ai.json
 
 name: Dheeraj Kumar Shukla
-role: Senior Technical Architect
+role: Technical Architect
 experience: 14+ years
-specialization: Cloud Architecture, EV Charging, Microservices, IoT, ERP
-technologies: .NET, Azure, AWS, Microservices, OCPI, OCPP, RabbitMQ, MQTT
+specialization: Cloud Architecture, EV Charging, Microservices, IoT, ERP, System Integration, Solution Architecture, DevOps
+technologies: .NET, ASP.NET Core, Azure, AWS, Microservices, API Gateway, REST APIs, Web Services, OCPI 2.2.1, OCPP, Beckn protocol (BPP and BAP), RabbitMQ, MQTT, SQL Server, MySQL, CI/CD, Docker, Angular, Nginx
+protocols: OCPI 2.2.1, OCPP, Beckn protocol (BPP and BAP), DEX
 
 intended_use:
 - Resume understanding

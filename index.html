@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dheeraj Shukla – Senior Technical Architect | Cloud, EV, Microservices</title>
+  <title>Dheeraj Kumar Shukla | Technical Architect | .NET, Azure, EV Charging, Microservices</title>
 
-  <meta name="description" content="Senior Technical Architect with 14+ years of experience in .NET, Azure, AWS, Microservices, EV Charging (OCPI/OCPP), DevOps and Enterprise Architecture." />
-  <meta name="keywords" content="Dheeraj Shukla, Technical Architect, Cloud Architect, Azure Architect, AWS Architect, .NET Architect, Microservices, EV Charging, OCPI, OCPP, DevOps, Beckn protocol (BPP and BAP)" />
+  <meta name="description" content="Technical Architect with 14+ years in .NET, Azure/AWS, Microservices, EV Charging (OCPI/OCPP), IoT, CI/CD and ERP platforms. Leads cloud-native architecture, integration, and high-availability systems." />
+  <meta name="keywords" content="Dheeraj Kumar Shukla, Dheeraj Shukla, Technical Architect, Solution Architect, Cloud Architect, Azure Architect, AWS Architect, .NET Architect, ASP.NET Core, Microservices, API Gateway, EV Charging, OCPI, OCPP, Beckn protocol (BPP and BAP), IoT, MQTT, RabbitMQ, DevOps, CI/CD, ERP, Vending Machines" />
   <meta name="author" content="Dheeraj Kumar Shukla" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
@@ -17,15 +17,15 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Dheeraj Shukla | Senior Technical Architect | OCPI protocol expert | OCPP protocol expert  | Beckn protocol (BPP and BAP) | vending machine" />
-  <meta property="og:description" content="Cloud, EV Architect & vending machine, specializing in Azure, AWS, .NET, Microservices, OCPI OCPP & Beckn protocol." />
+  <meta property="og:title" content="Dheeraj Kumar Shukla | Technical Architect | .NET, Azure, EV Charging, Microservices" />
+  <meta property="og:description" content="Technical Architect specializing in .NET, Azure/AWS, Microservices, EV Charging (OCPI/OCPP), IoT and CI/CD delivery for enterprise platforms." />
   <meta property="og:url" content="https://dheerajshukla.com" />
   <meta property="og:site_name" content="Dheeraj Shukla – Technical Architect" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dheeraj Shukla | Senior Technical Architect | OCPI protocol expert | OCPP protocol expert  | Beckn protocol (BPP and BAP) | vending machine" />
-  <meta name="twitter:description" content="Cloud, EV Architect & vending machine, specializing in Azure, AWS, .NET, Microservices, OCPI OCPP & Beckn protocol." />
+  <meta name="twitter:title" content="Dheeraj Kumar Shukla | Technical Architect | .NET, Azure, EV Charging, Microservices" />
+  <meta name="twitter:description" content="Technical Architect specializing in .NET, Azure/AWS, Microservices, EV Charging (OCPI/OCPP), IoT and CI/CD delivery for enterprise platforms." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,11 +63,33 @@
       line-height: 1.7;
     }
     a { color: var(--accent); text-decoration: none; }
+    a:hover { color: #7dd3fc; }
 
     header {
       padding: 110px 20px 90px;
       text-align: center;
       position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: -120px 0 auto;
+      height: 240px;
+      background: radial-gradient(600px 200px at 50% 0%, rgba(56,189,248,.2), transparent 60%);
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 30px;
+      width: 280px;
+      height: 280px;
+      transform: translateX(-50%);
+      background: radial-gradient(closest-side, rgba(34,197,94,.2), transparent);
+      filter: blur(18px);
+      opacity: .5;
+      pointer-events: none;
     }
     header h1 {
       font-size: clamp(2.6rem, 6vw, 3.8rem);
@@ -101,12 +123,23 @@
       color: #020617;
       font-weight: 700;
       box-shadow: 0 15px 40px rgba(56,189,248,.4);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 45px rgba(56,189,248,.45);
     }
     .btn.secondary {
       background: transparent;
       color: var(--text);
       border: 1px solid var(--border);
       box-shadow: none;
+      transition: transform .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .btn.secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56,189,248,.45);
+      color: #e2e8f0;
     }
 
     .container { max-width: 1250px; margin: auto; padding: 40px 22px; }
@@ -156,8 +189,21 @@
       font-weight: 500;
     }
 
+    .article-link {
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .article-link::after {
+      content: "→";
+      font-size: 1rem;
+      opacity: .8;
+    }
+
     ul { padding-left: 20px; }
     li { margin-bottom: 12px; }
+    li::marker { color: #7dd3fc; }
 
     footer {
       text-align: center;
@@ -175,12 +221,20 @@
   "@id": "https://dheerajshukla.com/#person",
   "name": "Dheeraj Kumar Shukla",
   "url": "https://dheerajshukla.com",
-  "jobTitle": "Dheeraj Shukla | Senior Technical Architect | OCPI protocol expert | OCPP protocol expert  | Beckn protocol (BPP and BAP) | vending machine",
-  "description": "Senior Technical Architect with 14+ years of experience in .NET, Cloud Architecture, Beckn protocol (BPP and BAP), EV Charging platforms (OCPI/OCPP), Microservices, DevOps and Enterprise Systems.",
+  "jobTitle": "Technical Architect",
+  "description": "Technical Architect with 14+ years of experience in .NET, cloud architecture, EV charging platforms (OCPI/OCPP), Beckn protocol (BPP and BAP), microservices, DevOps, and enterprise ERP systems.",
   "worksFor": {
     "@type": "Organization",
     "name": "ElectreeFi"
   },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Greater Noida",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  },
+  "email": "dheerajshuk@gmail.com",
+  "telephone": "+91-9136075015",
   "knowsAbout": [
     "ASP.NET Core",
     ".NET",
@@ -190,11 +244,33 @@
     "EV Charging",
     "OCPI",
     "OCPP",
-    "Beckn protocol (BPP and BAP)"
+    "Beckn protocol (BPP and BAP)",
     "IoT",
     "MQTT",
     "RabbitMQ",
-    "DevOps"
+    "DevOps",
+    "API Gateway",
+    "CI/CD",
+    "ERP Systems",
+    "Vending Platforms"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Azure Solutions Architect Expert (AZ-305)",
+      "url": "https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Azure Administrator Associate (AZ-104)",
+      "url": "https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/a5db3afac0018941"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Asian International University"
+    }
   ],
   "sameAs": [
     "https://www.linkedin.com/in/dheerajshuk/",
@@ -208,7 +284,7 @@
   "@type": "WebSite",
   "@id": "https://dheerajshukla.com/#website",
   "url": "https://dheerajshukla.com",
-  "name": "Dheeraj Shukla | Senior Technical Architect | OCPI protocol expert | OCPP protocol expert  | Beckn protocol (BPP and BAP) | vending machine",
+  "name": "Dheeraj Kumar Shukla | Technical Architect | .NET, Azure, EV Charging, Microservices",
   "publisher": {
     "@type": "Person",
     "@id": "https://dheerajshukla.com/#person"
@@ -221,7 +297,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "@id": "https://dheerajshukla.com/#profile-article",
-  "headline": "Dheeraj Shukla | Senior Technical Architect | OCPI protocol expert | OCPP protocol expert  | Beckn protocol (BPP and BAP) | vending machine",
+  "headline": "Dheeraj Kumar Shukla | Technical Architect | .NET, Azure, EV Charging, Microservices",
   "author": {
     "@type": "Person",
     "@id": "https://dheerajshukla.com/#person"
@@ -241,14 +317,17 @@
 
 <header>
   <h1>Dheeraj Kumar Shukla</h1>
-  <h2>Senior Technical Architect · Cloud · EV Platforms</h2>
+  <h2>Technical Architect · Cloud · EV Charging · Microservices</h2>
   <p>
-    I design and scale enterprise-grade, cloud-native platforms across EV charging,
-    IoT, and distributed systems. With 14+ years of experience, I specialize in
-    .NET, Azure/AWS, Microservices, CI/CD automation, and EV standards (OCPI & OCPP) and Beckn protocol (BPP and BAP).
+    Technical Architect with 14+ years of experience designing and scaling enterprise-grade,
+    cloud-native platforms across EV charging, IoT, ERP, and distributed systems.
+    Specializing in .NET, Azure/AWS, Microservices, CI/CD automation, and EV standards
+    (OCPI & OCPP) and Beckn protocol (BPP and BAP).
   </p>
   <div class="cta">
     <a class="btn" href="mailto:dheerajshuk@gmail.com">Contact Me</a>
+    <a class="btn secondary" href="Dheeraj kumar shukla - Resume.pdf" download>Download Resume (PDF)</a>
+    <a class="btn secondary" href="#articles">Articles</a>
     <a class="btn secondary" href="#experience">View Experience</a>
   </div>
   
@@ -256,6 +335,30 @@
 </header>
 
 <div class="container">
+
+  <section>
+    <h3>Professional Summary</h3>
+    <div class="card">
+      <ul>
+        <li>14+ years in software engineering with 8+ years in .NET Core and microservices architecture.</li>
+        <li>End-to-end delivery across requirement gathering, estimation, design, development, integration, and production support.</li>
+        <li>Architected EV charging, vending, and ERP platforms with OCPI/OCPP, Beckn protocol (BPP and BAP), MQTT, and RabbitMQ.</li>
+        <li>Technical SPOC for enterprise clients and OEMs, leading cross-functional delivery teams.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h3>Selected Impact</h3>
+    <div class="card">
+      <ul>
+        <li>Maintained ~99% platform uptime for EV charging systems and reduced downtime risk via resilient design.</li>
+        <li>Improved interoperability by ~20% across OCPI-compliant integrations.</li>
+        <li>Scaled smart vending and ERP platforms to millions of daily transactions.</li>
+        <li>Delivered offline-first sales workflows with route optimization and ERP/SAP integration.</li>
+      </ul>
+    </div>
+  </section>
 
   <section>
     <h3>What I Do</h3>
@@ -273,6 +376,8 @@
       <span class="badge">Microservices</span>
       <span class="badge">Azure</span>
       <span class="badge">AWS</span>
+      <span class="badge">Azure DevOps</span>
+      <span class="badge">API Gateway</span>
       <span class="badge">Docker</span>
       <span class="badge">CI/CD</span>
       <span class="badge">RabbitMQ</span>
@@ -283,8 +388,17 @@
       <span class="badge">Nginx</span>
       <span class="badge">OCPI</span>
       <span class="badge">OCPP</span>
-       <span class="badge">Beckn protocol (BPP and BAP)</span>
+      <span class="badge">Beckn protocol (BPP and BAP)</span>
       <span class="badge">DEX</span>
+    </div>
+  </section>
+
+  <section>
+    <h3>Protocols & Standards</h3>
+    <div class="grid">
+      <div class="card"><strong>EV Charging</strong><p>OCPI, OCPP for interoperability between EMSPs and CPOs.</p></div>
+      <div class="card"><strong>Beckn</strong><p>BPP and BAP integration for discovery, ordering, and fulfillment.</p></div>
+      <div class="card"><strong>IoT / Vending</strong><p>DEX for vending telemetry and device data exchange.</p></div>
     </div>
   </section>
 
@@ -299,6 +413,7 @@
         <li>Maintained ~99% uptime and improved interoperability by ~20%.</li>
         <li>Designed cloud-native microservices using .NET Core, Azure, API Gateway, MySQL, MQTT, RabbitMQ.</li>
         <li>Technical SPOC for Hyundai, Mahindra, Tata, Adani, Hero MotoCorp.</li>
+        <li>Owned system design reviews, performance tuning, and release quality gates.</li>
       </ul>
     </div>
 
@@ -310,6 +425,7 @@
       <ul>
         <li>Architected smart vending, ERP, and IoT platforms handling millions of daily transactions.</li>
         <li>Led SAP and third-party ERP integrations.</li>
+        <li>Delivered offline-first mobile sales workflows with route optimization.</li>
       </ul>
     </div>
 
@@ -320,6 +436,7 @@
       <p><em>Apr 2016 – Oct 2019</em></p>
       <ul>
         <li>Led development teams, sprint planning, estimations, and CI/CD implementations.</li>
+        <li>Created reusable components, code reviews, and mentoring programs.</li>
       </ul>
     </div>
 
@@ -330,6 +447,7 @@
       <p><em>Jun 2012 – Apr 2016</em></p>
       <ul>
         <li>Built enterprise web applications using ASP.NET, SQL Server, JavaScript.</li>
+        <li>Delivered workflow automation and REST API integrations.</li>
       </ul>
     </div>
   </section>
@@ -337,37 +455,48 @@
   <section>
     <h3>Key Projects</h3>
     <ul>
-      <li><strong>ElectreeFi EV Platform:</strong> OCPI-based EV charging ecosystem for multiple OEMs and EMSPs.</li>
-      <li><strong>Vendiman & Gobbly:</strong> Smart vending and visi-cooler IoT platforms.</li>
+      <li><strong>ElectreeFi EV Platform:</strong> OCPI-based EV charging ecosystem with Beckn protocol (BPP and BAP) integrations for multiple OEMs and EMSPs.</li>
+      <li><strong>Vendiman & Gobbly:</strong> Smart vending and visi-cooler IoT platforms with 2000+ devices and 1M+ daily outreach.</li>
       <li><strong>Xtend Sales:</strong> Global sales & delivery ERP with SAP integration (UAE, UK, USA).</li>
-      <li><strong>Sales ERP (Dubai):</strong> Offline-first van sales platform.</li>
-      <li><strong>Masafi, Zaika, Shine Eleven:</strong> Enterprise web portals (UAE & New Zealand).</li>
+      <li><strong>Sales ERP (Dubai):</strong> Offline-first van sales platform with route planning and POD printing.</li>
+      <li><strong>Masafi, Zaika, Shine Eleven:</strong> Enterprise web portals for order management and online marketplaces.</li>
     </ul>
   </section>
 
   <section>
     <h3>Certifications</h3>
     <ul>
-      <li>Azure Solutions Architect Expert (AZ-305)</li>
-      <li>Azure Administrator Associate (AZ-104)</li>
+      <li><a href="https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1" target="_blank" rel="noopener">Azure Solutions Architect Expert (AZ-305)</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/a5db3afac0018941" target="_blank" rel="noopener">Azure Administrator Associate (AZ-104)</a></li>
       <li>DevOps – IIT Roorkee</li>
       <li>Data Science – Data Folkz</li>
       <li>Advanced .NET MVC – TechMentro</li>
+      <li>.NET Training – NIIT</li>
     </ul>
   </section>
 
   <section>
     <h3>Education</h3>
     <ul>
-      <li>Master of Computer Applications (MCA)</li>
+      <li>Master of Computer Applications (MCA) – Asian International University</li>
       <li>Bachelor of Computer Applications (BCA)</li>
     </ul>
   </section>
 
   <section id="contact">
     <h3>Contact</h3>
+    <p>📍 Greater Noida, Uttar Pradesh, India</p>
     <p>📧 dheerajshuk@gmail.com <button onclick="navigator.clipboard.writeText('dheerajshuk@gmail.com')">Copy</button></p>
     <p>📞 +91-9136075015 <button onclick="navigator.clipboard.writeText('+91-9136075015')">Copy</button></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/dheerajshuk/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/dheerajshuk" target="_blank" rel="noopener">GitHub</a></p>
+  </section>
+
+  <section id="articles">
+    <h3>Articles</h3>
+    <ul>
+      <li><a class="article-link" href="beckn-by-dheeraj-shukla.html">Beckn Protocol (BPP and BAP) — Dheeraj Shukla Beckn Expert</a></li>
+      <li><a class="article-link" href="ocpi-by-dheeraj-shukla.html">OCPI 2.2.1 Detailed Guide — Dheeraj Shukla OCPI Expert</a></li>
+    </ul>
   </section>
 
 </div>
