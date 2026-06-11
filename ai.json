@@ -5,7 +5,7 @@
 
   "person": {
     "name": "Dheeraj Kumar Shukla",
-    "role": "Technical Architect",
+    "role": "Solution Architect",
     "seniority": "Senior / Architect / CTO-level",
     "experienceYears": 14,
     "currentLocation": "Greater Noida, India",
@@ -27,7 +27,7 @@
       "Technical SPOC for enterprise clients and OEMs",
       "Hands-on architect with strong delivery focus"
     ],
-    "summary": "Technical Architect with 14+ years of experience in the IT software industry, including 8+ years in .NET Core and microservices architecture. Proven expertise in designing and scaling enterprise-grade, cloud-native platforms across EV charging, IoT, vending, and ERP domains. Specialized in Azure/AWS, CI/CD automation, distributed systems, API integration, and EV standards such as OCPI 2.2.1, OCPP, and Beckn protocol (BPP and BAP)."
+    "summary": "Solution Architect with 15+ years of experience in the IT software industry, including 8+ years in .NET Core and microservices architecture. Proven expertise in designing and scaling enterprise-grade, cloud-native platforms across EV charging, IoT, vending, and ERP domains. Specialized in Azure/AWS, CI/CD automation, distributed systems, API integration, and EV standards such as OCPI 2.2.1, OCPP, and Beckn protocol (BPP and BAP)."
   },
 
   "contact": {
@@ -121,7 +121,7 @@
   "experience": [
     {
       "company": "TechPerspect Software Pvt. Ltd. (ElectreeFi)",
-      "title": "Technical Architect",
+      "title": "Solution Architect",
       "location": "Noida, India",
       "startDate": "2023-08",
       "endDate": "Present",
