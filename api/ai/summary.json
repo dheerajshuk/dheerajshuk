@@ -1,55 +1,212 @@
 {
-  "type": "ai-summary",
+  "schema": "ai-summary-v2",
   "name": "Dheeraj Kumar Shukla",
-  "alternate_names": [
-    "Dheeraj Shukla"
+  "alternateNames": [
+    "Dheeraj Shukla",
+    "Dheeraj K. Shukla"
   ],
   "role": "Solution Architect",
-  "experience_years": 14,
-  "specialization": [
-    "ASP.NET Core",
-    "Azure Architecture",
-    "AWS Architecture",
-    "Microservices",
-    "EV Charging Platforms",
-    "OCPI 2.2.1",
-    "OCPP",
-    "Beckn protocol (BAP and BPP)",
-    "DevOps",
-    "CI/CD",
-    "IoT",
-    "ERP Systems",
-    "API Gateway",
-    "System Integration",
-    "SQL Server",
-    "MySQL",
-    "RabbitMQ",
-    "MQTT"
+  "headline": "Solution Architect — EV charging interoperability, cloud-native platforms and enterprise AI",
+  "experienceYears": 14,
+  "dotnetCoreYears": 9,
+  "location": {
+    "city": "Greater Noida",
+    "region": "Uttar Pradesh",
+    "country": "India"
+  },
+  "marketsDelivered": [
+    "India",
+    "UAE",
+    "United Kingdom",
+    "USA"
   ],
+  "currentRole": {
+    "title": "Solution Architect",
+    "sector": "EV charging",
+    "since": "2026-05",
+    "employer": "Not publicly disclosed"
+  },
+  "previousRoles": [
+    {
+      "title": "Technical Architect",
+      "company": "TechPerspect Software (ElectreeFi)",
+      "from": "2023-08",
+      "to": "2026-04"
+    },
+    {
+      "title": "Web Architect",
+      "company": "Limitless Mobility Solutions",
+      "from": "2019-10",
+      "to": "2023-07"
+    },
+    {
+      "title": "Team Lead",
+      "company": "Limitless Mobility Solutions",
+      "from": "2016-04",
+      "to": "2019-10"
+    },
+    {
+      "title": "Web Developer",
+      "company": "Maya Techno Soft Pvt. Ltd.",
+      "from": "2012-06",
+      "to": "2016-04"
+    }
+  ],
+  "specialization": {
+    "architecture": [
+      "Solution Architecture",
+      "Cloud Architecture",
+      "Microservices",
+      "API Gateway & Aggregation",
+      "Event-Driven Architecture",
+      "High-Availability Systems",
+      "System Integration"
+    ],
+    "backend": [
+      ".NET",
+      ".NET Core",
+      "ASP.NET Core",
+      "ASP.NET MVC",
+      "REST APIs",
+      "C#"
+    ],
+    "cloud": [
+      "Microsoft Azure",
+      "AWS",
+      "Azure DevOps",
+      "Docker",
+      "CI/CD",
+      "Nginx"
+    ],
+    "protocols": [
+      "OCPI 2.2.1",
+      "OCPP 1.6J",
+      "OCPP 2.0.1",
+      "Beckn (BAP/BPP)",
+      "DEX",
+      "MQTT"
+    ],
+    "messaging": [
+      "RabbitMQ",
+      "MQTT"
+    ],
+    "data": [
+      "SQL Server",
+      "MySQL"
+    ],
+    "frontend": [
+      "Angular",
+      "JavaScript",
+      "jQuery"
+    ],
+    "ai": [
+      "Enterprise AI Architecture",
+      "Large Language Models (LLMs)",
+      "Retrieval Augmented Generation (RAG)",
+      "Vector Databases & Embeddings",
+      "Semantic Search",
+      "Prompt Engineering & Orchestration",
+      "Agentic AI & Multi-Agent Systems",
+      "Azure OpenAI Service",
+      "Conversational AI",
+      "AI-powered Knowledge Management",
+      "AI Governance",
+      "Python"
+    ],
+    "product": [
+      "Product Vision & Roadmap",
+      "PRD / FRD / User Stories",
+      "Backlog Prioritisation",
+      "KPI Definition & Tracking",
+      "Stakeholder Management",
+      "SaaS Product Scaling",
+      "Agile / Scrum",
+      "Cross-functional Leadership"
+    ]
+  },
   "domains": [
     "EV Charging & eMobility",
     "IoT & Smart Vending",
     "ERP & Van Sales",
     "Retail & Distribution",
+    "Healthcare Platforms",
     "Cloud & Platform Engineering",
-    "API & Integration Platforms"
+    "Enterprise AI"
   ],
-  "key_metrics": {
-    "platform_uptime": "99%",
-    "daily_user_interactions": "1M+",
-    "iot_devices": "2000+",
-    "partner_networks_integrated": "30+",
-    "interoperability_improvement": "20%"
+  "keyMetrics": {
+    "platformUptime": "99%",
+    "partnerNetworksIntegrated": "30+",
+    "interoperabilityImprovement": "20%",
+    "iotDevices": "2000+",
+    "dailyUserInteractions": "1M+",
+    "publishedGuides": 64
   },
-  "articles": [
-    "https://dheerajshukla.com/beckn-by-dheeraj-shukla.html",
-    "https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html",
-    "https://dheerajshukla.com/ocpp-by-dheeraj-shukla.html"
+  "oemClients": [
+    "Hyundai",
+    "Mahindra",
+    "Tata",
+    "Adani",
+    "Hero MotoCorp"
   ],
-  "current_company": "Not disclosed (EV sector, since May 2026)",
-  "previous_company": "TechPerspect Software (ElectreeFi), Aug 2023 - Apr 2026",
-  "location": "Greater Noida, India",
-  "authoritative": true,
-  "source": "https://dheerajshukla.com",
-  "last_updated": "2026-08-11"
+  "certifications": [
+    {
+      "name": "Azure Solutions Architect Expert (AZ-305)",
+      "issuer": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1"
+    },
+    {
+      "name": "Azure Administrator Associate (AZ-104)",
+      "issuer": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/a5db3afac0018941"
+    },
+    {
+      "name": "DevOps (Winter Training)",
+      "issuer": "IIT Roorkee",
+      "year": 2021
+    },
+    {
+      "name": "Data Science",
+      "issuer": "Data Folkz",
+      "year": 2021
+    },
+    {
+      "name": "Advanced .NET MVC",
+      "issuer": "TechMentro",
+      "year": 2012
+    },
+    {
+      "name": ".NET",
+      "issuer": "NIIT",
+      "year": 2011
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Computer Applications (MCA)",
+      "institution": "Asian International University"
+    },
+    {
+      "degree": "Bachelor of Computer Applications (BCA)"
+    }
+  ],
+  "publications": {
+    "total": 64,
+    "index": "https://dheerajshukla.com/articles.html",
+    "bySection": {
+      "Beckn Protocol": 11,
+      "Enterprise AI Architecture": 6,
+      "OCPI 2.2.1": 16,
+      "OCPP": 15,
+      "Software Engineering": 16
+    }
+  },
+  "contact": {
+    "email": "dheerajshuk@gmail.com",
+    "phone": "+91-9136075015",
+    "website": "https://dheerajshukla.com/",
+    "linkedin": "https://www.linkedin.com/in/dheerajshuk/",
+    "github": "https://github.com/dheerajshuk"
+  },
+  "source": "https://dheerajshukla.com/",
+  "lastUpdated": "2026-08-11"
 }

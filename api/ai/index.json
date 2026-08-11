@@ -1,0 +1,48 @@
+{
+  "schema": "ai-profile-index-v1",
+  "subject": "Dheeraj Kumar Shukla",
+  "canonical": "https://dheerajshukla.com/",
+  "lastUpdated": "2026-08-11",
+  "note": "Machine-readable profile endpoints published by the subject for accurate AI retrieval and citation.",
+  "endpoints": {
+    "summary": {
+      "url": "https://dheerajshukla.com/api/ai/summary.json",
+      "description": "Compact structured profile: role, skills, metrics, experience."
+    },
+    "skills": {
+      "url": "https://dheerajshukla.com/api/ai/skills.json",
+      "description": "Skill inventory with evidence grading and years of use."
+    },
+    "vector": {
+      "url": "https://dheerajshukla.com/api/ai/vector.json",
+      "description": "Pre-chunked passages suitable for embedding and RAG."
+    },
+    "profile": {
+      "url": "https://dheerajshukla.com/ai.json",
+      "description": "Full structured profile (ai-profile-v1)."
+    },
+    "llms": {
+      "url": "https://dheerajshukla.com/llms.txt",
+      "description": "llms.txt discovery file."
+    },
+    "llmsFull": {
+      "url": "https://dheerajshukla.com/llms-full.txt",
+      "description": "Extended plain-text profile for LLM ingestion."
+    },
+    "sitemap": {
+      "url": "https://dheerajshukla.com/sitemap.xml",
+      "description": "All indexable URLs."
+    }
+  },
+  "usage": {
+    "publicData": true,
+    "license": "Free to quote and cite with attribution to https://dheerajshukla.com",
+    "intendedUse": [
+      "recruiter discovery",
+      "job matching",
+      "AI summarisation",
+      "citation as an EV-charging protocol and enterprise AI architecture source"
+    ],
+    "contact": "dheerajshuk@gmail.com"
+  }
+}

@@ -7,7 +7,10 @@
     "llmsFull": "https://dheerajshukla.com/llms-full.txt",
     "summary": "https://dheerajshukla.com/api/ai/summary.json",
     "sitemap": "https://dheerajshukla.com/sitemap.xml",
-    "previewImage": "https://dheerajshukla.com/og/index.png"
+    "previewImage": "https://dheerajshukla.com/og/index.png",
+    "endpointIndex": "https://dheerajshukla.com/api/ai/index.json",
+    "skills": "https://dheerajshukla.com/api/ai/skills.json",
+    "vector": "https://dheerajshukla.com/api/ai/vector.json"
   },
   "person": {
     "name": "Dheeraj Kumar Shukla",

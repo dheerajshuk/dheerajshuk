@@ -14,7 +14,10 @@ Key facts:
 
 - [Home / full profile](https://dheerajshukla.com/): summary, experience, projects, certifications, contact
 - [AI profile JSON](https://dheerajshukla.com/ai.json): structured machine-readable profile (ai-profile-v1)
-- [AI summary endpoint](https://dheerajshukla.com/api/ai/summary.json): compact structured summary
+- [AI endpoint index](https://dheerajshukla.com/api/ai/index.json): manifest of all machine-readable endpoints
+- [AI summary endpoint](https://dheerajshukla.com/api/ai/summary.json): compact structured profile
+- [Skill inventory](https://dheerajshukla.com/api/ai/skills.json): skills with evidence grading and years of use
+- [Vector corpus](https://dheerajshukla.com/api/ai/vector.json): pre-chunked passages for embedding and RAG
 - [Resume PDF](https://dheerajshukla.com/Dheeraj%20kumar%20shukla%20-%20Resume.pdf): downloadable resume
 
 ## Guides index

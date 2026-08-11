@@ -1,0 +1,187 @@
+{
+  "schema": "skill-inventory-v1",
+  "subject": "Dheeraj Kumar Shukla",
+  "note": "Evidence grades reflect what is independently verifiable from published work, certifications and delivery history. DEMONSTRATED = shipped to production or certified. APPLIED = hands-on design and evaluation work. FOUNDATIONAL = training or adjacent capability without project evidence.",
+  "grades": {
+    "DEMONSTRATED": "Shipped to production with named platform, scale or certification",
+    "APPLIED": "Hands-on design and evaluation; no shipped outcome named publicly",
+    "FOUNDATIONAL": "Certification or adjacent capability; no project evidence"
+  },
+  "skills": [
+    {
+      "skill": "Azure Cloud Architecture",
+      "category": "cloud",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 8,
+      "basis": "AZ-305 Expert + AZ-104; production platforms"
+    },
+    {
+      "skill": ".NET Core / Microservices",
+      "category": "backend",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 9,
+      "basis": "Multiple production platforms"
+    },
+    {
+      "skill": "OCPI 2.2.1",
+      "category": "protocol",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 3,
+      "basis": "Named responsibility at ElectreeFi; 30+ partner networks; 16 published guides"
+    },
+    {
+      "skill": "Beckn Protocol (BAP/BPP)",
+      "category": "protocol",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 3,
+      "basis": "Named responsibility at ElectreeFi; 11 published guides"
+    },
+    {
+      "skill": "OCPP 1.6J / 2.0.1",
+      "category": "protocol",
+      "evidence": "APPLIED",
+      "yearsOfUse": 3,
+      "basis": "EV charging platform work; 15 published guides"
+    },
+    {
+      "skill": "Event-Driven Architecture (RabbitMQ, MQTT)",
+      "category": "architecture",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 8,
+      "basis": "ElectreeFi, Vendiman, Gobbly"
+    },
+    {
+      "skill": "API Gateway & Integration",
+      "category": "architecture",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 8,
+      "basis": "Five production platforms"
+    },
+    {
+      "skill": "CI/CD & Azure DevOps",
+      "category": "devops",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 8,
+      "basis": "Pipeline ownership; DevOps cert IIT Roorkee"
+    },
+    {
+      "skill": "SQL Server / MySQL",
+      "category": "data",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 14,
+      "basis": "14 years including RCA and tuning"
+    },
+    {
+      "skill": "Standards Compliance & Audit",
+      "category": "governance",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 3,
+      "basis": "OCPI conformance audits across partner interfaces"
+    },
+    {
+      "skill": "Product Ownership (PRD, roadmap, KPIs)",
+      "category": "product",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 3,
+      "basis": "Owned OCPI platform lifecycle"
+    },
+    {
+      "skill": "Stakeholder Management",
+      "category": "product",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 3,
+      "basis": "Technical SPOC for five OEMs"
+    },
+    {
+      "skill": "Team Leadership & Mentoring",
+      "category": "leadership",
+      "evidence": "DEMONSTRATED",
+      "yearsOfUse": 10,
+      "basis": "Team Lead from 2016; hiring and mentoring"
+    },
+    {
+      "skill": "Enterprise AI Architecture",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Defined AI architecture patterns at ElectreeFi; 6 published guides"
+    },
+    {
+      "skill": "RAG (Retrieval Augmented Generation)",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Design work at ElectreeFi; published guide"
+    },
+    {
+      "skill": "Vector Search & Embeddings",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Design work at ElectreeFi; published guide"
+    },
+    {
+      "skill": "Azure OpenAI Service",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Design and evaluation at ElectreeFi"
+    },
+    {
+      "skill": "Prompt Engineering & Orchestration",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Prompt orchestration patterns at ElectreeFi"
+    },
+    {
+      "skill": "Agentic AI & Multi-Agent Systems",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Agent-based automation design; published guide"
+    },
+    {
+      "skill": "Conversational AI",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Intelligent customer support design; published guide"
+    },
+    {
+      "skill": "AI Governance",
+      "category": "ai",
+      "evidence": "APPLIED",
+      "yearsOfUse": 2,
+      "basis": "Published guide; grounded in protocol-compliance audit practice"
+    },
+    {
+      "skill": "Python",
+      "category": "ai",
+      "evidence": "FOUNDATIONAL",
+      "yearsOfUse": 3,
+      "basis": "Listed skill; Data Science certification 2021"
+    },
+    {
+      "skill": "Machine Learning / Data Science",
+      "category": "ai",
+      "evidence": "FOUNDATIONAL",
+      "yearsOfUse": 3,
+      "basis": "Data Science certification, Data Folkz 2021"
+    }
+  ],
+  "gaps": [
+    {
+      "area": "Named production AI system with measured outcome",
+      "impact": "high",
+      "note": "AI capability is evidenced as architecture and design work rather than a shipped system with public metrics."
+    },
+    {
+      "area": "AI certification (e.g. AI-102)",
+      "impact": "medium",
+      "note": "Holds AZ-305 and AZ-104; no AI-specific Microsoft certification yet."
+    }
+  ],
+  "source": "https://dheerajshukla.com/",
+  "lastUpdated": "2026-08-11"
+}

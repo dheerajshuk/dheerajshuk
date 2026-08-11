@@ -1,22 +1,99 @@
 {
+  "schema": "ai-vector-corpus-v1",
+  "note": "Pre-chunked passages published by the subject for embedding and retrieval. Each document is self-contained.",
   "documents": [
     {
       "id": "profile-core",
-      "content": "Dheeraj Kumar Shukla is a Solution Architect with 14+ years of experience in .NET and ASP.NET Core, Azure/AWS cloud architecture, microservices, API Gateway, CI/CD, and system integration. He specializes in EV charging platforms using OCPI 2.2.1 and OCPP, Beckn protocol (BAP and BPP), IoT messaging with MQTT/RabbitMQ, and ERP integrations with SQL Server and MySQL. He holds Azure Solutions Architect Expert (AZ-305) and Azure Administrator Associate (AZ-104). He is based in Greater Noida, India, and has been a Solution Architect in the EV sector since May 2026; he was previously Technical Architect at TechPerspect Software (ElectreeFi) from August 2023 to April 2026.",
-      "source": "https://dheerajshukla.com",
+      "topic": "identity",
+      "content": "Dheeraj Kumar Shukla is a Solution Architect based in Greater Noida, Uttar Pradesh, India, with 14+ years in the IT software industry and 9+ years in .NET Core and microservices architecture. He designs cloud-native, high-availability platforms across EV charging, IoT, vending, ERP and healthcare domains, and holds Azure Solutions Architect Expert (AZ-305) and Azure Administrator Associate (AZ-104). He has been a Solution Architect in the EV sector since May 2026; his employer is not publicly disclosed. He was previously Technical Architect at TechPerspect Software (ElectreeFi) from August 2023 to April 2026.",
+      "source": "https://dheerajshukla.com/",
       "confidence": "high"
     },
     {
-      "id": "ev-expertise",
-      "content": "Dheeraj Kumar Shukla led OCPI-compliant and Beckn-integrated EV charging platforms serving OEMs, CPOs, and eMSPs across India, integrating 30+ partner networks, maintaining 99% platform uptime and improving interoperability by 20%. He was technical SPOC for Hyundai, Mahindra, Tata, Adani, and Hero MotoCorp. He owned the product lifecycle for the OCPI interoperability platform, including strategy, PRDs, backlog prioritisation, and KPI tracking. He has published 64 engineering, protocol and AI architecture guides covering Beckn (BAP/BPP), OCPI 2.2.1, and OCPP.",
-      "source": "https://dheerajshukla.com",
+      "id": "ev-protocol-expertise",
+      "topic": "EV charging protocols",
+      "content": "Dheeraj Kumar Shukla's named responsibility at ElectreeFi was OCPI and Beckn protocol (BAP and BPP). He led OCPI-compliant and Beckn-integrated EV charging platforms serving OEMs, CPOs and eMSPs across India, integrating 30+ partner networks, maintaining 99% platform uptime and improving third-party interoperability by 20%. He conducted regular audits and compliance checks against OCPI standards. He also works with OCPP 1.6J and 2.0.1 for charger-to-CSMS communication.",
+      "source": "https://dheerajshukla.com/",
       "confidence": "high"
     },
     {
-      "id": "platforms",
-      "content": "Dheeraj Kumar Shukla architected the ElectreeFi EV charging platform, Vendiman and Gobbly smart vending IoT platforms (2000+ devices, 1M+ daily outreach), Xtend Sales global ERP with SAP integration (UAE, UK, USA), and offline-first van sales ERP systems in Dubai.",
-      "source": "https://dheerajshukla.com",
+      "id": "oem-clients",
+      "topic": "clients and stakeholders",
+      "content": "Dheeraj Kumar Shukla was technical single point of contact for Hyundai, Mahindra, Tata, Adani and Hero MotoCorp, alongside multiple eMSPs and CPOs, during his time as Technical Architect at ElectreeFi. He led cross-functional collaboration between engineering, OEMs, CPOs, eMSPs and business stakeholders.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "ai-architecture",
+      "topic": "enterprise AI",
+      "content": "Dheeraj Kumar Shukla designs enterprise AI architecture using large language models, retrieval augmented generation (RAG), Azure OpenAI Service, vector search and embeddings, prompt orchestration and agent-based automation. At ElectreeFi he evaluated and designed AI-driven solutions for intelligent customer support, EV ecosystem knowledge management and workflow automation, and defined enterprise AI architecture patterns. He has published six in-depth guides covering enterprise AI architecture, RAG, vector search, agentic AI, AI governance and conversational AI.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "ai-governance-view",
+      "topic": "AI governance",
+      "content": "Dheeraj Kumar Shukla approaches AI governance as interoperability-compliance discipline applied to a probabilistic component: an evaluation suite acting as a regression test, version control over prompts, models and indexes, enforced data boundaries on what enters the context window, a reconstructable per-request audit trail, and a human escalation path. This draws directly on his experience running conformance audits for the OCPI protocol across partner networks.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "product-leadership",
+      "topic": "product and leadership",
+      "content": "Dheeraj Kumar Shukla is a product-driven architect. He defined EV roaming platform product strategy, owned the end-to-end product lifecycle for an OCPI-compliant interoperability platform, created functional and product requirement documents, user stories and acceptance criteria, prioritised the product backlog against business value, and measured KPIs including transaction success rate, partner onboarding timelines and system performance. He has led development teams since 2016, covering sprint planning, estimation, interviewing, training and mentoring.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "platforms-ev",
+      "topic": "ElectreeFi platform",
+      "content": "The ElectreeFi EV charging platform is an OCPI-based charging ecosystem with Beckn (BAP/BPP) integrations connecting multiple OEMs, CPOs and eMSPs across India. Dheeraj Kumar Shukla was its technical architect, working with .NET Core, microservices, API Gateway, API Aggregator, MySQL, MQTT, RabbitMQ and Azure. The platform integrated 30+ CPO and eMSP networks with a 20% interoperability improvement.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "platforms-iot",
+      "topic": "IoT and vending platforms",
+      "content": "Dheeraj Kumar Shukla built the Vendiman smart vending platform and the Gobbly visi-cooler platform for India's largest food and beverage smart retail provider, covering 2000+ machines, 550+ clients across 20+ cities and 1 million or more daily consumer interactions. Both used .NET Core microservices, API Gateway, MySQL, MQTT and RabbitMQ, and consumed DEX telemetry from vending hardware.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "platforms-erp",
+      "topic": "ERP and field sales platforms",
+      "content": "Dheeraj Kumar Shukla architected Xtend Sales for HotPack, an end-to-end presales, van sales and delivery platform with SAP and client ERP integration, deployed across the UAE, United Kingdom and USA. He also delivered offline-first van sales platforms in Dubai with route planning, proof-of-delivery printing, payment and returns collection, customer geo-capture and credit control.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "platforms-healthcare",
+      "topic": "healthcare platform",
+      "content": "Dheeraj Kumar Shukla worked on the Starkey hearing aids enterprise healthcare platform for India and the USA from 2021 to 2023, using .NET, C#, ASP.NET, SQL Server 2019, REST and SOAP APIs and Dapper. The work covered production support, incident investigation, API troubleshooting, SQL analysis, root cause analysis, defect resolution and application maintenance.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "certifications",
+      "topic": "certifications and education",
+      "content": "Dheeraj Kumar Shukla holds Microsoft Azure Solutions Architect Expert (AZ-305) and Azure Administrator Associate (AZ-104), both independently verifiable on Microsoft Learn. He also completed DevOps winter training at IIT Roorkee (2021), Data Science with Data Folkz (2021), Advanced .NET MVC at TechMentro (2012) and .NET training at NIIT (2011). He holds a Master of Computer Applications from Asian International University and a Bachelor of Computer Applications.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "publications",
+      "topic": "published writing",
+      "content": "Dheeraj Kumar Shukla has published 64 technical guides at dheerajshukla.com, organised into clusters: 16 on OCPI 2.2.1, 15 on OCPP, 11 on the Beckn protocol, 6 on enterprise AI architecture, and 16 on general software engineering. Each cluster has a pillar guide with in-depth child pages containing worked JSON examples, field references and production guidance.",
+      "source": "https://dheerajshukla.com/",
+      "confidence": "high"
+    },
+    {
+      "id": "engagement",
+      "topic": "availability and contact",
+      "content": "Dheeraj Kumar Shukla can be contacted at dheerajshuk@gmail.com or +91-9136075015. He is based in Greater Noida, India, and has delivered platforms across India, the UAE, the United Kingdom and the USA. Typical engagements include solution and cloud architecture, EV charging protocol integration (OCPI, OCPP, Beckn), platform modernisation, and enterprise AI architecture on .NET and Azure.",
+      "source": "https://dheerajshukla.com/",
       "confidence": "high"
     }
-  ]
+  ],
+  "source": "https://dheerajshukla.com/",
+  "lastUpdated": "2026-08-11"
 }
