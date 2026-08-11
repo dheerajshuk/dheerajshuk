@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azure DevOps: Running Delivery for Platform Teams | Dheeraj Shukla</title>
+  <title>Azure DevOps for Platform Delivery Teams | Dheeraj Shukla</title>
   <meta name="description" content="Dheeraj Shukla on Azure DevOps in practice: YAML pipelines, release gates, backlog management, and running Agile delivery for EV charging platform teams." />
   <meta name="keywords" content="Dheeraj Shukla, Azure DevOps, CI/CD pipelines, YAML pipelines, Agile, sprint management" />
   <meta name="author" content="Dheeraj Kumar Shukla" />
@@ -20,9 +20,14 @@
   <meta property="og:title" content="Azure DevOps: Running Delivery for Platform Teams | Dheeraj Shukla" />
   <meta property="og:description" content="Dheeraj Shukla on Azure DevOps in practice: YAML pipelines, release gates, backlog management, and running Agile delivery for EV charging platform teams." />
   <meta property="og:url" content="https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html" />
+  <meta property="og:image" content="https://dheerajshukla.com/og/azure-devops.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dheeraj Kumar Shukla — dheerajshukla.com" />
+  <meta name="twitter:image" content="https://dheerajshukla.com/og/azure-devops.png" />
   <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
   <meta property="og:locale" content="en_IN" />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Azure DevOps: Running Delivery for Platform Teams" />
   <meta name="twitter:description" content="Dheeraj Shukla on Azure DevOps in practice: YAML pipelines, release gates, backlog management, and running Agile delivery for EV charging platform teams." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,7 +74,7 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .fl a{color:var(--muted)}.fl a:hover{color:var(--text)}
 @media (max-width:760px){nav{padding:16px 20px}main{padding:0 20px 70px}footer{padding:28px 20px;justify-content:center;text-align:center}.nav-right{gap:13px}.ac-links{gap:14px}.ac-top{gap:13px}h1{font-size:clamp(29px,7.5vw,40px)}}
 </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Azure DevOps: Running Delivery for Platform Teams","description":"Dheeraj Shukla on Azure DevOps in practice: YAML pipelines, release gates, backlog management, and running Agile delivery for EV charging platform teams.","url":"https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html","about":["Azure DevOps","CI/CD pipelines","YAML pipelines","Agile","sprint management"],"author":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"publisher":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"mainEntityOfPage":"https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Article","headline":"Azure DevOps: Running Delivery for Platform Teams","description":"Dheeraj Shukla on Azure DevOps in practice: YAML pipelines, release gates, backlog management, and running Agile delivery for EV charging platform teams.","url":"https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html","about":["Azure DevOps","CI/CD pipelines","YAML pipelines","Agile","sprint management"],"author":{"@id":"https://dheerajshukla.com/#person"},"publisher":{"@id":"https://dheerajshukla.com/#person"},"mainEntityOfPage":"https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11","image":{"@type":"ImageObject","url":"https://dheerajshukla.com/og/azure-devops.png","width":1200,"height":630},"isPartOf":{"@id":"https://dheerajshukla.com/#website"},"articleSection":"Software Engineering","wordCount":439,"keywords":["Dheeraj Shukla","Azure DevOps","CI/CD pipelines","YAML pipelines","Agile","sprint management"],"speakable":{"@type":"SpeakableSpecification","cssSelector":[".lede",".tldr"]}},{"@type":"Person","@id":"https://dheerajshukla.com/#person","name":"Dheeraj Kumar Shukla","alternateName":"Dheeraj Shukla","url":"https://dheerajshukla.com/","jobTitle":"Solution Architect","sameAs":["https://www.linkedin.com/in/dheerajshuk/","https://github.com/dheerajshuk","https://learn.microsoft.com/en-us/users/dheerajshukla-6488/"]},{"@type":"WebSite","@id":"https://dheerajshukla.com/#website","url":"https://dheerajshukla.com/","name":"Dheeraj Kumar Shukla | Solution Architect","publisher":{"@id":"https://dheerajshukla.com/#person"},"inLanguage":"en-IN"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dheerajshukla.com/"},{"@type":"ListItem","position":2,"name":"Azure DevOps","item":"https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Azure DevOps or GitHub Actions?","acceptedAnswer":{"@type":"Answer","text":"For enterprise platform teams needing integrated backlog + pipelines + artifacts + granular approvals, Azure DevOps remains stronger. For open-source or lightweight repos, GitHub Actions. Many of my teams run both — Boards + GitHub is a common hybrid."}},{"@type":"Question","name":"How long should a deploy take?","acceptedAnswer":{"@type":"Answer","text":"Commit to production under 30 minutes including tests and scans. Longer than that and engineers batch changes, and batched changes are where incidents hide."}},{"@type":"Question","name":"How do you manage multi-team sprints?","acceptedAnswer":{"@type":"Answer","text":"Shared cadence, separate boards per service area, one cross-team sync anchored on dependencies — and every dependency tracked as a linked work item, not a promise in a meeting."}}]}</script>
 </head>

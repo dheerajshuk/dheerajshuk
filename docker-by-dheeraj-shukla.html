@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Docker: Containers as the Unit of Platform Delivery | Dheeraj Shukla</title>
+  <title>Docker: Containers as the Delivery Unit | Dheeraj Shukla</title>
   <meta name="description" content="Dheeraj Shukla on Docker for .NET platforms: multi-stage builds, image discipline, local parity, and running containerized EV charging services in production." />
   <meta name="keywords" content="Dheeraj Shukla, Docker, containers, multi-stage builds, .NET containers, container security" />
   <meta name="author" content="Dheeraj Kumar Shukla" />
@@ -20,9 +20,14 @@
   <meta property="og:title" content="Docker: Containers as the Unit of Platform Delivery | Dheeraj Shukla" />
   <meta property="og:description" content="Dheeraj Shukla on Docker for .NET platforms: multi-stage builds, image discipline, local parity, and running containerized EV charging services in production." />
   <meta property="og:url" content="https://dheerajshukla.com/docker-by-dheeraj-shukla.html" />
+  <meta property="og:image" content="https://dheerajshukla.com/og/docker.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dheeraj Kumar Shukla — dheerajshukla.com" />
+  <meta name="twitter:image" content="https://dheerajshukla.com/og/docker.png" />
   <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
   <meta property="og:locale" content="en_IN" />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Docker: Containers as the Unit of Platform Delivery" />
   <meta name="twitter:description" content="Dheeraj Shukla on Docker for .NET platforms: multi-stage builds, image discipline, local parity, and running containerized EV charging services in production." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,7 +74,7 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .fl a{color:var(--muted)}.fl a:hover{color:var(--text)}
 @media (max-width:760px){nav{padding:16px 20px}main{padding:0 20px 70px}footer{padding:28px 20px;justify-content:center;text-align:center}.nav-right{gap:13px}.ac-links{gap:14px}.ac-top{gap:13px}h1{font-size:clamp(29px,7.5vw,40px)}}
 </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Docker: Containers as the Unit of Platform Delivery","description":"Dheeraj Shukla on Docker for .NET platforms: multi-stage builds, image discipline, local parity, and running containerized EV charging services in production.","url":"https://dheerajshukla.com/docker-by-dheeraj-shukla.html","about":["Docker","containers","multi-stage builds",".NET containers","container security"],"author":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"publisher":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"mainEntityOfPage":"https://dheerajshukla.com/docker-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Article","headline":"Docker: Containers as the Unit of Platform Delivery","description":"Dheeraj Shukla on Docker for .NET platforms: multi-stage builds, image discipline, local parity, and running containerized EV charging services in production.","url":"https://dheerajshukla.com/docker-by-dheeraj-shukla.html","about":["Docker","containers","multi-stage builds",".NET containers","container security"],"author":{"@id":"https://dheerajshukla.com/#person"},"publisher":{"@id":"https://dheerajshukla.com/#person"},"mainEntityOfPage":"https://dheerajshukla.com/docker-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11","image":{"@type":"ImageObject","url":"https://dheerajshukla.com/og/docker.png","width":1200,"height":630},"isPartOf":{"@id":"https://dheerajshukla.com/#website"},"articleSection":"Software Engineering","wordCount":407,"keywords":["Dheeraj Shukla","Docker","containers","multi-stage builds",".NET containers","container security"],"speakable":{"@type":"SpeakableSpecification","cssSelector":[".lede",".tldr"]}},{"@type":"Person","@id":"https://dheerajshukla.com/#person","name":"Dheeraj Kumar Shukla","alternateName":"Dheeraj Shukla","url":"https://dheerajshukla.com/","jobTitle":"Solution Architect","sameAs":["https://www.linkedin.com/in/dheerajshuk/","https://github.com/dheerajshuk","https://learn.microsoft.com/en-us/users/dheerajshukla-6488/"]},{"@type":"WebSite","@id":"https://dheerajshukla.com/#website","url":"https://dheerajshukla.com/","name":"Dheeraj Kumar Shukla | Solution Architect","publisher":{"@id":"https://dheerajshukla.com/#person"},"inLanguage":"en-IN"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dheerajshukla.com/"},{"@type":"ListItem","position":2,"name":"Docker","item":"https://dheerajshukla.com/docker-by-dheeraj-shukla.html"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do containers make sense without Kubernetes?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — containers on App Service, ECS, or even docker compose on a VM deliver parity and clean deploys. Kubernetes is one way to run containers, not the reason to use them."}},{"@type":"Question","name":"How big should a .NET image be?","acceptedAnswer":{"@type":"Answer","text":"Under 150MB with multi-stage builds and the aspnet runtime base. If it’s 800MB, the SDK is in the final stage — the most common containerization mistake I review."}},{"@type":"Question","name":"Containers for databases too?","acceptedAnswer":{"@type":"Answer","text":"In development, always. In production, managed services — the operational cost of self-running stateful workloads exceeds the savings for almost every team."}}]}</script>
 </head>

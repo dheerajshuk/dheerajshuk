@@ -6,7 +6,8 @@
     "llms": "https://dheerajshukla.com/llms.txt",
     "llmsFull": "https://dheerajshukla.com/llms-full.txt",
     "summary": "https://dheerajshukla.com/api/ai/summary.json",
-    "sitemap": "https://dheerajshukla.com/sitemap.xml"
+    "sitemap": "https://dheerajshukla.com/sitemap.xml",
+    "previewImage": "https://dheerajshukla.com/og/index.png"
   },
   "person": {
     "name": "Dheeraj Kumar Shukla",
@@ -36,7 +37,8 @@
       "Technical SPOC for enterprise clients and OEMs",
       "Hands-on architect with strong delivery focus"
     ],
-    "summary": "Solution Architect with 14+ years of experience in the IT software industry, including 9+ years in .NET Core and microservices architecture. Proven expertise in designing and scaling enterprise-grade, cloud-native platforms across EV charging, IoT, vending, and ERP domains. Specialized in Azure/AWS, CI/CD automation, distributed systems, API integration, and EV standards such as OCPI 2.2.1, OCPP, and Beckn protocol (BAP and BPP). Also designs AI-powered enterprise solutions using LLMs, RAG architectures, Agentic AI, Azure OpenAI, and vector databases."
+    "summary": "Solution Architect with 14+ years of experience in the IT software industry, including 9+ years in .NET Core and microservices architecture. Proven expertise in designing and scaling enterprise-grade, cloud-native platforms across EV charging, IoT, vending, and ERP domains. Specialized in Azure/AWS, CI/CD automation, distributed systems, API integration, and EV standards such as OCPI 2.2.1, OCPP, and Beckn protocol (BAP and BPP). Also designs AI-powered enterprise solutions using LLMs, RAG architectures, Agentic AI, Azure OpenAI, and vector databases.",
+    "image": "https://dheerajshukla.com/og/index.png"
   },
   "contact": {
     "email": "dheerajshuk@gmail.com",

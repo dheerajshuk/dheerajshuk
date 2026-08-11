@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nginx: The Quiet Workhorse in Front of Everything | Dheeraj Shukla</title>
+  <title>Nginx at the Platform Edge | Dheeraj Shukla</title>
   <meta name="description" content="Dheeraj Shukla on Nginx in production: reverse proxying .NET services, TLS termination, WebSocket proxying for OCPP, load balancing, and hardening." />
   <meta name="keywords" content="Dheeraj Shukla, Nginx, reverse proxy, TLS termination, WebSocket proxy, load balancing" />
   <meta name="author" content="Dheeraj Kumar Shukla" />
@@ -20,9 +20,14 @@
   <meta property="og:title" content="Nginx: The Quiet Workhorse in Front of Everything | Dheeraj Shukla" />
   <meta property="og:description" content="Dheeraj Shukla on Nginx in production: reverse proxying .NET services, TLS termination, WebSocket proxying for OCPP, load balancing, and hardening." />
   <meta property="og:url" content="https://dheerajshukla.com/nginx-by-dheeraj-shukla.html" />
+  <meta property="og:image" content="https://dheerajshukla.com/og/nginx.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dheeraj Kumar Shukla — dheerajshukla.com" />
+  <meta name="twitter:image" content="https://dheerajshukla.com/og/nginx.png" />
   <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
   <meta property="og:locale" content="en_IN" />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nginx: The Quiet Workhorse in Front of Everything" />
   <meta name="twitter:description" content="Dheeraj Shukla on Nginx in production: reverse proxying .NET services, TLS termination, WebSocket proxying for OCPP, load balancing, and hardening." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,7 +74,7 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .fl a{color:var(--muted)}.fl a:hover{color:var(--text)}
 @media (max-width:760px){nav{padding:16px 20px}main{padding:0 20px 70px}footer{padding:28px 20px;justify-content:center;text-align:center}.nav-right{gap:13px}.ac-links{gap:14px}.ac-top{gap:13px}h1{font-size:clamp(29px,7.5vw,40px)}}
 </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Nginx: The Quiet Workhorse in Front of Everything","description":"Dheeraj Shukla on Nginx in production: reverse proxying .NET services, TLS termination, WebSocket proxying for OCPP, load balancing, and hardening.","url":"https://dheerajshukla.com/nginx-by-dheeraj-shukla.html","about":["Nginx","reverse proxy","TLS termination","WebSocket proxy","load balancing"],"author":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"publisher":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"mainEntityOfPage":"https://dheerajshukla.com/nginx-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Article","headline":"Nginx: The Quiet Workhorse in Front of Everything","description":"Dheeraj Shukla on Nginx in production: reverse proxying .NET services, TLS termination, WebSocket proxying for OCPP, load balancing, and hardening.","url":"https://dheerajshukla.com/nginx-by-dheeraj-shukla.html","about":["Nginx","reverse proxy","TLS termination","WebSocket proxy","load balancing"],"author":{"@id":"https://dheerajshukla.com/#person"},"publisher":{"@id":"https://dheerajshukla.com/#person"},"mainEntityOfPage":"https://dheerajshukla.com/nginx-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11","image":{"@type":"ImageObject","url":"https://dheerajshukla.com/og/nginx.png","width":1200,"height":630},"isPartOf":{"@id":"https://dheerajshukla.com/#website"},"articleSection":"Software Engineering","wordCount":418,"keywords":["Dheeraj Shukla","Nginx","reverse proxy","TLS termination","WebSocket proxy","load balancing"],"speakable":{"@type":"SpeakableSpecification","cssSelector":[".lede",".tldr"]}},{"@type":"Person","@id":"https://dheerajshukla.com/#person","name":"Dheeraj Kumar Shukla","alternateName":"Dheeraj Shukla","url":"https://dheerajshukla.com/","jobTitle":"Solution Architect","sameAs":["https://www.linkedin.com/in/dheerajshuk/","https://github.com/dheerajshuk","https://learn.microsoft.com/en-us/users/dheerajshukla-6488/"]},{"@type":"WebSite","@id":"https://dheerajshukla.com/#website","url":"https://dheerajshukla.com/","name":"Dheeraj Kumar Shukla | Solution Architect","publisher":{"@id":"https://dheerajshukla.com/#person"},"inLanguage":"en-IN"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dheerajshukla.com/"},{"@type":"ListItem","position":2,"name":"Nginx","item":"https://dheerajshukla.com/nginx-by-dheeraj-shukla.html"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Nginx vs cloud load balancers?","acceptedAnswer":{"@type":"Answer","text":"In fully managed cloud estates, use the managed option — less to operate. Nginx wins on client-hosted infrastructure, fine-grained control, and anywhere licensing or egress economics matter."}},{"@type":"Question","name":"The mistake you see most?","acceptedAnswer":{"@type":"Answer","text":"WebSocket timeouts — default proxy_read_timeout of 60s silently kills idle OCPP connections. Set it above the protocol heartbeat interval and chargers stop mysteriously reconnecting."}},{"@type":"Question","name":"Nginx as an API gateway?","acceptedAnswer":{"@type":"Answer","text":"It can carry auth, routing, and rate limiting for simpler platforms. Once you need per-partner policies, version negotiation, and developer portals, a dedicated gateway pays for itself."}}]}</script>
 </head>
