@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dheerajshukla.com/</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>
   <url><loc>https://dheerajshukla.com/articles.html</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://dheerajshukla.com/agentic-ai-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ai-governance-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/angular-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://dheerajshukla.com/api-gateway-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://dheerajshukla.com/aspnet-core-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
@@ -20,9 +22,11 @@
   <url><loc>https://dheerajshukla.com/beckn-status-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/cicd-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/conversational-ai-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/dex-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://dheerajshukla.com/docker-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://dheerajshukla.com/dotnet-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/enterprise-ai-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/microservices-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://dheerajshukla.com/mqtt-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://dheerajshukla.com/mysql-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
@@ -59,7 +63,9 @@
   <url><loc>https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/ocpp-transaction-event-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/rabbitmq-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/rag-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/sql-server-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/vector-search-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://dheerajshukla.com/Dheeraj%20kumar%20shukla%20-%20Resume.pdf</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://dheerajshukla.com/ai.json</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
   <url><loc>https://dheerajshukla.com/llms.txt</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>

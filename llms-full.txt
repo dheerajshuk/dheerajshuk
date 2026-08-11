@@ -108,6 +108,14 @@ Enterprise AI solutions: Large Language Models (LLMs), Retrieval Augmented Gener
 - OCPP firmware and diagnostics — https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html
 - OCPP Reset and availability control — https://dheerajshukla.com/ocpp-reset-by-dheeraj-shukla.html
 
+## Enterprise AI architecture deep dives
+- Enterprise AI architecture: the complete guide — https://dheerajshukla.com/enterprise-ai-by-dheeraj-shukla.html
+- RAG: retrieval that survives production — https://dheerajshukla.com/rag-by-dheeraj-shukla.html
+- Vector search and embeddings — https://dheerajshukla.com/vector-search-by-dheeraj-shukla.html
+- Agentic AI: orchestration that holds up — https://dheerajshukla.com/agentic-ai-by-dheeraj-shukla.html
+- AI governance: control for systems that don't repeat — https://dheerajshukla.com/ai-governance-by-dheeraj-shukla.html
+- Conversational AI for enterprise support — https://dheerajshukla.com/conversational-ai-by-dheeraj-shukla.html
+
 ## Protocol concept guides (each with worked JSON examples)
 - OCPI CDR: the record money depends on — https://dheerajshukla.com/ocpi-cdr-by-dheeraj-shukla.html
 - OCPI Sessions: the live view of a charge — https://dheerajshukla.com/ocpi-sessions-by-dheeraj-shukla.html

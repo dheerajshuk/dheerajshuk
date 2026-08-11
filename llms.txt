@@ -19,7 +19,7 @@ Key facts:
 
 ## Guides index
 
-- [All 58 engineering guides](https://dheerajshukla.com/articles.html)
+- [All 64 engineering guides](https://dheerajshukla.com/articles.html)
 
 ## Articles
 
@@ -88,6 +88,15 @@ Key facts:
 - [OCPP configuration: reading and changing settings](https://dheerajshukla.com/ocpp-configuration-by-dheeraj-shukla.html): key settings, rebootrequired, and configuration drift
 - [OCPP firmware and diagnostics](https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html): staged rollout, bricking risk, and update discipline
 - [OCPP Reset and availability control](https://dheerajshukla.com/ocpp-reset-by-dheeraj-shukla.html): soft vs hard reset, and safe remote intervention
+
+## Enterprise AI and GenAI architecture
+
+- [Enterprise AI architecture: the complete guide](https://dheerajshukla.com/enterprise-ai-by-dheeraj-shukla.html): the five-layer reference model, build order, .net and azure path, and cost
+- [RAG: retrieval that survives production](https://dheerajshukla.com/rag-by-dheeraj-shukla.html): chunking, hybrid retrieval, reranking, grounding, evaluation and failure modes
+- [Vector search and embeddings](https://dheerajshukla.com/vector-search-by-dheeraj-shukla.html): distance metrics, hnsw and ivf, filtered ann, freshness and cost
+- [Agentic AI: orchestration that holds up](https://dheerajshukla.com/agentic-ai-by-dheeraj-shukla.html): the agent loop, tool design, orchestration patterns and guardrails
+- [AI governance: control for systems that don't repeat](https://dheerajshukla.com/ai-governance-by-dheeraj-shukla.html): evaluation suites, versioning, data boundaries, audit trails and oversight
+- [Conversational AI for enterprise support](https://dheerajshukla.com/conversational-ai-by-dheeraj-shukla.html): escalation design, multi-turn state, and the metrics that reveal the truth
 
 ## Protocol concept guides (with JSON examples)
 
