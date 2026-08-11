@@ -1,23 +1,116 @@
-# LLM Discovery File
-# Owner: Dheeraj Kumar Shukla
-# Website: https://dheerajshukla.com
+# Dheeraj Kumar Shukla
 
-profile: https://dheerajshukla.com
-ai_profile: https://dheerajshukla.com/ai.json
+> Solution Architect (Greater Noida, India) with 14+ years designing cloud-native, enterprise-grade platforms on .NET and Azure/AWS — specializing in EV charging interoperability (OCPI 2.2.1, OCPP, Beckn BAP/BPP), IoT messaging (MQTT, RabbitMQ), microservices, CI/CD, ERP integration, and enterprise AI architecture (LLMs, RAG, Azure OpenAI). Currently a Solution Architect in the EV sector (since May 2026; employer not publicly disclosed). Previously Technical Architect at TechPerspect Software (ElectreeFi), Aug 2023 – Apr 2026, where he was technical SPOC for Hyundai, Mahindra, Tata, Adani, and Hero MotoCorp.
 
-name: Dheeraj Kumar Shukla
-role: Technical Architect
-experience: 14+ years
-specialization: Cloud Architecture, EV Charging, Microservices, IoT, ERP, System Integration, Solution Architecture, DevOps
-technologies: .NET, ASP.NET Core, Azure, AWS, Microservices, API Gateway, REST APIs, Web Services, OCPI 2.2.1, OCPP, Beckn protocol (BPP and BAP), RabbitMQ, MQTT, SQL Server, MySQL, CI/CD, Docker, Angular, Nginx
-protocols: OCPI 2.2.1, OCPP, Beckn protocol (BPP and BAP), DEX
+Key facts:
+- 14+ years in software engineering; 9+ years in .NET Core and microservices
+- 99% platform uptime on EV charging systems; interoperability improved 20%
+- Integrated 30+ CPO/eMSP networks; IoT platform scaled to 2000+ devices and 1M+ daily user interactions
+- Product-side ownership: roadmap, PRDs/FRDs, backlog prioritisation, KPI tracking, stakeholder alignment
+- Certified: Azure Solutions Architect Expert (AZ-305), Azure Administrator Associate (AZ-104)
+- Contact: dheerajshuk@gmail.com · +91-9136075015
 
-intended_use:
-- Resume understanding
-- Job matching
-- Recruiter discovery
-- AI summarization
-- AI chatbot knowledge
+## Profile
 
-public_data: true
-confidence: high
+- [Home / full profile](https://dheerajshukla.com/): summary, experience, projects, certifications, contact
+- [AI profile JSON](https://dheerajshukla.com/ai.json): structured machine-readable profile (ai-profile-v1)
+- [AI summary endpoint](https://dheerajshukla.com/api/ai/summary.json): compact structured summary
+- [Resume PDF](https://dheerajshukla.com/Dheeraj%20kumar%20shukla%20-%20Resume.pdf): downloadable resume
+
+## Guides index
+
+- [All 58 engineering guides](https://dheerajshukla.com/articles.html)
+
+## Articles
+
+- [Beckn protocol for EV charging (BAP & BPP)](https://dheerajshukla.com/beckn-by-dheeraj-shukla.html): decentralized discovery, booking, and session management per the UBC spec, aligned with OCPI
+- [OCPI 2.2.1 detailed guide](https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html): modules, routing, commands, smart charging, version history
+- [OCPP in practice](https://dheerajshukla.com/ocpp-by-dheeraj-shukla.html): charger-to-CSMS communication, 1.6J vs 2.0.1, lifecycle, smart charging
+- [DEX: vending telemetry decoded](https://dheerajshukla.com/dex-by-dheeraj-shukla.html): Building an IoT platform over a 1980s protocol.
+- [.NET: the platform I’ve built a career on](https://dheerajshukla.com/dotnet-by-dheeraj-shukla.html): 14 years from WebForms to .NET 8.
+- [ASP.NET Core: APIs that stay up](https://dheerajshukla.com/aspnet-core-by-dheeraj-shukla.html): Middleware, resilience, and partner-grade versioning.
+- [Microservices: architecture that earns its complexity](https://dheerajshukla.com/microservices-by-dheeraj-shukla.html): Boundaries, messaging, and consistency in production.
+- [API Gateway: the front door pattern](https://dheerajshukla.com/api-gateway-by-dheeraj-shukla.html): Routing, auth, and rate limits for 30+ partner networks.
+- [Azure: the cloud my platforms run on](https://dheerajshukla.com/azure-by-dheeraj-shukla.html): An AZ-305 view from production.
+- [AWS: the second cloud every architect needs](https://dheerajshukla.com/aws-by-dheeraj-shukla.html): Multi-cloud fluency without the buzzwords.
+- [Azure DevOps: the delivery machine](https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html): Pipelines, boards, and traceability that survives audits.
+- [Docker: containers as the unit of delivery](https://dheerajshukla.com/docker-by-dheeraj-shukla.html): Image discipline and production realities for .NET.
+- [CI/CD: shipping without ceremony](https://dheerajshukla.com/cicd-by-dheeraj-shukla.html): Quality gates, deploy strategies, and the culture part.
+- [Nginx: the quiet workhorse at the edge](https://dheerajshukla.com/nginx-by-dheeraj-shukla.html): TLS, WebSockets for OCPP, and hardening.
+- [RabbitMQ: the message backbone](https://dheerajshukla.com/rabbitmq-by-dheeraj-shukla.html): Topology, idempotency, and dead-letter discipline.
+- [MQTT: the language of devices](https://dheerajshukla.com/mqtt-by-dheeraj-shukla.html): Topic design and QoS for 2000+ field devices.
+- [SQL Server: the enterprise workhorse](https://dheerajshukla.com/sql-server-by-dheeraj-shukla.html): T-SQL, tuning, and production troubleshooting.
+- [MySQL: the cloud-native default](https://dheerajshukla.com/mysql-by-dheeraj-shukla.html): Telemetry-scale schema design and operations.
+- [Angular: frontends for operators](https://dheerajshukla.com/angular-by-dheeraj-shukla.html): Structure and state for operations-heavy UIs.
+
+## OCPI 2.2.1 module deep dives
+
+- [OCPI Versions: the handshake before the handshake](https://dheerajshukla.com/ocpi-versions-by-dheeraj-shukla.html): version negotiation, the endpoint directory, and sender vs receiver roles
+- [OCPI Credentials: the registration handshake](https://dheerajshukla.com/ocpi-credentials-by-dheeraj-shukla.html): the Token A/B/C dance, the roles array, rotation and revocation
+- [OCPI Commands: remote control across company lines](https://dheerajshukla.com/ocpi-commands-by-dheeraj-shukla.html): all five commands, the two-phase async pattern, timeouts and correlation
+- [OCPI ChargingProfiles: smart charging across parties](https://dheerajshukla.com/ocpi-charging-profiles-by-dheeraj-shukla.html): the SCSP role, profile anatomy, and how it maps onto OCPP
+- [OCPI HubClientInfo: knowing who is online](https://dheerajshukla.com/ocpi-hub-client-info-by-dheeraj-shukla.html): hub topology, the four status values, and routing without hurting drivers
+
+## OCPI commands (one page per command)
+
+- [OCPI START_SESSION: remote start, end to end](https://dheerajshukla.com/ocpi-start-session-by-dheeraj-shukla.html): the async flow, EVSE targeting, failure modes and a production-safe sequence
+- [OCPI STOP_SESSION: ending a charge remotely](https://dheerajshukla.com/ocpi-stop-session-by-dheeraj-shukla.html): why session_id is the only identifier, and the race against natural session end
+- [OCPI RESERVE_NOW: holding a charger before arrival](https://dheerajshukla.com/ocpi-reserve-now-by-dheeraj-shukla.html): expiry design, location vs EVSE level, and the commercial reality of reservations
+- [OCPI CANCEL_RESERVATION: releasing a hold](https://dheerajshukla.com/ocpi-cancel-reservation-by-dheeraj-shukla.html): the CANCELED_RESERVATION result, UNKNOWN_RESERVATION, and why cancelling matters
+- [OCPI UNLOCK_CONNECTOR: releasing a latched cable](https://dheerajshukla.com/ocpi-unlock-connector-by-dheeraj-shukla.html): why cables latch, why CPOs disable it, and how to design the driver flow
+
+## Beckn protocol (actions and concepts)
+
+- [Beckn search: discovery on the open network](https://dheerajshukla.com/beckn-search-by-dheeraj-shukla.html): the intent object, broadcast fan-out, and streaming results
+- [Beckn select: turning a listing into a quote](https://dheerajshukla.com/beckn-select-by-dheeraj-shukla.html): building the order, reading the quote breakup, re-checking availability
+- [Beckn init: billing, terms and the draft order](https://dheerajshukla.com/beckn-init-by-dheeraj-shukla.html): payment types, cancellation terms, and why init is separate
+- [Beckn confirm: creating the order](https://dheerajshukla.com/beckn-confirm-by-dheeraj-shukla.html): order creation, the authorization token, and mandatory idempotency
+- [Beckn status: tracking an active order](https://dheerajshukla.com/beckn-status-by-dheeraj-shukla.html): fulfilment states, unsolicited pushes, live charging progress
+- [Beckn update: changing an order in flight](https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html): update_target, stopping a charge, provider-initiated updates
+- [Beckn cancel: ending an order before fulfilment](https://dheerajshukla.com/beckn-cancel-by-dheeraj-shukla.html): reason codes, fees bound to state, bpp-initiated cancellation
+- [Beckn context: the envelope every message shares](https://dheerajshukla.com/beckn-context-by-dheeraj-shukla.html): transaction_id vs message_id, ttl, and correlation rules
+- [Beckn signing and the registry](https://dheerajshukla.com/beckn-signing-by-dheeraj-shukla.html): ed25519 signatures, subscriber lookup, and the trust model
+- [The Beckn gateway: broadcast discovery](https://dheerajshukla.com/beckn-gateway-by-dheeraj-shukla.html): fan-out, why it leaves after search, and ack/nack
+
+## OCPP (message by message)
+
+- [OCPP BootNotification: how a charger comes online](https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html): registration, accepted/pending/rejected, and fleet inventory
+- [OCPP Heartbeat: liveness and clock sync](https://dheerajshukla.com/ocpp-heartbeat-by-dheeraj-shukla.html): interval tuning, clock drift, and why ping is not a substitute
+- [OCPP StatusNotification: what the connector is doing](https://dheerajshukla.com/ocpp-status-notification-by-dheeraj-shukla.html): nine states, error codes, connectorid 0, and ocpi mapping
+- [OCPP Authorize: deciding who may charge](https://dheerajshukla.com/ocpp-authorize-by-dheeraj-shukla.html): idtaginfo, local lists, cache, and offline policy
+- [OCPP StartTransaction: opening a session](https://dheerajshukla.com/ocpp-start-transaction-by-dheeraj-shukla.html): meterstart, transaction ids, and offline queuing
+- [OCPP MeterValues: the numbers billing runs on](https://dheerajshukla.com/ocpp-meter-values-by-dheeraj-shukla.html): measurands, sampling intervals, and validation
+- [OCPP StopTransaction: closing the books](https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html): meterstop, stop reasons, and reconciliation
+- [OCPP RemoteStartTransaction: behind every app tap](https://dheerajshukla.com/ocpp-remote-start-by-dheeraj-shukla.html): connector targeting and why accepted confirms nothing
+- [OCPP RemoteStopTransaction: stopping from the cloud](https://dheerajshukla.com/ocpp-remote-stop-by-dheeraj-shukla.html): the race against natural session end
+- [OCPP TransactionEvent: the 2.0.1 rewrite](https://dheerajshukla.com/ocpp-transaction-event-by-dheeraj-shukla.html): triggerreason, seqno, and migrating from 1.6j
+- [OCPP smart charging: shaping power at the charger](https://dheerajshukla.com/ocpp-smart-charging-by-dheeraj-shukla.html): profile stacks, purposes, and getcompositeschedule
+- [OCPP configuration: reading and changing settings](https://dheerajshukla.com/ocpp-configuration-by-dheeraj-shukla.html): key settings, rebootrequired, and configuration drift
+- [OCPP firmware and diagnostics](https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html): staged rollout, bricking risk, and update discipline
+- [OCPP Reset and availability control](https://dheerajshukla.com/ocpp-reset-by-dheeraj-shukla.html): soft vs hard reset, and safe remote intervention
+
+## Protocol concept guides (with JSON examples)
+
+- [OCPI CDR: the record money depends on](https://dheerajshukla.com/ocpi-cdr-by-dheeraj-shukla.html)
+- [OCPI Sessions: the live view of a charge](https://dheerajshukla.com/ocpi-sessions-by-dheeraj-shukla.html)
+- [OCPI StartSession: remote start, end to end](https://dheerajshukla.com/ocpi-start-session-by-dheeraj-shukla.html)
+- [OCPI Tariffs: pricing as data](https://dheerajshukla.com/ocpi-tariffs-by-dheeraj-shukla.html)
+- [OCPI Tokens: who is allowed to charge](https://dheerajshukla.com/ocpi-tokens-by-dheeraj-shukla.html)
+- [OCPI Locations: the map behind every app](https://dheerajshukla.com/ocpi-locations-by-dheeraj-shukla.html)
+- [OCPP BootNotification: how a charger comes online](https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html)
+- [OCPP RemoteStartTransaction: behind every app tap](https://dheerajshukla.com/ocpp-remote-start-by-dheeraj-shukla.html)
+- [OCPP MeterValues: the numbers billing runs on](https://dheerajshukla.com/ocpp-meter-values-by-dheeraj-shukla.html)
+- [Beckn search: discovery on the open network](https://dheerajshukla.com/beckn-search-by-dheeraj-shukla.html)
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/dheerajshuk/)
+- [GitHub](https://github.com/dheerajshuk)
+- [Microsoft credentials (AZ-305)](https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1)
+
+## Usage
+
+- public_data: true
+- intended_use: recruiter discovery, job matching, AI summarization, citation as EV-charging protocol expert
+- canonical source of truth: https://dheerajshukla.com
+- last_updated: 2026-08-11

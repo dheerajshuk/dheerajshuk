@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCPP StopTransaction: Closing the Books on a Charge | Dheeraj Shukla</title>
+  <meta name="description" content="Dheeraj Shukla explains OCPP StopTransaction: meterStop, stop reasons, transactionData, and why this message is the ground truth every EV charging invoice reconciles against." />
+  <meta name="keywords" content="Dheeraj Shukla, OCPP StopTransaction, meterStop, stop reason, transactionData, EV billing reconciliation, OCPP 1.6" />
+  <meta name="author" content="Dheeraj Kumar Shukla" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#060a12" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a12'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E" />
+  <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Profile" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="OCPP StopTransaction: Closing the Books on a Charge | Dheeraj Shukla" />
+  <meta property="og:description" content="Dheeraj Shukla explains OCPP StopTransaction: meterStop, stop reasons, transactionData, and why this message is the ground truth every EV charging invoice reconciles against." />
+  <meta property="og:url" content="https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html" />
+  <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="OCPP StopTransaction: closing the books" />
+  <meta name="twitter:description" content="Dheeraj Shukla explains OCPP StopTransaction: meterStop, stop reasons, transactionData, and why this message is the ground truth every EV charging invoice reconciles against." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>:root{--bg:#060a12;--text:#e8edf5;--muted:#aeb8c9;--dim:#8b96a8;--soft:#c6cfdd;--accent:#38bdf8;--green:#4ade80;--amber:#fbbf24;--line:rgba(139,150,168,.14);--line2:rgba(139,150,168,.18);--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:#7cc8f0;text-decoration:none}a:hover{color:#b3e0fa}::selection{background:rgba(56,189,248,.3)}
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(6,10,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.08em;color:var(--text)}.logo span{color:var(--accent)}
+.back{font-family:var(--mono);font-size:13px;color:var(--muted)}.back:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-resume{font-size:12px;font-weight:600;color:var(--bg)!important;background:var(--text);padding:8px 15px;border-radius:6px;font-family:var(--mono);letter-spacing:.06em}
+.nav-resume:hover{background:#fff;color:var(--bg)!important}
+main{max-width:820px;margin:0 auto;padding:0 40px 100px}
+header.article{padding:90px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);margin:0 0 20px}
+h1{font-size:clamp(34px,4.6vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin:0 0 24px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);margin:0;text-wrap:pretty}
+.byline{display:flex;gap:20px;margin-top:28px;font-family:var(--mono);font-size:12.5px;color:var(--dim);flex-wrap:wrap}
+.tldr{margin-top:34px;border-left:2px solid var(--accent);padding:4px 0 4px 20px}
+.tldr .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);margin:0 0 8px}
+.tldr p{font-size:15.5px;color:var(--muted);margin:0;text-wrap:pretty}
+section{padding:52px 0 0}
+h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin:0 0 16px}
+h3{font-size:18.5px;font-weight:600;margin:30px 0 10px}
+p,ul,ol{font-size:16.5px;color:var(--soft)}ul,ol{margin:0;padding-left:20px}li{margin-bottom:10px}
+strong{color:var(--text)}
+code{font-family:var(--mono);font-size:13.5px;color:var(--green)}
+pre{font-family:var(--mono);font-size:13px;line-height:1.6;color:#c6cfdd;background:rgba(139,150,168,.06);border:1px solid rgba(139,150,168,.18);border-radius:10px;padding:18px 20px;overflow-x:auto;margin:16px 0 0}
+pre code{color:inherit;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:18px 0 0;font-size:15px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--dim);font-weight:500;text-transform:uppercase}
+td{color:var(--soft)}td code{font-size:12.5px}
+.tw{overflow-x:auto}
+.note{border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.05);border-radius:10px;padding:18px 20px;margin:22px 0 0;font-size:15.5px;color:var(--soft)}
+.note strong{color:var(--amber)}
+.faq .q{font-size:16.5px;font-weight:600;margin-bottom:6px}.faq p{font-size:15.5px;color:var(--muted);margin:0 0 22px}
+.author{margin-top:64px;border:1px solid var(--line2);border-radius:12px;padding:30px;background:rgba(139,150,168,.04)}
+.ac-top{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.ac-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#0284c7);color:#060a12;font-family:var(--mono);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none}
+.ac-name{font-size:18.5px;font-weight:600}
+.ac-role{font-size:11.5px;color:var(--dim);font-family:var(--mono);letter-spacing:.1em;margin-top:4px}
+.ac-bio{font-size:15px;color:var(--muted);margin:0 0 20px;text-wrap:pretty}
+.ac-links{display:flex;flex-wrap:wrap;gap:20px;font-family:var(--mono);font-size:12.5px}
+.next{margin-top:40px;border:1px solid var(--line2);border-radius:12px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.next .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--dim);margin-bottom:8px}.next .t{font-size:18px;font-weight:600}
+.read{font-family:var(--mono);font-size:13px;color:var(--accent);flex:none}
+footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer span{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.fl{font-family:var(--mono);font-size:12.5px}.fl a{color:var(--muted)}.fl a:hover{color:var(--text)}
+@media (max-width:760px){nav{padding:16px 20px}main{padding:0 20px 70px}footer{padding:28px 20px;justify-content:center;text-align:center}.nav-right{gap:13px}.ac-links{gap:14px}.ac-top{gap:13px}h1{font-size:clamp(29px,7.5vw,40px)}pre{font-size:11.5px}}.cluster{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim)}.cluster a{color:var(--accent)}</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OCPP StopTransaction: closing the books","description":"Dheeraj Shukla explains OCPP StopTransaction: meterStop, stop reasons, transactionData, and why this message is the ground truth every EV charging invoice reconciles against.","url":"https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html","about":["OCPP StopTransaction","meterStop","stop reason","billing reconciliation"],"author":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"publisher":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"mainEntityOfPage":"https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dheerajshukla.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://dheerajshukla.com/articles.html"},{"@type":"ListItem","position":3,"name":"OCPP StopTransaction","item":"https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is energy calculated in OCPP?","acceptedAnswer":{"@type":"Answer","text":"By subtracting meterStart on StartTransaction from meterStop on StopTransaction. Both are cumulative register readings in watt-hours, so the difference is the energy delivered during that session."}},{"@type":"Question","name":"What is transactionData in OCPP StopTransaction?","acceptedAnswer":{"@type":"Answer","text":"Meter samples the CSMS may not have received, typically readings taken while the charger was offline. They must be merged with any MeterValues already received and de-duplicated on timestamp and measurand, otherwise energy is double-counted."}},{"@type":"Question","name":"Why does the OCPP stop reason matter?","acceptedAnswer":{"@type":"Answer","text":"It is the best fleet-diagnostic signal in the protocol and is usually discarded. A healthy estate is dominated by EVDisconnected and Local. A charger model showing frequent Reboot has a firmware defect, and a site showing repeated PowerLoss has an electrical problem — neither appears in uptime metrics."}},{"@type":"Question","name":"What should you do with a transaction that never receives a StopTransaction?","acceptedAnswer":{"@type":"Answer","text":"Age it out on a defined policy: close it using the last received meter sample, mark the record as estimated, and exclude it from partner settlement. Never silently invoice an estimated close, because you cannot evidence the energy."}},{"@type":"Question","name":"Can a session be stopped with a different card than it was started with?","acceptedAnswer":{"@type":"Answer","text":"Yes, provided both credentials share a parentIdTag. This is what lets a driver start with an RFID card and stop from a mobile app."}}]}</script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">DKS<span>_</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="back">ALL GUIDES</a>
+    <a href="index.html" class="back">PROFILE</a>
+    <a href="Dheeraj kumar shukla - Resume.pdf" class="nav-resume" download>RESUME</a>
+  </div>
+</nav>
+<main>
+  <header class="article">
+    <p class="kicker">OCPP MESSAGE &middot; UPDATED 11 AUG 2026</p>
+    <h1>StopTransaction: closing the books on a charge</h1>
+    <p class="lede">Every rupee invoiced for a charging session traces back to two numbers on two messages. This is the second one &mdash; and it is the closest thing to physical ground truth that a charging platform ever gets.</p>
+    <div class="byline"><span>DHEERAJ KUMAR SHUKLA</span><span>&middot;</span><span>OCPP STOPTRANSACTION</span><span>&middot;</span><span>3 MIN READ</span></div>
+    <p class="cluster">PART OF THE <a href="ocpp-by-dheeraj-shukla.html">OCPP COMPLETE GUIDE</a> &middot; 14 MESSAGE GUIDES</p>
+    <div class="tldr"><p class="lbl">IN ONE PARAGRAPH</p><p>StopTransaction reports the final meter reading, the time, and why the session ended. The difference between meterStop and meterStart is the energy actually delivered, which makes this the record every downstream invoice must reconcile against. The stop reason is the most under-used operational signal in the protocol.</p></div>
+  </header>
+  <article>
+    <section>
+      <h2>The message</h2>
+      <pre><code>// Charge point -&gt; CSMS
+[2, &quot;19223210&quot;, &quot;StopTransaction&quot;, {
+  &quot;transactionId&quot;: 770142,
+  &quot;idTag&quot;: &quot;DR88231ABCD&quot;,
+  &quot;meterStop&quot;: 4496370,
+  &quot;timestamp&quot;: &quot;2026-08-11T10:03:41Z&quot;,
+  &quot;reason&quot;: &quot;EVDisconnected&quot;,
+  &quot;transactionData&quot;: [{
+    &quot;timestamp&quot;: &quot;2026-08-11T10:03:41Z&quot;,
+    &quot;sampledValue&quot;: [{
+      &quot;value&quot;: &quot;4496370&quot;,
+      &quot;context&quot;: &quot;Transaction.End&quot;,
+      &quot;measurand&quot;: &quot;Energy.Active.Import.Register&quot;,
+      &quot;unit&quot;: &quot;Wh&quot;
+    }]
+  }]
+}]
+
+// CSMS -&gt; charge point
+[3, &quot;19223210&quot;, { &quot;idTagInfo&quot;: { &quot;status&quot;: &quot;Accepted&quot; } }]</code></pre><p>Energy delivered is <code>4496370 - 4471820 = 24550 Wh</code>, or 24.55 kWh. That subtraction is the entire financial basis of the session.</p><p><code>idTag</code> is optional and may differ from the one that started the session &mdash; a driver can start with a card and stop with an app credential, provided both share a <code>parentIdTag</code>.</p>
+    </section>
+    <section>
+      <h2>The stop reason is diagnostic gold</h2>
+      <p><code>reason</code> is optional in the spec and routinely ignored in implementations. It is the single best signal you have about what is actually happening across a fleet.</p><div class="tw"><table><thead><tr><th>Reason</th><th>Means</th><th>What a cluster of these tells you</th></tr></thead><tbody><tr><td><code>EVDisconnected</code></td><td>Driver unplugged</td><td>Normal &mdash; the healthy majority</td></tr><tr><td><code>Local</code></td><td>Stopped at the charger</td><td>Normal</td></tr><tr><td><code>Remote</code></td><td>Stopped by <a href="ocpp-remote-stop-by-dheeraj-shukla.html">RemoteStopTransaction</a></td><td>Normal &mdash; app-initiated</td></tr><tr><td><code>DeAuthorized</code></td><td>Authorisation withdrawn</td><td>Token or roaming problem</td></tr><tr><td><code>EmergencyStop</code></td><td>Emergency button pressed</td><td>Investigate the site immediately</td></tr><tr><td><code>PowerLoss</code></td><td>Charger lost power</td><td>Site electrical problem</td></tr><tr><td><code>Reboot</code> / <code>HardReset</code> / <code>SoftReset</code></td><td>Charger restarted mid-session</td><td>Firmware instability &mdash; a repeat pattern is a warranty case</td></tr><tr><td><code>UnlockCommand</code></td><td>Cable released remotely</td><td>Usually a stuck-cable incident</td></tr><tr><td><code>Other</code></td><td>Unspecified</td><td>Vendor-specific; investigate</td></tr></tbody></table></div><div class="note"><strong>Track the reason distribution per charger model and per site.</strong> A healthy estate is dominated by <code>EVDisconnected</code> and <code>Local</code>. A model showing 5% <code>Reboot</code> has a firmware defect; a site showing repeated <code>PowerLoss</code> has an electrical problem. Neither shows up in uptime metrics, and both are visible here for free.</div>
+    </section>
+    <section>
+      <h2>transactionData and the offline case</h2>
+      <p><code>transactionData</code> carries meter samples the CSMS may not have received &mdash; typically the full set of readings taken while the charger was offline.</p><p>This is why an offline session still bills correctly. The charger stores samples locally and delivers them all in the stop message. Your ingestion must merge these with any <a href="ocpp-meter-values-by-dheeraj-shukla.html">MeterValues</a> already received, de-duplicating on timestamp and measurand, rather than treating them as a second set of readings.</p><p>Doing that naively double-counts energy. The samples in <code>transactionData</code> frequently overlap with what already arrived.</p>
+    </section>
+    <section>
+      <h2>Reconciliation: the honesty metric</h2>
+      <p>This message is the point where an EV platform can check its own arithmetic. Three reconciliations are worth running continuously:</p><div class="tw"><table><thead><tr><th>Check</th><th>Compare</th><th>A mismatch means</th></tr></thead><tbody><tr><td>Meter arithmetic</td><td><code>meterStop - meterStart</code> vs the sum of <a href="ocpp-meter-values-by-dheeraj-shukla.html">MeterValues</a> deltas</td><td>Lost or duplicated meter samples</td></tr><tr><td>OCPI CDR energy</td><td>Transaction energy vs <a href="ocpi-cdr-by-dheeraj-shukla.html">CDR</a> <code>total_energy</code></td><td>Your CDR generation is wrong &mdash; a billing defect</td></tr><tr><td>Session closure</td><td>Every <a href="ocpp-start-transaction-by-dheeraj-shukla.html">StartTransaction</a> has a StopTransaction</td><td>Stuck sessions or lost messages</td></tr></tbody></table></div><p>The second row is the one that matters commercially. A roaming partner's dispute is settled by whether your CDR matches your own StopTransaction. If it does not, you cannot defend the invoice &mdash; and the mismatch rate against StopTransaction is the number an audit will ask for.</p>
+    </section>
+    <section>
+      <h2>Sessions that never stop</h2>
+      <p>Some transactions never receive a StopTransaction:</p><ul><li>The charger lost power mid-session and never recovered its queue.</li><li>Firmware crashed and lost local state.</li><li>The unit was decommissioned mid-transaction.</li><li>The message was sent and lost, and the charger did not retry.</li></ul><p>You cannot leave these open forever &mdash; they inflate the &ldquo;currently charging&rdquo; count and block the connector in your availability model. Age them out on a defined policy: close using the last received meter sample, mark the record as estimated, and exclude it from partner settlement rather than invoicing a number you cannot evidence.</p><p>Never silently invoice an estimated close. If you cannot evidence the energy, you cannot defend the charge.</p>
+    </section>
+    <section>
+      <h2>Production lessons</h2>
+      <ul><li><strong>Reconcile every CDR against its StopTransaction.</strong> The mismatch rate is your platform's honesty metric.</li><li><strong>De-duplicate <code>transactionData</code> against received <a href="ocpp-meter-values-by-dheeraj-shukla.html">MeterValues</a></strong> before summing anything.</li><li><strong>Record and dashboard the stop reason.</strong> It is free fleet diagnostics that most platforms discard.</li><li><strong>Age out unclosed transactions</strong> with an explicit policy, flagged as estimated.</li><li><strong>Handle zero-energy stops</strong> &mdash; <code>DeAuthorized</code> seconds after start must not generate an invoice.</li><li><strong>Keep the raw payload.</strong> When a partner disputes energy, the original StopTransaction ends the discussion.</li><li><strong>Accept late stops without complaint.</strong> An offline charger delivering yesterday's transaction is working correctly.</li></ul>
+    </section>
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="q">How is energy calculated in OCPP?</div>
+      <p>By subtracting meterStart on <a href="ocpp-start-transaction-by-dheeraj-shukla.html">StartTransaction</a> from meterStop on StopTransaction. Both are cumulative register readings in watt-hours, so the difference is the energy delivered during that session.</p>
+      <div class="q">What is transactionData in OCPP StopTransaction?</div>
+      <p>Meter samples the CSMS may not have received, typically readings taken while the charger was offline. They must be merged with any MeterValues already received and de-duplicated on timestamp and measurand, otherwise energy is double-counted.</p>
+      <div class="q">Why does the OCPP stop reason matter?</div>
+      <p>It is the best fleet-diagnostic signal in the protocol and is usually discarded. A healthy estate is dominated by EVDisconnected and Local. A charger model showing frequent Reboot has a firmware defect, and a site showing repeated PowerLoss has an electrical problem — neither appears in uptime metrics.</p>
+      <div class="q">What should you do with a transaction that never receives a StopTransaction?</div>
+      <p>Age it out on a defined policy: close it using the last received meter sample, mark the record as estimated, and exclude it from partner settlement. Never silently invoice an estimated close, because you cannot evidence the energy.</p>
+      <div class="q">Can a session be stopped with a different card than it was started with?</div>
+      <p>Yes, provided both credentials share a parentIdTag. This is what lets a driver start with an RFID card and stop from a mobile app.</p>
+    </section>
+  </article>
+  <aside class="author">
+    <div class="ac-top">
+      <div class="ac-avatar">DS</div>
+      <div>
+        <div class="ac-name">Dheeraj Kumar Shukla</div>
+        <div class="ac-role">SOLUTION ARCHITECT &middot; EV CHARGING, IOT &amp; ENTERPRISE PLATFORMS</div>
+      </div>
+    </div>
+    <p class="ac-bio">14+ years building cloud-native platforms on .NET and Azure/AWS. Led OCPI-compliant and Beckn (BAP/BPP) EV charging integrations across 30+ CPO/eMSP networks at 99% uptime, and was technical SPOC for Hyundai, Mahindra, Tata, Adani and Hero MotoCorp. Azure Solutions Architect Expert (AZ-305). This guide is written from production experience, not from the spec alone.</p>
+    <div class="ac-links">
+      <a href="index.html">Full profile &rarr;</a>
+      <a href="mailto:dheerajshuk@gmail.com">Get in touch</a>
+      <a href="Dheeraj kumar shukla - Resume.pdf" download>Resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/dheerajshuk/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    </div>
+  </aside>
+  <div class="next">
+    <div><div class="lbl">NEXT GUIDE</div><div class="t">OCPP MeterValues: the numbers billing runs on</div></div>
+    <a class="read" href="ocpp-meter-values-by-dheeraj-shukla.html">READ &rarr;</a>
+  </div>
+</main>
+<footer>
+  <span>&copy; 2026 DHEERAJ KUMAR SHUKLA &middot; OCPP STOPTRANSACTION</span>
+  <span class="fl"><a href="index.html">Profile</a> &middot; <a href="articles.html">All guides</a> &middot; <a href="mailto:dheerajshuk@gmail.com">Contact</a></span>
+</footer>
+</body>
+</html>

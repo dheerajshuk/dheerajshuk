@@ -1,509 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= SEO + AI META ================= -->
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Dheeraj Kumar Shukla | Solution Architect | .NET, Azure, EV Charging, Microservices | AI</title>
-
-  <meta name="description" content="Solution Architect with 14+ years in .NET, Azure/AWS, Microservices, EV Charging (OCPI/OCPP), IoT, CI/CD and ERP platforms. Leads cloud-native architecture, integration, and high-availability systems." />
-  <meta name="keywords" content="Dheeraj Kumar Shukla, Dheeraj Shukla, Solution Architect, Solution Architect, Cloud Architect, Azure Architect, AWS Architect, .NET Architect, ASP.NET Core, Microservices, API Gateway, EV Charging, OCPI, OCPP, Beckn protocol (BPP and BAP), IoT, MQTT, RabbitMQ, DevOps, CI/CD, ERP, Vending Machines" />
+  <title>Dheeraj Kumar Shukla | Solution Architect — EV Charging, OCPI, OCPP, Beckn, Azure, AI</title>
+  <meta name="description" content="Dheeraj Kumar Shukla — Solution Architect, 14+ years building cloud-native platforms on .NET and Azure/AWS. EV charging interoperability (OCPI, OCPP, Beckn BAP/BPP), IoT at scale, ERP integration, and enterprise AI (LLMs, RAG, Azure OpenAI). 99% uptime, 30+ partner networks, 1M+ daily interactions." />
+  <meta name="keywords" content="Dheeraj Shukla, Dheeraj Kumar Shukla, Solution Architect, Technical Architect, EV Charging, OCPI, OCPP, Beckn, BAP, BPP, Azure, AWS, .NET Core, Microservices, AI Architect, RAG, Azure OpenAI, Greater Noida" />
   <meta name="author" content="Dheeraj Kumar Shukla" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-
-
-
-  <!-- Open Graph -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#060a12" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://dheerajshukla.com/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a12'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E" />
+  <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Profile" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Dheeraj Kumar Shukla | Solution Architect | .NET, Azure, EV Charging, Microservices" />
-  <meta property="og:description" content="Solution Architect specializing in .NET, Azure/AWS, Microservices, EV Charging (OCPI/OCPP), IoT and CI/CD delivery for enterprise platforms." />
-  <meta property="og:url" content="https://dheerajshukla.com" />
-  <meta property="og:site_name" content="Dheeraj Shukla – Solution Architect" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dheeraj Kumar Shukla | Solution Architect | .NET, Azure, EV Charging, Microservices" />
-  <meta name="twitter:description" content="Solution Architect specializing in .NET, Azure/AWS, Microservices, EV Charging (OCPI/OCPP), IoT and CI/CD delivery for enterprise platforms." />
-
-  <!-- Fonts -->
+  <meta property="og:title" content="Dheeraj Kumar Shukla | Solution Architect — EV Charging & Enterprise AI" />
+  <meta property="og:description" content="14+ years architecting EV charging, IoT, and ERP platforms — OCPI, OCPP, Beckn, .NET, Azure/AWS, and enterprise AI. 99% uptime across 30+ partner networks." />
+  <meta property="og:url" content="https://dheerajshukla.com/" />
+  <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dheeraj Kumar Shukla | Solution Architect" />
+  <meta name="twitter:description" content="EV charging platform architect — OCPI, OCPP, Beckn, .NET, Azure/AWS, enterprise AI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-  
-  <!-- AI Profile -->
-<link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON">
-
-<!-- LLM Discovery -->
-<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile">
-
-
-  <!-- ================= DESIGN ================= -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #050816;
-      --card: #0f172a;
-      --accent: #38bdf8;
-      --accent2: #22c55e;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --border: rgba(148,163,184,.15);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
-      background: radial-gradient(900px 400px at 10% -10%, #1e293b 0%, transparent 60%), var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { color: #7dd3fc; }
-
-    header {
-      padding: 110px 20px 90px;
-      text-align: center;
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      inset: -120px 0 auto;
-      height: 240px;
-      background: radial-gradient(600px 200px at 50% 0%, rgba(56,189,248,.2), transparent 60%);
-      pointer-events: none;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 30px;
-      width: 280px;
-      height: 280px;
-      transform: translateX(-50%);
-      background: radial-gradient(closest-side, rgba(34,197,94,.2), transparent);
-      filter: blur(18px);
-      opacity: .5;
-      pointer-events: none;
-    }
-    header h1 {
-      font-size: clamp(2.6rem, 6vw, 3.8rem);
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      margin-bottom: 14px;
-    }
-    header h2 {
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--muted);
-    }
-    header p {
-      max-width: 900px;
-      margin: 34px auto 0;
-      font-size: 1.08rem;
-      color: #c7d2fe;
-    }
-
-    .cta {
-      margin-top: 42px;
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 15px 26px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), #60a5fa);
-      color: #020617;
-      font-weight: 700;
-      box-shadow: 0 15px 40px rgba(56,189,248,.4);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 45px rgba(56,189,248,.45);
-    }
-    .btn.secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-      box-shadow: none;
-      transition: transform .2s ease, border-color .2s ease, color .2s ease;
-    }
-    .btn.secondary:hover {
-      transform: translateY(-2px);
-      border-color: rgba(56,189,248,.45);
-      color: #e2e8f0;
-    }
-
-    .container { max-width: 1250px; margin: auto; padding: 40px 22px; }
-    section { margin-bottom: 110px; }
-
-    h3 {
-      font-size: 2.1rem;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    h3::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      width: 70px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 4px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: linear-gradient(180deg, #0b1229, var(--card));
-      padding: 30px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      transition: transform .35s ease, box-shadow .35s ease;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(0,0,0,.55);
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 9px 16px;
-      border-radius: 999px;
-      background: rgba(56,189,248,.12);
-      border: 1px solid rgba(56,189,248,.35);
-      margin: 6px 8px 6px 0;
-      font-size: .92rem;
-      font-weight: 500;
-    }
-
-    .article-link {
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .article-link::after {
-      content: "→";
-      font-size: 1rem;
-      opacity: .8;
-    }
-
-    ul { padding-left: 20px; }
-    li { margin-bottom: 12px; }
-    li::marker { color: #7dd3fc; }
-
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
+    :root{--bg:#060a12;--text:#e8edf5;--muted:#aeb8c9;--dim:#8b96a8;--soft:#c6cfdd;--accent:#38bdf8;--green:#4ade80;--amber:#fbbf24;--line:rgba(139,150,168,.14);--line2:rgba(139,150,168,.18);--mono:'JetBrains Mono',monospace}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:#7cc8f0;text-decoration:none}a:hover{color:#b3e0fa}
+    ::selection{background:rgba(56,189,248,.3)}
+    nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(6,10,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .logo{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.08em;color:var(--text)}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:26px}
+    .nav-links a{font-size:14.5px;color:var(--muted)}.nav-links a:hover{color:var(--text)}
+    .nav-resume{font-size:13.5px;font-weight:600;color:var(--bg)!important;background:var(--text);padding:9px 18px;border-radius:6px}.nav-resume:hover{background:#fff}
+    main{max-width:1060px;margin:0 auto;padding:0 40px}
+    .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);margin:0 0 14px}
+    h2.sec{font-size:clamp(30px,4vw,42px);font-weight:600;letter-spacing:-.03em;margin:0 0 18px}
+    .sec-sub{font-size:17px;color:var(--muted);max-width:660px;margin:0 0 56px;text-wrap:pretty}
+    section{padding:96px 0;border-bottom:1px solid var(--line)}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--green);border:1px solid rgba(74,222,128,.3);border-radius:999px;padding:6px 14px;margin-bottom:26px}
+    .badge i{width:7px;height:7px;border-radius:50%;background:var(--green);flex:none}
+    .btn{display:inline-block;font-size:15px;font-weight:600;color:var(--bg);background:var(--accent);padding:14px 28px;border-radius:8px;transition:transform .18s,background .18s}
+    .btn:hover{transform:translateY(-2px);background:#5eccfa;color:var(--bg)}
+    .btn-ghost{display:inline-block;font-size:15px;font-weight:500;color:var(--text);border:1px solid rgba(139,150,168,.3);padding:14px 28px;border-radius:8px;transition:transform .18s,border-color .18s}
+    .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(56,189,248,.55);color:var(--text)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:1px solid var(--line)}
+    .stats>div{padding:26px 24px 0}.stats>div+div{border-left:1px solid var(--line)}
+    .stats b{font-size:34px;font-weight:600;letter-spacing:-.02em;display:block}
+    .stats small{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--dim);margin-top:4px;display:block}
+    .glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;border:1px solid var(--line2);border-radius:12px;margin:0 0 6px;overflow:hidden}
+    .glance>div{padding:22px 24px;border-right:1px solid var(--line)}
+    .glance>div:last-child{border-right:none}
+    .glance dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--dim);margin:0 0 8px}
+    .glance dd{margin:0;font-size:15.5px;font-weight:500;color:var(--text)}
+    .clients{display:flex;align-items:center;gap:34px;flex-wrap:wrap;padding:34px 0;border-bottom:1px solid var(--line)}
+    .clients .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;color:var(--dim)}
+    .clients span:not(.lbl){font-size:16px;font-weight:500;color:var(--soft)}
+    .cols3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:44px}
+    .cols3 .tag{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:14px}
+    .cols3 h3{font-size:20px;font-weight:600;margin:0 0 10px}
+    .cols3 p{font-size:15.5px;color:var(--muted);margin:0;text-wrap:pretty}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:64px}
+    .chips span,.chips a{display:inline-block;font-family:var(--mono);font-size:12.5px;color:var(--soft);border:1px solid rgba(139,150,168,.22);border-radius:6px;padding:7px 13px;transition:border-color .2s,color .2s}
+    .chips a:hover{border-color:rgba(56,189,248,.5);color:var(--text)}
+    .job{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:40px 0;border-top:1px solid var(--line)}
+    .job .yrs{font-family:var(--mono);font-size:13px;color:var(--dim)}
+    .job .loc{font-family:var(--mono);font-size:12px;color:#5d6778;margin-top:6px}
+    .job h3{font-size:21px;font-weight:600;margin:0}
+    .job .org{font-size:15px;color:var(--dim);margin:4px 0 16px}
+    .job ul{margin:0;padding-left:18px;color:var(--muted);font-size:15.5px}
+    .job li{margin-bottom:8px}
+    .job .now{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--green);border:1px solid rgba(74,222,128,.3);border-radius:4px;padding:2px 8px;margin-left:10px;vertical-align:middle}
+    .todo{border:1px dashed var(--amber);border-radius:8px;padding:14px 18px;margin:0 0 16px;font-size:14px;color:var(--amber);background:rgba(251,191,36,.06)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+    .card{border:1px solid var(--line2);border-radius:12px;padding:28px;background:rgba(139,150,168,.04);transition:border-color .25s,transform .25s}
+    .card:hover{border-color:rgba(56,189,248,.5);transform:translateY(-3px)}
+    .card .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--accent);margin-bottom:12px}
+    .card h3{font-size:18.5px;font-weight:600;margin:0 0 8px}
+    .card p{font-size:14.5px;color:var(--muted);margin:0;text-wrap:pretty}
+    .card .out{display:block;font-family:var(--mono);font-size:12px;color:var(--green);margin-top:14px}
+    .lead{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+    .lead>div{border-left:2px solid rgba(56,189,248,.4);padding-left:20px}
+    .lead h3{font-size:17px;font-weight:600;margin:0 0 8px}
+    .lead p{font-size:15px;color:var(--muted);margin:0;text-wrap:pretty}
+    .articles{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+    .article{display:block;border:1px solid var(--line2);border-radius:12px;padding:32px;background:rgba(139,150,168,.04);transition:border-color .25s,transform .25s;color:var(--text)}
+    .article:hover{border-color:rgba(56,189,248,.5);transform:translateY(-3px);color:var(--text)}
+    .article .meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--dim);margin-bottom:14px}
+    .article h3{font-size:21px;font-weight:600;margin:0 0 10px;letter-spacing:-.01em}
+    .article p{font-size:15px;color:var(--muted);margin:0 0 18px;text-wrap:pretty}
+    .read{font-family:var(--mono);font-size:13px;color:var(--accent)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+    .two-col .kicker{margin-bottom:20px}
+    .two-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;font-size:15.5px;color:var(--soft)}
+    #contact{text-align:center;border-bottom:none;padding:110px 0 90px}
+    #contact h2{font-size:clamp(34px,5vw,56px);font-weight:600;letter-spacing:-.03em;margin:0 0 22px;text-wrap:balance}
+    .copy-btn{font-size:14px;font-weight:500;font-family:'Space Grotesk',sans-serif;color:var(--text);background:transparent;border:1px solid rgba(139,150,168,.3);padding:14px 22px;border-radius:8px;cursor:pointer;transition:border-color .18s}
+    .copy-btn:hover{border-color:rgba(56,189,248,.55)}
+    .social{display:flex;gap:26px;justify-content:center;font-family:var(--mono);font-size:13.5px;flex-wrap:wrap}
+    footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    footer span{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+    @media (max-width:760px){
+      nav{padding:16px 20px}main{padding:0 20px}footer{padding:28px 20px}
+      .nav-links{gap:14px}.nav-links a:not(.nav-resume){display:none}
+      .stats{grid-template-columns:1fr 1fr}.stats>div{border-left:none!important;padding:26px 0 0}
+      .glance>div{border-right:none;border-bottom:1px solid var(--line)}
+      .job{grid-template-columns:1fr;gap:8px}.two-col{grid-template-columns:1fr;gap:40px}
+      section{padding:68px 0}
     }
   </style>
-  <!-- ================= STRUCTURED DATA ================= -->
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://dheerajshukla.com/#person",
-  "name": "Dheeraj Kumar Shukla",
-  "url": "https://dheerajshukla.com",
-  "jobTitle": "Solution Architect",
-  "description": "Solution Architect with 14+ years of experience in .NET, cloud architecture, EV charging platforms (OCPI/OCPP), Beckn protocol (BPP and BAP), microservices, DevOps, and enterprise ERP systems.",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "ElectreeFi"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Greater Noida",
-    "addressRegion": "Uttar Pradesh",
-    "addressCountry": "IN"
-  },
-  "email": "dheerajshuk@gmail.com",
-  "telephone": "+91-9136075015",
-  "knowsAbout": [
-    "ASP.NET Core",
-    ".NET",
-    "Azure Architecture",
-    "AWS Architecture",
-    "Microservices",
-    "EV Charging",
-    "OCPI",
-    "OCPP",
-    "Beckn protocol (BPP and BAP)",
-    "IoT",
-    "MQTT",
-    "RabbitMQ",
-    "DevOps",
-    "API Gateway",
-    "CI/CD",
-    "ERP Systems",
-    "Vending Platforms"
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Azure Solutions Architect Expert (AZ-305)",
-      "url": "https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Azure Administrator Associate (AZ-104)",
-      "url": "https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/a5db3afac0018941"
-    }
-  ],
-  "alumniOf": [
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Asian International University"
-    }
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/in/dheerajshuk/",
-    "https://github.com/dheerajshuk"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://dheerajshukla.com/#website",
-  "url": "https://dheerajshukla.com",
-  "name": "Dheeraj Kumar Shukla | Solution Architect | .NET, Azure, EV Charging, Microservices",
-  "publisher": {
-    "@type": "Person",
-    "@id": "https://dheerajshukla.com/#person"
-  },
-  "inLanguage": "en-IN"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "@id": "https://dheerajshukla.com/#profile-article",
-  "headline": "Dheeraj Kumar Shukla | Solution Architect | .NET, Azure, EV Charging, Microservices",
-  "author": {
-    "@type": "Person",
-    "@id": "https://dheerajshukla.com/#person"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Dheeraj Kumar Shukla"
-  },
-  "mainEntityOfPage": "https://dheerajshukla.com",
-  "datePublished": "2026-01-05",
-  "inLanguage": "en-IN"
-}
-</script>
-
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Person","@id":"https://dheerajshukla.com/#person","name":"Dheeraj Kumar Shukla","alternateName":["Dheeraj Shukla","Dheeraj K. Shukla"],"url":"https://dheerajshukla.com","jobTitle":"Solution Architect","description":"Solution Architect with 14+ years of experience in .NET and cloud architecture, specialising in EV charging interoperability (OCPI 2.2.1, OCPP, Beckn BAP/BPP), microservices, IoT platforms, ERP integration, and enterprise AI architecture (LLMs, RAG, Azure OpenAI).","address":{"@type":"PostalAddress","addressLocality":"Greater Noida","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"email":"mailto:dheerajshuk@gmail.com","telephone":"+91-9136075015","knowsAbout":["ASP.NET Core",".NET","Azure Architecture","AWS Architecture","Microservices","EV Charging","OCPI 2.2.1","OCPP","Beckn protocol (BAP and BPP)","IoT","MQTT","RabbitMQ","DevOps","API Gateway","CI/CD","ERP Systems","Vending Platforms","Product Roadmap Planning","Stakeholder Management","Large Language Models (LLMs)","Retrieval Augmented Generation (RAG)","Azure OpenAI","Agentic AI","Vector Databases","Prompt Engineering"],"hasOccupation":{"@type":"Occupation","name":"Solution Architect","occupationalCategory":"15-1299.00","skills":"OCPI, OCPP, Beckn, .NET Core, Azure, AWS, Microservices, Enterprise AI"},"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Azure Solutions Architect Expert (AZ-305)","credentialCategory":"certification","url":"https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1"},{"@type":"EducationalOccupationalCredential","name":"Azure Administrator Associate (AZ-104)","credentialCategory":"certification","url":"https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/a5db3afac0018941"}],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Asian International University"}],"sameAs":["https://www.linkedin.com/in/dheerajshuk/","https://github.com/dheerajshuk","https://learn.microsoft.com/en-us/users/dheerajshukla-6488/"]},
+    {"@type":"WebSite","@id":"https://dheerajshukla.com/#website","url":"https://dheerajshukla.com","name":"Dheeraj Kumar Shukla | Solution Architect","publisher":{"@id":"https://dheerajshukla.com/#person"},"inLanguage":"en-IN"},
+    {"@type":"ProfilePage","@id":"https://dheerajshukla.com/#profilepage","url":"https://dheerajshukla.com","mainEntity":{"@id":"https://dheerajshukla.com/#person"},"isPartOf":{"@id":"https://dheerajshukla.com/#website"},"dateModified":"2026-08-11"},
+    {"@type":"FAQPage","@id":"https://dheerajshukla.com/#faq","mainEntity":[
+      {"@type":"Question","name":"Who is Dheeraj Kumar Shukla?","acceptedAnswer":{"@type":"Answer","text":"Dheeraj Kumar Shukla is a Solution Architect based in Greater Noida, India, with 14+ years in software engineering and 9+ years in .NET Core. He designs cloud-native platforms on .NET and Azure/AWS, specialising in EV charging interoperability (OCPI, OCPP, Beckn), IoT at scale, ERP integration, and enterprise AI architecture."}},
+      {"@type":"Question","name":"What EV charging protocols does Dheeraj Shukla specialise in?","acceptedAnswer":{"@type":"Answer","text":"OCPI 2.2.1 for eMSP-CPO roaming and Beckn protocol (BAP and BPP) for decentralised discovery and booking were his named responsibilities at ElectreeFi. He also works with OCPP for charger-to-CSMS communication."}},
+      {"@type":"Question","name":"What results has Dheeraj Shukla delivered?","acceptedAnswer":{"@type":"Answer","text":"He launched an interoperable EV charging platform integrated with 30+ CPO/eMSP networks, improved interoperability by 20%, maintained 99% uptime across distributed microservices, and scaled an IoT vending platform to 2000+ machines with 1M+ daily user interactions."}},
+      {"@type":"Question","name":"Which companies has Dheeraj Shukla worked with?","acceptedAnswer":{"@type":"Answer","text":"He is currently a Solution Architect in the EV sector (since May 2026; employer not publicly disclosed). Previously Technical Architect at TechPerspect Software (ElectreeFi) from August 2023 to April 2026, serving as technical SPOC for Hyundai, Mahindra, Tata, Adani, and Hero MotoCorp; before that Web Architect and Team Lead at Limitless Mobility Solutions, and Web Developer at Maya Techno Soft."}},
+      {"@type":"Question","name":"Does Dheeraj Shukla work on AI and GenAI systems?","acceptedAnswer":{"@type":"Answer","text":"Yes. He designs enterprise AI architecture using LLMs, RAG, Azure OpenAI, vector search and embeddings, prompt orchestration, and agent-based automation — applied to intelligent customer support, EV ecosystem knowledge management, and workflow automation."}}
+    ]},
+    {"@type":"ItemList","@id":"https://dheerajshukla.com/#articles","name":"Engineering and protocol guides by Dheeraj Kumar Shukla","numberOfItems":58,"itemListOrder":"https://schema.org/ItemListOrderAscending","url":"https://dheerajshukla.com/articles.html"}
+  ]}
+  </script>
 </head>
 <body>
-
-<header>
-  <h1>Dheeraj Kumar Shukla</h1>
-  <h2>Solution Architect · Cloud · EV Charging · Microservices</h2>
-  <p>
-    Solution Architect with 14+ years of experience designing and scaling enterprise-grade,
-    cloud-native platforms across EV charging, IoT, ERP, and distributed systems.
-    Specializing in .NET, Azure/AWS, Microservices, CI/CD automation, and EV standards
-    (OCPI & OCPP) and Beckn protocol (BPP and BAP).
-  </p>
-  <div class="cta">
-    <a class="btn" href="mailto:dheerajshuk@gmail.com">Contact Me</a>
-    <a class="btn secondary" href="Dheeraj kumar shukla - Resume.pdf" download>Download Resume (PDF)</a>
-    <a class="btn secondary" href="#articles">Articles</a>
-    <a class="btn secondary" href="#experience">View Experience</a>
+<nav>
+  <a href="#top" class="logo">DKS<span>_</span></a>
+  <div class="nav-links">
+    <a href="#work">What I do</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#experience">Experience</a>
+    <a href="#writing">Writing</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-resume" href="Dheeraj kumar shukla - Resume.pdf" download>Resume</a>
   </div>
-  
+</nav>
+<main id="top">
+  <header style="padding:110px 0 80px">
+    <p style="font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--dim);margin:0 0 22px">SOLUTION ARCHITECT — GREATER NOIDA, IN</p>
+    <h1 style="font-size:clamp(42px,6.2vw,74px);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:0 0 30px;text-wrap:balance">I build the platforms that keep EV charging networks running.</h1>
+    <p style="font-size:19px;color:var(--muted);max-width:680px;margin:0 0 26px;text-wrap:pretty">I'm <strong style="color:var(--text)">Dheeraj Kumar Shukla</strong> — a solution architect with 14+ years turning complex, multi-party technical problems into platforms that stay up. Most recently that meant EV charging: making 30+ separate charging networks talk to each other reliably enough that a driver never sees the seams.</p>
+    <p style="font-size:17px;color:var(--dim);max-width:680px;margin:0 0 40px;text-wrap:pretty">I own the whole arc — the architecture, the product decisions, the partner conversations, and the 2am incident. Increasingly that also means bringing LLMs and RAG into enterprise systems that can't afford to guess.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a class="btn" href="mailto:dheerajshuk@gmail.com">Start a conversation</a>
+      <a class="btn-ghost" href="Dheeraj kumar shukla - Resume.pdf" download>Download resume (PDF)</a>
+    </div>
+    <div class="stats">
+      <div><b>14+</b><small>YEARS BUILDING</small></div>
+      <div><b>99%</b><small>PLATFORM UPTIME</small></div>
+      <div><b>30+</b><small>PARTNER NETWORKS</small></div>
+      <div><b>1M+</b><small>DAILY INTERACTIONS</small></div>
+    </div>
+  </header>
 
-</header>
+  <section style="padding:0 0 34px;border-bottom:none">
+    <dl class="glance">
+      <div><dt>CURRENT ROLE</dt><dd>Solution Architect, EV sector</dd></div>
+      <div><dt>BASED IN</dt><dd>Greater Noida, India</dd></div>
+      <div><dt>EXPERIENCE</dt><dd>14+ yrs · 9+ in .NET Core</dd></div>
+      <div><dt>CERTIFIED</dt><dd>Azure AZ-305 Expert</dd></div>
+      <div><dt>WORKED ACROSS</dt><dd>India · UAE · UK · USA</dd></div>
+    </dl>
+  </section>
 
-<div class="container">
+  <div class="clients">
+    <span class="lbl">TECHNICAL SPOC FOR</span>
+    <span>Hyundai</span><span>Mahindra</span><span>Tata</span><span>Adani</span><span>Hero MotoCorp</span>
+  </div>
 
-  <section>
-    <h3>Professional Summary</h3>
-    <div class="card">
-      <ul>
-        <li>14+ years in software engineering with 8+ years in .NET Core and microservices architecture.</li>
-        <li>End-to-end delivery across requirement gathering, estimation, design, development, integration, and production support.</li>
-        <li>Architected EV charging, vending, and ERP platforms with OCPI/OCPP, Beckn protocol (BPP and BAP), MQTT, and RabbitMQ.</li>
-        <li>Technical SPOC for enterprise clients and OEMs, leading cross-functional delivery teams.</li>
-      </ul>
+  <section id="work">
+    <p class="kicker">01 — WHAT I DO</p>
+    <h2 class="sec">Systems that stay up, scale out, and talk to each other.</h2>
+    <p class="sec-sub">Four things I get hired for. In plain terms: I make sure the software holds when it's carrying real money, real vehicles, and real customers.</p>
+    <div class="cols3">
+      <div><div class="tag">/ ARCHITECTURE &amp; DESIGN</div><h3>Cloud-native platform architecture</h3><p>Microservices on .NET Core with API gateways and event-driven messaging (RabbitMQ, MQTT). Designed against real production load, not whiteboard load — and reviewed until it survives it.</p></div>
+      <div><div class="tag">/ EV &amp; IOT PLATFORMS</div><h3>Interoperable charging networks</h3><p>OCPI and Beckn (BAP/BPP) integrations that let separate operators transact with each other. When a driver charges on someone else's network and gets billed correctly, this is the layer that did it.</p></div>
+      <div><div class="tag">/ CLOUD &amp; DEVOPS</div><h3>Delivery pipelines &amp; operations</h3><p>Azure and AWS architectures with CI/CD automation, observability, performance tuning, and cost control — owned end to end, including the on-call reality.</p></div>
+      <div><div class="tag">/ AI &amp; GENAI</div><h3>Enterprise AI architecture</h3><p>LLMs, RAG, and Azure OpenAI with vector search and embeddings, plus prompt orchestration and agent-based automation — designed for intelligent support, knowledge management, and workflow automation over platform data.</p></div>
+    </div>
+    <div class="chips">
+      <a href="dotnet-by-dheeraj-shukla.html">.NET</a><a href="aspnet-core-by-dheeraj-shukla.html">ASP.NET Core</a><a href="microservices-by-dheeraj-shukla.html">Microservices</a><a href="azure-by-dheeraj-shukla.html">Azure</a><a href="aws-by-dheeraj-shukla.html">AWS</a><a href="azure-devops-by-dheeraj-shukla.html">Azure DevOps</a><a href="api-gateway-by-dheeraj-shukla.html">API Gateway</a><a href="docker-by-dheeraj-shukla.html">Docker</a><a href="cicd-by-dheeraj-shukla.html">CI/CD</a><a href="rabbitmq-by-dheeraj-shukla.html">RabbitMQ</a><a href="mqtt-by-dheeraj-shukla.html">MQTT</a><a href="sql-server-by-dheeraj-shukla.html">SQL Server</a><a href="mysql-by-dheeraj-shukla.html">MySQL</a><a href="angular-by-dheeraj-shukla.html">Angular</a><a href="nginx-by-dheeraj-shukla.html">Nginx</a><a href="ocpi-by-dheeraj-shukla.html">OCPI</a><a href="ocpp-by-dheeraj-shukla.html">OCPP</a><a href="beckn-by-dheeraj-shukla.html">Beckn (BAP/BPP)</a><a href="dex-by-dheeraj-shukla.html">DEX</a><span>Python</span><span>Azure OpenAI</span><span>LLMs / RAG</span><span>Agentic AI</span><span>Vector Databases</span>
     </div>
   </section>
 
-  <section>
-    <h3>Selected Impact</h3>
-    <div class="card">
-      <ul>
-        <li>Maintained ~99% platform uptime for EV charging systems and reduced downtime risk via resilient design.</li>
-        <li>Improved interoperability by ~20% across OCPI-compliant integrations.</li>
-        <li>Scaled smart vending and ERP platforms to millions of daily transactions.</li>
-        <li>Delivered offline-first sales workflows with route optimization and ERP/SAP integration.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h3>What I Do</h3>
-    <div class="grid">
-      <div class="card"><strong>Architecture & Design</strong><p>Designing scalable, secure, cloud-native systems with long-term maintainability and high availability.</p></div>
-      <div class="card"><strong>Cloud & DevOps</strong><p>Azure & AWS architectures, CI/CD automation, monitoring, performance tuning, and cost optimization.</p></div>
-      <div class="card"><strong>EV & IoT Platforms</strong><p>EV charging platforms using OCPI/OCPP and Beckn protocol (BPP and BAP), IoT messaging with MQTT & RabbitMQ.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h3>Core Technology Stack</h3>
-    <div>
-      <span class="badge">.NET / ASP.NET Core</span>
-      <span class="badge">Microservices</span>
-      <span class="badge">Azure</span>
-      <span class="badge">AWS</span>
-      <span class="badge">Azure DevOps</span>
-      <span class="badge">API Gateway</span>
-      <span class="badge">Docker</span>
-      <span class="badge">CI/CD</span>
-      <span class="badge">RabbitMQ</span>
-      <span class="badge">MQTT</span>
-      <span class="badge">SQL Server</span>
-      <span class="badge">MySQL</span>
-      <span class="badge">Angular</span>
-      <span class="badge">Nginx</span>
-      <span class="badge">OCPI</span>
-      <span class="badge">OCPP</span>
-      <span class="badge">Beckn protocol (BPP and BAP)</span>
-      <span class="badge">DEX</span>
-    </div>
-  </section>
-
-  <section>
-    <h3>Protocols & Standards</h3>
-    <div class="grid">
-      <div class="card"><strong>EV Charging</strong><p>OCPI, OCPP for interoperability between EMSPs and CPOs.</p></div>
-      <div class="card"><strong>Beckn</strong><p>BPP and BAP integration for discovery, ordering, and fulfillment.</p></div>
-      <div class="card"><strong>IoT / Vending</strong><p>DEX for vending telemetry and device data exchange.</p></div>
+  <section id="leadership">
+    <p class="kicker">02 — HOW I WORK</p>
+    <h2 class="sec">An architect who owns the outcome, not just the diagram.</h2>
+    <p class="sec-sub">Architecture only matters if it ships. I've spent most of my career on the side of the table where the roadmap, the partners, and the delivery date are also my problem.</p>
+    <div class="lead">
+      <div><h3>Product ownership, end to end</h3><p>Defined EV roaming platform strategy and owned the lifecycle of the OCPI interoperability platform from ideation to launch — including FRDs, PRDs, user stories, and acceptance criteria.</p></div>
+      <div><h3>Stakeholder &amp; partner alignment</h3><p>Technical point of contact for OEMs and enterprise clients — Hyundai, Mahindra, Tata, Adani, Hero MotoCorp — plus the CPO and eMSP partners on the other side of every integration.</p></div>
+      <div><h3>Prioritisation under constraint</h3><p>Ran backlog prioritisation against business value and interoperability goals, so engineering effort went where the ecosystem actually needed it.</p></div>
+      <div><h3>Measured, not assumed</h3><p>Tracked product KPIs — transaction success rate, partner onboarding timelines, system performance — and used them to drive the next round of work.</p></div>
+      <div><h3>Teams that outlast the project</h3><p>Led development teams from 2016, running sprint planning and estimation, plus interviewing, training, and mentoring engineers into stronger roles.</p></div>
+      <div><h3>Delivery across markets</h3><p>Launched and supported platforms across India, UAE, UK, and USA — with the compliance, integration, and timezone realities each one brings.</p></div>
     </div>
   </section>
 
   <section id="experience">
-    <h3>Professional Experience</h3>
+    <p class="kicker">03 — EXPERIENCE</p>
+    <h2 class="sec" style="margin-bottom:26px">Fourteen years, five chapters.</h2>
 
-    <div class="card">
-      <strong>Solution Architect – TechPerspect Software Pvt. Ltd. (ElectreeFi)</strong>
-      <p><em>Aug 2023 – Present | Noida, India</em></p>
-      <ul>
-        <li>Led OCPI-compliant and Beckn protocol (BPP and BAP) EV charging platforms serving OEMs and CPOs across India.</li>
-        <li>Maintained ~99% uptime and improved interoperability by ~20%.</li>
-        <li>Designed cloud-native microservices using .NET Core, Azure, API Gateway, MySQL, MQTT, RabbitMQ.</li>
-        <li>Technical SPOC for Hyundai, Mahindra, Tata, Adani, Hero MotoCorp.</li>
-        <li>Owned system design reviews, performance tuning, and release quality gates.</li>
-      </ul>
+    <div class="job">
+      <div><div class="yrs">MAY 2026 — NOW</div><div class="loc">INDIA</div></div>
+      <div><h3>Solution Architect<span class="now">CURRENT</span></h3><div class="org">EV sector · employer not disclosed</div>
+        <ul>
+          <li>Architecture ownership for EV platform engineering.</li>
+          <li>Happy to discuss scope and context directly — <a href="mailto:dheerajshuk@gmail.com">get in touch</a>.</li>
+        </ul></div>
     </div>
 
-    <br />
-
-    <div class="card">
-      <strong>Web Architect – Limitless Mobility Solutions</strong>
-      <p><em>Oct 2019 – Jul 2023 | Greater Noida</em></p>
-      <ul>
-        <li>Architected smart vending, ERP, and IoT platforms handling millions of daily transactions.</li>
-        <li>Led SAP and third-party ERP integrations.</li>
-        <li>Delivered offline-first mobile sales workflows with route optimization.</li>
-      </ul>
+    <div class="job">
+      <div><div class="yrs">AUG 2023 — APR 2026</div><div class="loc">NOIDA, IN</div></div>
+      <div><h3>Technical Architect</h3><div class="org">TechPerspect Software (ElectreeFi)</div>
+        <ul>
+          <li>Led OCPI-compliant and Beckn (BAP/BPP) EV charging integrations across 30+ CPO/eMSP networks in India.</li>
+          <li>Maintained 99% uptime and improved third-party interoperability by 20%.</li>
+          <li>Technical SPOC for Hyundai, Mahindra, Tata, Adani, and Hero MotoCorp.</li>
+          <li>Owned the OCPI platform product lifecycle — strategy, PRDs, backlog, and KPIs.</li>
+          <li>Designed enterprise AI patterns — vector search, embeddings, prompt orchestration, agent-based automation — for support and knowledge management.</li>
+          <li>Ran compliance audits against OCPI standards across all partner interfaces.</li>
+        </ul></div>
     </div>
 
-    <br />
-
-    <div class="card">
-      <strong>Team Lead – Limitless Mobility Solutions</strong>
-      <p><em>Apr 2016 – Oct 2019</em></p>
-      <ul>
-        <li>Led development teams, sprint planning, estimations, and CI/CD implementations.</li>
-        <li>Created reusable components, code reviews, and mentoring programs.</li>
-      </ul>
+    <div class="job">
+      <div><div class="yrs">OCT 2019 — JUL 2023</div><div class="loc">GREATER NOIDA, IN</div></div>
+      <div><h3>Web Architect</h3><div class="org">Limitless Mobility Solutions</div>
+        <ul>
+          <li>Architected ERP and IoT platforms handling millions of daily interactions.</li>
+          <li>Led SAP and third-party ERP integrations for cross-border deployments.</li>
+          <li>Delivered offline-first mobile sales workflows with route optimisation.</li>
+        </ul></div>
     </div>
 
-    <br />
+    <div class="job">
+      <div><div class="yrs">APR 2016 — OCT 2019</div><div class="loc">GREATER NOIDA, IN</div></div>
+      <div><h3>Team Lead</h3><div class="org">Limitless Mobility Solutions</div>
+        <ul>
+          <li>Led development teams through sprint planning, estimation, and CI/CD adoption.</li>
+          <li>Built the smart vending and visi-cooler IoT platforms (Vendiman, Gobbly).</li>
+          <li>Established reusable components, code review practice, and mentoring programmes.</li>
+        </ul></div>
+    </div>
 
-    <div class="card">
-      <strong>Web Developer – Maya Techno Soft Pvt. Ltd.</strong>
-      <p><em>Jun 2012 – Apr 2016</em></p>
-      <ul>
-        <li>Built enterprise web applications using ASP.NET, SQL Server, JavaScript.</li>
-        <li>Delivered workflow automation and REST API integrations.</li>
-      </ul>
+    <div class="job">
+      <div><div class="yrs">JUN 2012 — APR 2016</div><div class="loc">NOIDA, IN</div></div>
+      <div><h3>Web Developer</h3><div class="org">Maya Techno Soft</div>
+        <ul>
+          <li>Built enterprise web applications on ASP.NET, SQL Server, and JavaScript.</li>
+          <li>Delivered workflow automation and REST API integrations.</li>
+        </ul></div>
     </div>
   </section>
 
   <section>
-    <h3>Key Projects</h3>
-    <ul>
-      <li><strong>ElectreeFi EV Platform:</strong> OCPI-based EV charging ecosystem with Beckn protocol (BPP and BAP) integrations for multiple OEMs and EMSPs.</li>
-      <li><strong>Vendiman & Gobbly:</strong> Smart vending and visi-cooler IoT platforms with 2000+ devices and 1M+ daily outreach.</li>
-      <li><strong>Xtend Sales:</strong> Global sales & delivery ERP with SAP integration (UAE, UK, USA).</li>
-      <li><strong>Sales ERP (Dubai):</strong> Offline-first van sales platform with route planning and POD printing.</li>
-      <li><strong>Masafi, Zaika, Shine Eleven:</strong> Enterprise web portals for order management and online marketplaces.</li>
-    </ul>
+    <p class="kicker">04 — SELECTED PLATFORMS</p>
+    <h2 class="sec">Built for production, not for demos.</h2>
+    <p class="sec-sub">Each of these carried real transactions, real devices, or real patients. The outcome line is what the business got.</p>
+    <div class="cards">
+      <div class="card"><div class="tag">EV CHARGING</div><h3>ElectreeFi EV Platform</h3><p>OCPI-based charging ecosystem with Beckn (BAP/BPP) integrations, connecting multiple OEMs, CPOs, and eMSPs across India.</p><span class="out">→ 30+ networks integrated · 20% interoperability gain</span></div>
+      <div class="card"><div class="tag">IOT / VENDING</div><h3>Vendiman &amp; Gobbly</h3><p>Smart vending and visi-cooler IoT platforms for India's largest F&amp;B smart-retail operator, built on MQTT and microservices.</p><span class="out">→ 2000+ machines · 1M+ daily outreach</span></div>
+      <div class="card"><div class="tag">ERP / SAP</div><h3>Xtend Sales (HotPack)</h3><p>End-to-end presales, van sales, and delivery platform with SAP and client ERP integration — offline-capable by design.</p><span class="out">→ Live across UAE, UK, and USA</span></div>
+      <div class="card"><div class="tag">HEALTHCARE</div><h3>Starkey Hearing Aids</h3><p>Enterprise hearing-care platform — production support, API integration, SQL analysis, RCA, and defect resolution.</p><span class="out">→ Supported operations across India and USA</span></div>
+      <div class="card"><div class="tag">FIELD SALES</div><h3>Sales ERP · Salze</h3><p>Offline-first van sales platforms with route planning, proof-of-delivery printing, payment and returns collection.</p><span class="out">→ Deployed for Dubai-based operators</span></div>
+      <div class="card"><div class="tag">COMMERCE</div><h3>Masafi · Zaika · Shine Eleven</h3><p>Order-to-delivery portals with route planning, plus online ordering and classifieds platforms.</p><span class="out">→ UAE and New Zealand markets</span></div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <p class="kicker">05 — WRITING</p>
+    <h2 class="sec">Deep dives on the protocols I ship.</h2>
+    <p class="sec-sub">Fifty-eight guides written from production experience rather than from the spec PDF — including what the spec doesn't tell you.</p>
+    <div class="articles">
+      <a class="article" href="beckn-by-dheeraj-shukla.html">
+        <div class="meta">PROTOCOL GUIDE · AUG 2026</div>
+        <h3>Beckn for EV charging: BAP &amp; BPP, explained end to end</h3>
+        <p>Decentralised discovery, booking, and session management on the UBC spec — and how it stays aligned with OCPI.</p>
+        <span class="read">READ →</span>
+      </a>
+      <a class="article" href="ocpi-by-dheeraj-shukla.html">
+        <div class="meta">PROTOCOL GUIDE · AUG 2026</div>
+        <h3>OCPI 2.2.1: modules, routing, and version history</h3>
+        <p>A module-level tour of the EV roaming spec — sessions, CDRs, tariffs, commands, and smart charging profiles.</p>
+        <span class="read">READ →</span>
+      </a>
+      <a class="article" href="ocpp-by-dheeraj-shukla.html">
+        <div class="meta">PROTOCOL GUIDE · AUG 2026</div>
+        <h3>OCPP: the charger-to-CSMS protocol in practice</h3>
+        <p>How charge points talk to central systems — boot, authorisation, transactions, and smart charging across 1.6J and 2.0.1.</p>
+        <span class="read">READ →</span>
+      </a>
+    </div>
+    <div style="margin-top:28px;text-align:center"><a class="btn-ghost" href="articles.html">View all 58 guides →</a></div>
   </section>
 
   <section>
-    <h3>Certifications</h3>
-    <ul>
-      <li><a href="https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1" target="_blank" rel="noopener">Azure Solutions Architect Expert (AZ-305)</a></li>
-      <li><a href="https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/a5db3afac0018941" target="_blank" rel="noopener">Azure Administrator Associate (AZ-104)</a></li>
-      <li>DevOps – IIT Roorkee</li>
-      <li>Data Science – Data Folkz</li>
-      <li>Advanced .NET MVC – TechMentro</li>
-      <li>.NET Training – NIIT</li>
-    </ul>
-  </section>
-
-  <section>
-    <h3>Education</h3>
-    <ul>
-      <li>Master of Computer Applications (MCA) – Asian International University</li>
-      <li>Bachelor of Computer Applications (BCA)</li>
-    </ul>
+    <div class="two-col">
+      <div>
+        <p class="kicker">CERTIFICATIONS</p>
+        <ul>
+          <li><a href="https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/e73a5b6f4961c8b1" target="_blank" rel="noopener">Azure Solutions Architect Expert (AZ-305) — verify ↗</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/users/dheerajshukla-6488/credentials/a5db3afac0018941" target="_blank" rel="noopener">Azure Administrator Associate (AZ-104) — verify ↗</a></li>
+          <li>DevOps — IIT Roorkee (2021)</li>
+          <li>Data Science — Data Folkz (2021)</li>
+          <li>Advanced .NET MVC — TechMentro (2012)</li>
+          <li>.NET — NIIT (2011)</li>
+        </ul>
+      </div>
+      <div>
+        <p class="kicker">EDUCATION</p>
+        <ul>
+          <li>MCA — Asian International University</li>
+          <li>BCA — Bachelor of Computer Applications</li>
+        </ul>
+        <p class="kicker" style="margin-top:44px">LANGUAGES &amp; TOOLS</p>
+        <ul>
+          <li>Jira · Confluence · Azure DevOps</li>
+          <li>Agile / Scrum delivery</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
-    <h3>Contact</h3>
-    <p>📍 Greater Noida, Uttar Pradesh, India</p>
-    <p>📧 dheerajshuk@gmail.com <button onclick="navigator.clipboard.writeText('dheerajshuk@gmail.com')">Copy</button></p>
-    <p>📞 +91-9136075015 <button onclick="navigator.clipboard.writeText('+91-9136075015')">Copy</button></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/dheerajshuk/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/dheerajshuk" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="kicker" style="letter-spacing:.18em">GET IN TOUCH</p>
+    <h2>Let's build infrastructure that doesn't go down.</h2>
+    <p style="font-size:17px;color:var(--muted);margin:0 auto 40px;max-width:600px;text-wrap:pretty">Architecture reviews, platform builds, protocol integrations, or a conversation about where EV charging and AI are heading. I read every message.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:44px">
+      <a class="btn" href="mailto:dheerajshuk@gmail.com">dheerajshuk@gmail.com</a>
+      <button class="copy-btn" id="copyEmail">Copy email</button>
+      <a class="btn-ghost" href="Dheeraj kumar shukla - Resume.pdf" download>Resume (PDF)</a>
+    </div>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/dheerajshuk/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+      <a href="https://github.com/dheerajshuk" target="_blank" rel="noopener">GITHUB ↗</a>
+      <a href="tel:+919136075015">+91 91360 75015</a>
+    </div>
   </section>
-
-  <section id="articles">
-    <h3>Articles</h3>
-    <ul>
-      <li><a class="article-link" href="beckn-by-dheeraj-shukla.html">Beckn Protocol (BPP and BAP) — Dheeraj Shukla Beckn Expert</a></li>
-      <li><a class="article-link" href="ocpi-by-dheeraj-shukla.html">OCPI 2.2.1 Detailed Guide — Dheeraj Shukla OCPI Expert</a></li>
-    </ul>
-  </section>
-
-</div>
-
+</main>
 <footer>
-  <p>© 2026 Dheeraj Shukla · Senior Solution Architect</p>
+  <span>© 2026 DHEERAJ KUMAR SHUKLA</span>
+  <span>SOLUTION ARCHITECT · GREATER NOIDA, IN</span>
 </footer>
-
+<script>
+document.getElementById('copyEmail').addEventListener('click', function(){
+  navigator.clipboard.writeText('dheerajshuk@gmail.com');
+  this.textContent = 'Copied ✓';
+  setTimeout(() => { this.textContent = 'Copy email'; }, 1800);
+});
+</script>
 </body>
 </html>

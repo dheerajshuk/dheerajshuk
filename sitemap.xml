@@ -1,52 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Main Profile Page -->
-  <url>
-    <loc>https://dheerajshukla.com/</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.00</priority>
-  </url>
-
-  <!-- Beckn Protocol Page -->
-  <url>
-    <loc>https://dheerajshukla.com/beckn-by-dheeraj-shukla.html</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- OCPI Protocol Page -->
-  <url>
-    <loc>https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- AI Structured Profile -->
-  <url>
-    <loc>https://dheerajshukla.com/ai.json</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- LLM Discovery -->
-  <url>
-    <loc>https://dheerajshukla.com/llms.txt</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Robots -->
-  <url>
-    <loc>https://dheerajshukla.com/robots.txt</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.70</priority>
-  </url>
-
+  <url><loc>https://dheerajshukla.com/</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>
+  <url><loc>https://dheerajshukla.com/articles.html</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://dheerajshukla.com/angular-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/api-gateway-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/aspnet-core-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/aws-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/azure-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/azure-devops-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-cancel-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-confirm-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-context-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-gateway-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-init-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-search-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-select-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-signing-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-status-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/cicd-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/dex-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/docker-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/dotnet-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/microservices-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/mqtt-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/mysql-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/nginx-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-cancel-reservation-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-cdr-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-charging-profiles-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-commands-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-credentials-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-hub-client-info-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-locations-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-reserve-now-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-sessions-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-start-session-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-stop-session-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-tariffs-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-tokens-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-unlock-connector-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpi-versions-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-authorize-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-configuration-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-heartbeat-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-meter-values-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-remote-start-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-remote-stop-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-reset-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-smart-charging-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-start-transaction-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-status-notification-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-stop-transaction-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/ocpp-transaction-event-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://dheerajshukla.com/rabbitmq-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/sql-server-by-dheeraj-shukla.html</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/Dheeraj%20kumar%20shukla%20-%20Resume.pdf</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://dheerajshukla.com/ai.json</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://dheerajshukla.com/llms.txt</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/llms-full.txt</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://dheerajshukla.com/api/ai/summary.json</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://dheerajshukla.com/api/ai/vector.json</loc><lastmod>2026-08-11</lastmod><changefreq>weekly</changefreq><priority>0.60</priority></url>
 </urlset>

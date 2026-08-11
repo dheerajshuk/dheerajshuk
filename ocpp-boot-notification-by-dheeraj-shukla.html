@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCPP BootNotification: How a Charger Comes Online | Dheeraj Shukla</title>
+  <meta name="description" content="Dheeraj Shukla explains OCPP BootNotification: the registration handshake, Accepted/Pending/Rejected, retry intervals, and using it as a fleet inventory and provisioning gate." />
+  <meta name="keywords" content="Dheeraj Shukla, OCPP BootNotification, Accepted Pending Rejected, charge point registration, heartbeat interval, fleet inventory" />
+  <meta name="author" content="Dheeraj Kumar Shukla" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#060a12" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a12'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E" />
+  <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Profile" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="OCPP BootNotification: How a Charger Comes Online | Dheeraj Shukla" />
+  <meta property="og:description" content="Dheeraj Shukla explains OCPP BootNotification: the registration handshake, Accepted/Pending/Rejected, retry intervals, and using it as a fleet inventory and provisioning gate." />
+  <meta property="og:url" content="https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html" />
+  <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="OCPP BootNotification: how a charger comes online" />
+  <meta name="twitter:description" content="Dheeraj Shukla explains OCPP BootNotification: the registration handshake, Accepted/Pending/Rejected, retry intervals, and using it as a fleet inventory and provisioning gate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>:root{--bg:#060a12;--text:#e8edf5;--muted:#aeb8c9;--dim:#8b96a8;--soft:#c6cfdd;--accent:#38bdf8;--green:#4ade80;--amber:#fbbf24;--line:rgba(139,150,168,.14);--line2:rgba(139,150,168,.18);--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:#7cc8f0;text-decoration:none}a:hover{color:#b3e0fa}::selection{background:rgba(56,189,248,.3)}
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(6,10,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.08em;color:var(--text)}.logo span{color:var(--accent)}
+.back{font-family:var(--mono);font-size:13px;color:var(--muted)}.back:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-resume{font-size:12px;font-weight:600;color:var(--bg)!important;background:var(--text);padding:8px 15px;border-radius:6px;font-family:var(--mono);letter-spacing:.06em}
+.nav-resume:hover{background:#fff;color:var(--bg)!important}
+main{max-width:820px;margin:0 auto;padding:0 40px 100px}
+header.article{padding:90px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);margin:0 0 20px}
+h1{font-size:clamp(34px,4.6vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin:0 0 24px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);margin:0;text-wrap:pretty}
+.byline{display:flex;gap:20px;margin-top:28px;font-family:var(--mono);font-size:12.5px;color:var(--dim);flex-wrap:wrap}
+.tldr{margin-top:34px;border-left:2px solid var(--accent);padding:4px 0 4px 20px}
+.tldr .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);margin:0 0 8px}
+.tldr p{font-size:15.5px;color:var(--muted);margin:0;text-wrap:pretty}
+section{padding:52px 0 0}
+h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin:0 0 16px}
+h3{font-size:18.5px;font-weight:600;margin:30px 0 10px}
+p,ul,ol{font-size:16.5px;color:var(--soft)}ul,ol{margin:0;padding-left:20px}li{margin-bottom:10px}
+strong{color:var(--text)}
+code{font-family:var(--mono);font-size:13.5px;color:var(--green)}
+pre{font-family:var(--mono);font-size:13px;line-height:1.6;color:#c6cfdd;background:rgba(139,150,168,.06);border:1px solid rgba(139,150,168,.18);border-radius:10px;padding:18px 20px;overflow-x:auto;margin:16px 0 0}
+pre code{color:inherit;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:18px 0 0;font-size:15px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--dim);font-weight:500;text-transform:uppercase}
+td{color:var(--soft)}td code{font-size:12.5px}
+.tw{overflow-x:auto}
+.note{border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.05);border-radius:10px;padding:18px 20px;margin:22px 0 0;font-size:15.5px;color:var(--soft)}
+.note strong{color:var(--amber)}
+.faq .q{font-size:16.5px;font-weight:600;margin-bottom:6px}.faq p{font-size:15.5px;color:var(--muted);margin:0 0 22px}
+.author{margin-top:64px;border:1px solid var(--line2);border-radius:12px;padding:30px;background:rgba(139,150,168,.04)}
+.ac-top{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.ac-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#0284c7);color:#060a12;font-family:var(--mono);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none}
+.ac-name{font-size:18.5px;font-weight:600}
+.ac-role{font-size:11.5px;color:var(--dim);font-family:var(--mono);letter-spacing:.1em;margin-top:4px}
+.ac-bio{font-size:15px;color:var(--muted);margin:0 0 20px;text-wrap:pretty}
+.ac-links{display:flex;flex-wrap:wrap;gap:20px;font-family:var(--mono);font-size:12.5px}
+.next{margin-top:40px;border:1px solid var(--line2);border-radius:12px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.next .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--dim);margin-bottom:8px}.next .t{font-size:18px;font-weight:600}
+.read{font-family:var(--mono);font-size:13px;color:var(--accent);flex:none}
+footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer span{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.fl{font-family:var(--mono);font-size:12.5px}.fl a{color:var(--muted)}.fl a:hover{color:var(--text)}
+@media (max-width:760px){nav{padding:16px 20px}main{padding:0 20px 70px}footer{padding:28px 20px;justify-content:center;text-align:center}.nav-right{gap:13px}.ac-links{gap:14px}.ac-top{gap:13px}h1{font-size:clamp(29px,7.5vw,40px)}pre{font-size:11.5px}}.cluster{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim)}.cluster a{color:var(--accent)}</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OCPP BootNotification: how a charger comes online","description":"Dheeraj Shukla explains OCPP BootNotification: the registration handshake, Accepted/Pending/Rejected, retry intervals, and using it as a fleet inventory and provisioning gate.","url":"https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html","about":["OCPP BootNotification","charge point registration","provisioning","fleet inventory"],"author":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"publisher":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"mainEntityOfPage":"https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dheerajshukla.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://dheerajshukla.com/articles.html"},{"@type":"ListItem","position":3,"name":"OCPP BootNotification","item":"https://dheerajshukla.com/ocpp-boot-notification-by-dheeraj-shukla.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does OCPP BootNotification do?","acceptedAnswer":{"@type":"Answer","text":"It is the first message a charge point sends after connecting. The charger reports its vendor, model, serial numbers, firmware version and modem details, and the CSMS responds with Accepted, Pending or Rejected plus the current time and the heartbeat interval."}},{"@type":"Question","name":"What does a Pending BootNotification response mean?","acceptedAnswer":{"@type":"Answer","text":"The CSMS recognises the charger but is not ready to let it operate. It cannot start transactions and will retry after the given interval. This is the correct window in which to push configuration, a local authorisation list or a firmware update before the charger serves its first driver."}},{"@type":"Question","name":"When should a CSMS reject a BootNotification?","acceptedAnswer":{"@type":"Answer","text":"For unknown serial numbers, and for units that have been decommissioned. Rejecting with a long retry interval prevents unknown hardware from operating and stops a fleet of rejected chargers from hammering the CSMS. Accepting anything that connects means your inventory is defined by whatever dials in."}},{"@type":"Question","name":"How can BootNotification be used for fleet management?","acceptedAnswer":{"@type":"Answer","text":"Every boot carries a full hardware and firmware census — vendor, model, serials, firmware version, meter type and SIM identifiers. Persisted over time this gives asset tracking, firmware rollout verification and fault attribution by model. Boot frequency also reveals reboot loops that availability metrics hide."}}]}</script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">DKS<span>_</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="back">ALL GUIDES</a>
+    <a href="index.html" class="back">PROFILE</a>
+    <a href="Dheeraj kumar shukla - Resume.pdf" class="nav-resume" download>RESUME</a>
+  </div>
+</nav>
+<main>
+  <header class="article">
+    <p class="kicker">OCPP MESSAGE &middot; UPDATED 11 AUG 2026</p>
+    <h1>BootNotification: how a charger comes online</h1>
+    <p class="lede">The first message a charge point sends after the WebSocket opens, and the one that decides whether it is allowed to do anything at all. It is also the best fleet inventory feed you will ever get, and most platforms throw the data away.</p>
+    <div class="byline"><span>DHEERAJ KUMAR SHUKLA</span><span>&middot;</span><span>OCPP BOOTNOTIFICATION</span><span>&middot;</span><span>3 MIN READ</span></div>
+    <p class="cluster">PART OF THE <a href="ocpp-by-dheeraj-shukla.html">OCPP COMPLETE GUIDE</a> &middot; 14 MESSAGE GUIDES</p>
+    <div class="tldr"><p class="lbl">IN ONE PARAGRAPH</p><p>BootNotification is the charger introducing itself: vendor, model, serial, firmware, modem details. The CSMS answers Accepted, Pending or Rejected and sets the heartbeat interval. Accepted means the charger may operate; the other two are provisioning gates that most implementations under-use.</p></div>
+  </header>
+  <article>
+    <section>
+      <h2>The message</h2>
+      <pre><code>// Charge point -&gt; CSMS
+[2, &quot;19223200&quot;, &quot;BootNotification&quot;, {
+  &quot;chargePointVendor&quot;: &quot;ExampleVendor&quot;,
+  &quot;chargePointModel&quot;: &quot;DC60-CCS2&quot;,
+  &quot;chargePointSerialNumber&quot;: &quot;CP014-002&quot;,
+  &quot;chargeBoxSerialNumber&quot;: &quot;CB-2024-88231&quot;,
+  &quot;firmwareVersion&quot;: &quot;2.4.1&quot;,
+  &quot;iccid&quot;: &quot;89910123456789012345&quot;,
+  &quot;imsi&quot;: &quot;404451234567890&quot;,
+  &quot;meterType&quot;: &quot;Landis+Gyr E360&quot;,
+  &quot;meterSerialNumber&quot;: &quot;MTR-77123&quot;
+}]
+
+// CSMS -&gt; charge point
+[3, &quot;19223200&quot;, {
+  &quot;status&quot;: &quot;Accepted&quot;,
+  &quot;currentTime&quot;: &quot;2026-08-11T08:59:58Z&quot;,
+  &quot;interval&quot;: 900
+}]</code></pre><p>Sent immediately after the WebSocket opens, and again after every reboot, firmware install or reconnection following a long outage.</p>
+    </section>
+    <section>
+      <h2>The three verdicts</h2>
+      <div class="tw"><table><thead><tr><th>Status</th><th>Charger may</th><th>Retry behaviour</th></tr></thead><tbody><tr><td><code>Accepted</code></td><td>Operate normally</td><td>Proceeds to <a href="ocpp-heartbeat-by-dheeraj-shukla.html">Heartbeat</a> at <code>interval</code></td></tr><tr><td><code>Pending</code></td><td>Not start transactions; CSMS may configure it</td><td>Retries after <code>interval</code></td></tr><tr><td><code>Rejected</code></td><td>Nothing</td><td>Retries after <code>interval</code></td></tr></tbody></table></div><div class="note"><strong><code>Pending</code> is the most under-used status in OCPP.</strong> It means &ldquo;I know you, wait while I set you up&rdquo; &mdash; and it is exactly the window in which to push <a href="ocpp-configuration-by-dheeraj-shukla.html">configuration</a>, a local authorisation list, or a <a href="ocpp-firmware-by-dheeraj-shukla.html">firmware</a> update, before the charger starts serving drivers with vendor defaults. Most platforms return <code>Accepted</code> unconditionally and then configure afterwards, which means every newly installed charger serves its first sessions misconfigured.</div><p><code>interval</code> does double duty: on <code>Accepted</code> it is the heartbeat period; on <code>Pending</code> or <code>Rejected</code> it is how long to wait before retrying. A short retry interval on <code>Rejected</code> across a fleet of unknown chargers is a self-inflicted denial of service on your own CSMS.</p>
+    </section>
+    <section>
+      <h2>Rejected as a security control</h2>
+      <p><code>Rejected</code> is the gate for chargers you do not recognise. A CSMS endpoint is reachable from the internet, and unknown units will connect &mdash; misconfigured hardware pointed at the wrong CSMS, units from a decommissioned site, and occasionally something you should look at more closely.</p><p>A reasonable policy:</p><ul><li><strong>Known and provisioned</strong> &rarr; <code>Accepted</code>.</li><li><strong>Known but not yet configured</strong> &rarr; <code>Pending</code>, configure, then accept on the retry.</li><li><strong>Unknown serial</strong> &rarr; <code>Rejected</code> with a long interval, and log it.</li><li><strong>Known but decommissioned</strong> &rarr; <code>Rejected</code>, and alert &mdash; a retired unit reconnecting is worth investigating.</li></ul><p>Accepting anything that connects means your fleet inventory is defined by whatever dials in, which is not an inventory.</p>
+    </section>
+    <section>
+      <h2>Free fleet inventory</h2>
+      <p>Every boot carries a full hardware and firmware census. Recorded over time it answers questions that are otherwise expensive:</p><div class="tw"><table><thead><tr><th>Field</th><th>Operational use</th></tr></thead><tbody><tr><td><code>chargePointVendor</code> / <code>chargePointModel</code></td><td>Attribute faults to a model; target <a href="ocpp-firmware-by-dheeraj-shukla.html">firmware rollouts</a></td></tr><tr><td><code>firmwareVersion</code></td><td>Confirm updates actually installed; correlate regressions</td></tr><tr><td><code>chargePointSerialNumber</code></td><td>Identity, warranty, asset tracking</td></tr><tr><td><code>meterType</code> / <code>meterSerialNumber</code></td><td>Metrology compliance and billing dispute evidence</td></tr><tr><td><code>iccid</code> / <code>imsi</code></td><td>SIM inventory and connectivity troubleshooting</td></tr></tbody></table></div><p>The boot pattern itself is diagnostic. A charger sending BootNotification every few minutes is in a reboot loop &mdash; a fault no availability metric will show you, because between reboots it reports as fine. Alert on boot frequency, not just on boot failure.</p>
+    </section>
+    <section>
+      <h2>What happens after a reboot</h2>
+      <p>A reboot is not free. Depending on the vendor and how it happened:</p><ul><li><strong>Queued offline transactions may or may not survive.</strong> A <a href="ocpp-reset-by-dheeraj-shukla.html">hard reset</a> is materially more likely to lose them than a soft one.</li><li><strong>Configuration may have reverted</strong>, particularly after a firmware install. Re-apply rather than assume.</li><li><strong>Active sessions end.</strong> Expect <a href="ocpp-stop-transaction-by-dheeraj-shukla.html">StopTransaction</a> with reason <code>Reboot</code> or <code>PowerLoss</code>.</li><li><strong>The charger re-reports status</strong> for every connector, so treat post-boot status as authoritative and discard what you held before.</li></ul><p>Using the boot as a trigger to reconcile &mdash; verify configuration, check firmware version, refresh status &mdash; turns an unavoidable event into a consistency checkpoint.</p>
+    </section>
+    <section>
+      <h2>Production lessons</h2>
+      <ul><li><strong>Use <code>Pending</code> to provision before first use.</strong> It is what the status exists for.</li><li><strong>Reject unknown serials with a long retry interval</strong> and log every one.</li><li><strong>Persist every boot as an inventory record</strong>, not just the latest state. The history is what makes it useful.</li><li><strong>Alert on boot frequency</strong> to catch reboot loops that availability metrics hide.</li><li><strong>Set <code>interval</code> per charger here</strong> rather than pushing configuration changes fleet-wide.</li><li><strong>Re-verify configuration after every boot</strong> following a firmware change.</li><li><strong>Serve <code>currentTime</code> from a synchronised clock</strong> &mdash; this is the charger's first clock set, and every timestamp it produces afterwards inherits it.</li></ul>
+    </section>
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="q">What does OCPP BootNotification do?</div>
+      <p>It is the first message a charge point sends after connecting. The charger reports its vendor, model, serial numbers, firmware version and modem details, and the CSMS responds with Accepted, Pending or Rejected plus the current time and the heartbeat interval.</p>
+      <div class="q">What does a Pending BootNotification response mean?</div>
+      <p>The CSMS recognises the charger but is not ready to let it operate. It cannot start transactions and will retry after the given interval. This is the correct window in which to push configuration, a local authorisation list or a firmware update before the charger serves its first driver.</p>
+      <div class="q">When should a CSMS reject a BootNotification?</div>
+      <p>For unknown serial numbers, and for units that have been decommissioned. Rejecting with a long retry interval prevents unknown hardware from operating and stops a fleet of rejected chargers from hammering the CSMS. Accepting anything that connects means your inventory is defined by whatever dials in.</p>
+      <div class="q">How can BootNotification be used for fleet management?</div>
+      <p>Every boot carries a full hardware and firmware census — vendor, model, serials, firmware version, meter type and SIM identifiers. Persisted over time this gives asset tracking, firmware rollout verification and fault attribution by model. Boot frequency also reveals reboot loops that availability metrics hide.</p>
+    </section>
+  </article>
+  <aside class="author">
+    <div class="ac-top">
+      <div class="ac-avatar">DS</div>
+      <div>
+        <div class="ac-name">Dheeraj Kumar Shukla</div>
+        <div class="ac-role">SOLUTION ARCHITECT &middot; EV CHARGING, IOT &amp; ENTERPRISE PLATFORMS</div>
+      </div>
+    </div>
+    <p class="ac-bio">14+ years building cloud-native platforms on .NET and Azure/AWS. Led OCPI-compliant and Beckn (BAP/BPP) EV charging integrations across 30+ CPO/eMSP networks at 99% uptime, and was technical SPOC for Hyundai, Mahindra, Tata, Adani and Hero MotoCorp. Azure Solutions Architect Expert (AZ-305). This guide is written from production experience, not from the spec alone.</p>
+    <div class="ac-links">
+      <a href="index.html">Full profile &rarr;</a>
+      <a href="mailto:dheerajshuk@gmail.com">Get in touch</a>
+      <a href="Dheeraj kumar shukla - Resume.pdf" download>Resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/dheerajshuk/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    </div>
+  </aside>
+  <div class="next">
+    <div><div class="lbl">NEXT GUIDE</div><div class="t">OCPP <a href="ocpp-heartbeat-by-dheeraj-shukla.html">Heartbeat</a>: liveness and clock sync</div></div>
+    <a class="read" href="ocpp-heartbeat-by-dheeraj-shukla.html">READ &rarr;</a>
+  </div>
+</main>
+<footer>
+  <span>&copy; 2026 DHEERAJ KUMAR SHUKLA &middot; OCPP BOOTNOTIFICATION</span>
+  <span class="fl"><a href="index.html">Profile</a> &middot; <a href="articles.html">All guides</a> &middot; <a href="mailto:dheerajshuk@gmail.com">Contact</a></span>
+</footer>
+</body>
+</html>

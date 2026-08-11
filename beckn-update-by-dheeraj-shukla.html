@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beckn update / on_update: Changing an Order in Flight | Dheeraj Shukla</title>
+  <meta name="description" content="Dheeraj Shukla explains the Beckn update and on_update actions for EV charging: update_target, stopping a charge remotely, extending a reservation, and full JSON examples." />
+  <meta name="keywords" content="Dheeraj Shukla, Beckn update, on_update, update_target, stop charging, modify order, BAP BPP, EV charging" />
+  <meta name="author" content="Dheeraj Kumar Shukla" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#060a12" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a12'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E" />
+  <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Profile" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Beckn update / on_update: Changing an Order in Flight | Dheeraj Shukla" />
+  <meta property="og:description" content="Dheeraj Shukla explains the Beckn update and on_update actions for EV charging: update_target, stopping a charge remotely, extending a reservation, and full JSON examples." />
+  <meta property="og:url" content="https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html" />
+  <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Beckn update: changing an order in flight" />
+  <meta name="twitter:description" content="Dheeraj Shukla explains the Beckn update and on_update actions for EV charging: update_target, stopping a charge remotely, extending a reservation, and full JSON examples." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>:root{--bg:#060a12;--text:#e8edf5;--muted:#aeb8c9;--dim:#8b96a8;--soft:#c6cfdd;--accent:#38bdf8;--green:#4ade80;--amber:#fbbf24;--line:rgba(139,150,168,.14);--line2:rgba(139,150,168,.18);--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:#7cc8f0;text-decoration:none}a:hover{color:#b3e0fa}::selection{background:rgba(56,189,248,.3)}
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(6,10,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.08em;color:var(--text)}.logo span{color:var(--accent)}
+.back{font-family:var(--mono);font-size:13px;color:var(--muted)}.back:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-resume{font-size:12px;font-weight:600;color:var(--bg)!important;background:var(--text);padding:8px 15px;border-radius:6px;font-family:var(--mono);letter-spacing:.06em}
+.nav-resume:hover{background:#fff;color:var(--bg)!important}
+main{max-width:820px;margin:0 auto;padding:0 40px 100px}
+header.article{padding:90px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);margin:0 0 20px}
+h1{font-size:clamp(34px,4.6vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin:0 0 24px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);margin:0;text-wrap:pretty}
+.byline{display:flex;gap:20px;margin-top:28px;font-family:var(--mono);font-size:12.5px;color:var(--dim);flex-wrap:wrap}
+.tldr{margin-top:34px;border-left:2px solid var(--accent);padding:4px 0 4px 20px}
+.tldr .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);margin:0 0 8px}
+.tldr p{font-size:15.5px;color:var(--muted);margin:0;text-wrap:pretty}
+section{padding:52px 0 0}
+h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin:0 0 16px}
+h3{font-size:18.5px;font-weight:600;margin:30px 0 10px}
+p,ul,ol{font-size:16.5px;color:var(--soft)}ul,ol{margin:0;padding-left:20px}li{margin-bottom:10px}
+strong{color:var(--text)}
+code{font-family:var(--mono);font-size:13.5px;color:var(--green)}
+pre{font-family:var(--mono);font-size:13px;line-height:1.6;color:#c6cfdd;background:rgba(139,150,168,.06);border:1px solid rgba(139,150,168,.18);border-radius:10px;padding:18px 20px;overflow-x:auto;margin:16px 0 0}
+pre code{color:inherit;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:18px 0 0;font-size:15px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--dim);font-weight:500;text-transform:uppercase}
+td{color:var(--soft)}td code{font-size:12.5px}
+.tw{overflow-x:auto}
+.note{border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.05);border-radius:10px;padding:18px 20px;margin:22px 0 0;font-size:15.5px;color:var(--soft)}
+.note strong{color:var(--amber)}
+.faq .q{font-size:16.5px;font-weight:600;margin-bottom:6px}.faq p{font-size:15.5px;color:var(--muted);margin:0 0 22px}
+.author{margin-top:64px;border:1px solid var(--line2);border-radius:12px;padding:30px;background:rgba(139,150,168,.04)}
+.ac-top{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.ac-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#0284c7);color:#060a12;font-family:var(--mono);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none}
+.ac-name{font-size:18.5px;font-weight:600}
+.ac-role{font-size:11.5px;color:var(--dim);font-family:var(--mono);letter-spacing:.1em;margin-top:4px}
+.ac-bio{font-size:15px;color:var(--muted);margin:0 0 20px;text-wrap:pretty}
+.ac-links{display:flex;flex-wrap:wrap;gap:20px;font-family:var(--mono);font-size:12.5px}
+.next{margin-top:40px;border:1px solid var(--line2);border-radius:12px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.next .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--dim);margin-bottom:8px}.next .t{font-size:18px;font-weight:600}
+.read{font-family:var(--mono);font-size:13px;color:var(--accent);flex:none}
+footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer span{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.fl{font-family:var(--mono);font-size:12.5px}.fl a{color:var(--muted)}.fl a:hover{color:var(--text)}
+@media (max-width:760px){nav{padding:16px 20px}main{padding:0 20px 70px}footer{padding:28px 20px;justify-content:center;text-align:center}.nav-right{gap:13px}.ac-links{gap:14px}.ac-top{gap:13px}h1{font-size:clamp(29px,7.5vw,40px)}pre{font-size:11.5px}}.cluster{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim)}.cluster a{color:var(--accent)}</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Beckn update: changing an order in flight","description":"Dheeraj Shukla explains the Beckn update and on_update actions for EV charging: update_target, stopping a charge remotely, extending a reservation, and full JSON examples.","url":"https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html","about":["Beckn update","on_update","update_target","order modification"],"author":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"publisher":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"mainEntityOfPage":"https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dheerajshukla.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://dheerajshukla.com/articles.html"},{"@type":"ListItem","position":3,"name":"Beckn update","item":"https://dheerajshukla.com/beckn-update-by-dheeraj-shukla.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does update_target do in a Beckn update?","acceptedAnswer":{"@type":"Answer","text":"It names the path into the order object that is being changed, such as order.fulfillments[0].state. Because an order has many mutable parts, the target is what tells the BPP which change is intended. A vague or missing target typically produces a silent no-op."}},{"@type":"Question","name":"How does a driver stop charging over Beckn?","acceptedAnswer":{"@type":"Answer","text":"The BAP sends an update with update_target set to the fulfilment state and the state set to COMPLETED. The BPP relays that to its charger, usually via OCPI STOP_SESSION or a direct OCPP stop, then calls back with on_update once the hardware has responded."}},{"@type":"Question","name":"Can a Beckn BPP send on_update without a request?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it must. Charging ending naturally, a fault, a lapsed reservation, and the final settled quote all arrive as unsolicited on_update messages. A BAP that only handles on_update as a response will silently drop all of them."}},{"@type":"Question","name":"When should you use update instead of cancel?","acceptedAnswer":{"@type":"Answer","text":"Use update when energy has already been delivered, since the order needs completing and billing rather than voiding. Use cancel only when nothing was delivered, such as a reservation the driver abandoned before plugging in."}}]}</script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">DKS<span>_</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="back">ALL GUIDES</a>
+    <a href="index.html" class="back">PROFILE</a>
+    <a href="Dheeraj kumar shukla - Resume.pdf" class="nav-resume" download>RESUME</a>
+  </div>
+</nav>
+<main>
+  <header class="article">
+    <p class="kicker">BECKN ACTION &middot; UPDATED 11 AUG 2026</p>
+    <h1>update: changing an order in flight</h1>
+    <p class="lede">update is the general-purpose action, which makes it the most useful and the most easily misused. It is how a driver stops a charge from an app &mdash; and how a BPP tells a BAP that something changed without being asked.</p>
+    <div class="byline"><span>DHEERAJ KUMAR SHUKLA</span><span>&middot;</span><span>BECKN UPDATE</span><span>&middot;</span><span>3 MIN READ</span></div>
+    <p class="cluster">PART OF THE <a href="beckn-by-dheeraj-shukla.html">BECKN FOR EV CHARGING GUIDE</a> &middot; 10 ACTION &amp; CONCEPT GUIDES</p>
+    <div class="tldr"><p class="lbl">IN ONE PARAGRAPH</p><p>update modifies a live order. The update_target field names which part of the order is being changed, and everything hinges on getting it right. In EV charging its most important use is stopping a charge remotely; its second is carrying provider-initiated changes back to the BAP.</p></div>
+  </header>
+  <article>
+    <section>
+      <h2>update_target does the work</h2>
+      <p>Unlike the earlier actions, <code>update</code> has no fixed shape &mdash; an order has many mutable parts and the action has to say which one it is touching. <code>update_target</code> is a path into the order object:</p><div class="tw"><table><thead><tr><th><code>update_target</code></th><th>Changes</th><th>Typical use</th></tr></thead><tbody><tr><td><code>order.fulfillments[0].state</code></td><td>The fulfilment state</td><td>Stop charging</td></tr><tr><td><code>order.fulfillments[0].stops[0].time</code></td><td>Timing</td><td>Extend or move a reservation</td></tr><tr><td><code>order.payments[0]</code></td><td>Payment</td><td>Marking payment settled</td></tr><tr><td><code>order.items</code></td><td>The items</td><td>Changing requested energy &mdash; often unsupported</td></tr></tbody></table></div><div class="note"><strong>Send only what changes.</strong> An update carrying a whole order object invites the BPP to guess which field you meant. Name the target precisely and include only that part &mdash; ambiguity here produces silent no-ops that are painful to debug because nothing errors.</div>
+    </section>
+    <section>
+      <h2>Stopping a charge</h2>
+      <p>The most common update in EV charging. A driver taps &ldquo;stop&rdquo; in a BAP app and the BPP has to end a session on hardware it operates:</p><pre><code>POST https://cpo.electreefi.in/beckn/update
+
+{
+  &quot;context&quot;: {
+    &quot;domain&quot;: &quot;ev-charging:uei&quot;, &quot;action&quot;: &quot;update&quot;, &quot;version&quot;: &quot;1.1.0&quot;,
+    &quot;bap_id&quot;: &quot;emsp.example.com&quot;, &quot;bap_uri&quot;: &quot;https://emsp.example.com/beckn&quot;,
+    &quot;bpp_id&quot;: &quot;cpo.electreefi.in&quot;, &quot;bpp_uri&quot;: &quot;https://cpo.electreefi.in/beckn&quot;,
+    &quot;transaction_id&quot;: &quot;txn-4471&quot;, &quot;message_id&quot;: &quot;msg-9041&quot;,
+    &quot;timestamp&quot;: &quot;2026-08-11T10:03:00Z&quot;
+  },
+  &quot;message&quot;: {
+    &quot;update_target&quot;: &quot;order.fulfillments[0].state&quot;,
+    &quot;order&quot;: {
+      &quot;id&quot;: &quot;ord-EFI-2026-0811-4471&quot;,
+      &quot;fulfillments&quot;: [{
+        &quot;id&quot;: &quot;FUL-1&quot;,
+        &quot;state&quot;: { &quot;descriptor&quot;: { &quot;code&quot;: &quot;COMPLETED&quot; } }
+      }]
+    }
+  }
+}</code></pre><p>The BPP ACKs, translates the request into an <a href="ocpi-stop-session-by-dheeraj-shukla.html">OCPI STOP_SESSION</a> or a direct OCPP stop against its own charger, and calls back once the hardware has actually responded:</p><pre><code>POST https://emsp.example.com/beckn/on_update
+
+{
+  &quot;context&quot;: { &quot;...&quot;: &quot;same transaction_id&quot;, &quot;action&quot;: &quot;on_update&quot;,
+               &quot;message_id&quot;: &quot;msg-9041&quot; },
+  &quot;message&quot;: {
+    &quot;order&quot;: {
+      &quot;id&quot;: &quot;ord-EFI-2026-0811-4471&quot;,
+      &quot;status&quot;: &quot;ACTIVE&quot;,
+      &quot;fulfillments&quot;: [{
+        &quot;id&quot;: &quot;FUL-1&quot;,
+        &quot;state&quot;: { &quot;descriptor&quot;: { &quot;code&quot;: &quot;COMPLETED&quot; } },
+        &quot;tags&quot;: [{ &quot;descriptor&quot;: { &quot;code&quot;: &quot;progress&quot; }, &quot;list&quot;: [
+          { &quot;descriptor&quot;: { &quot;code&quot;: &quot;energy_delivered&quot; }, &quot;value&quot;: &quot;24.550&quot; },
+          { &quot;descriptor&quot;: { &quot;code&quot;: &quot;ended_at&quot; },
+            &quot;value&quot;: &quot;2026-08-11T10:03:41Z&quot; }
+        ]}]
+      }],
+      &quot;quote&quot;: { &quot;price&quot;: { &quot;currency&quot;: &quot;INR&quot;, &quot;value&quot;: &quot;535.93&quot; } }
+    }
+  }
+}</code></pre><p>Note the same race that afflicts <a href="ocpi-stop-session-by-dheeraj-shukla.html">OCPI STOP_SESSION</a>: the driver may have unplugged while the request was in flight. A BPP that returns &ldquo;already completed&rdquo; has not failed &mdash; from the driver's point of view the outcome is exactly what they asked for.</p>
+    </section>
+    <section>
+      <h2>Provider-initiated updates</h2>
+      <p><code>on_update</code> can arrive without a preceding <code>update</code>. This is how a BPP reports things the BAP could not have asked about:</p><ul><li><strong>Charging ended on its own</strong> &mdash; battery full, or the driver unplugged at the charger.</li><li><strong>A fault occurred</strong> &mdash; the session terminated abnormally.</li><li><strong>The final quote is ready</strong> &mdash; metering finalised, the estimate replaced by an actual.</li><li><strong>A reservation lapsed</strong> &mdash; the driver never arrived.</li></ul><p>A BAP that only handles <code>on_update</code> as a response to its own requests will silently drop all of these. Handle unsolicited updates from day one; they are not an edge case.</p>
+    </section>
+    <section>
+      <h2>update versus cancel</h2>
+      <div class="tw"><table><thead><tr><th>Situation</th><th>Action</th></tr></thead><tbody><tr><td>Driver stops a charge that already started</td><td><a href="beckn-update-by-dheeraj-shukla.html">update</a> &mdash; the service was delivered</td></tr><tr><td>Driver abandons a reservation before plugging in</td><td><a href="beckn-cancel-by-dheeraj-shukla.html">cancel</a> &mdash; nothing was delivered</td></tr><tr><td>Charging ends naturally</td><td><code>on_update</code> from the BPP</td></tr><tr><td>Reservation expires unused</td><td><code>on_update</code>, or <a href="beckn-cancel-by-dheeraj-shukla.html"><code>on_cancel</code></a> by BPP policy</td></tr></tbody></table></div><p>The dividing line is whether anything was delivered. Cancelling an order that already produced energy leaves the BPP with an unpaid charge and no clean way to bill it &mdash; the correct move is to complete it via update and let the quote reflect what was consumed.</p>
+    </section>
+    <section>
+      <h2>Production lessons</h2>
+      <ul><li><strong>Always set <code>update_target</code> precisely.</strong> A vague target produces a silent no-op.</li><li><strong>Handle unsolicited <code>on_update</code> from the start.</strong> Natural completion arrives this way, and it is the most common update of all.</li><li><strong>Make updates idempotent.</strong> Two stop requests should produce one stop and the same response.</li><li><strong>Do not treat &ldquo;already completed&rdquo; as an error.</strong> It is the outcome the driver wanted.</li><li><strong>Use update, not cancel, once energy has flowed.</strong></li><li><strong>Expect a final <code>on_update</code> carrying the settled quote</strong> and reconcile your billing against it rather than against the last live estimate.</li></ul>
+    </section>
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="q">What does update_target do in a Beckn update?</div>
+      <p>It names the path into the order object that is being changed, such as order.fulfillments[0].state. Because an order has many mutable parts, the target is what tells the BPP which change is intended. A vague or missing target typically produces a silent no-op.</p>
+      <div class="q">How does a driver stop charging over Beckn?</div>
+      <p>The BAP sends an update with update_target set to the fulfilment state and the state set to COMPLETED. The BPP relays that to its charger, usually via OCPI STOP_SESSION or a direct OCPP stop, then calls back with on_update once the hardware has responded.</p>
+      <div class="q">Can a Beckn BPP send on_update without a request?</div>
+      <p>Yes, and it must. Charging ending naturally, a fault, a lapsed reservation, and the final settled quote all arrive as unsolicited on_update messages. A BAP that only handles on_update as a response will silently drop all of them.</p>
+      <div class="q">When should you use update instead of cancel?</div>
+      <p>Use update when energy has already been delivered, since the order needs completing and billing rather than voiding. Use cancel only when nothing was delivered, such as a reservation the driver abandoned before plugging in.</p>
+    </section>
+  </article>
+  <aside class="author">
+    <div class="ac-top">
+      <div class="ac-avatar">DS</div>
+      <div>
+        <div class="ac-name">Dheeraj Kumar Shukla</div>
+        <div class="ac-role">SOLUTION ARCHITECT &middot; EV CHARGING, IOT &amp; ENTERPRISE PLATFORMS</div>
+      </div>
+    </div>
+    <p class="ac-bio">14+ years building cloud-native platforms on .NET and Azure/AWS. Led OCPI-compliant and Beckn (BAP/BPP) EV charging integrations across 30+ CPO/eMSP networks at 99% uptime, and was technical SPOC for Hyundai, Mahindra, Tata, Adani and Hero MotoCorp. Azure Solutions Architect Expert (AZ-305). This guide is written from production experience, not from the spec alone.</p>
+    <div class="ac-links">
+      <a href="index.html">Full profile &rarr;</a>
+      <a href="mailto:dheerajshuk@gmail.com">Get in touch</a>
+      <a href="Dheeraj kumar shukla - Resume.pdf" download>Resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/dheerajshuk/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    </div>
+  </aside>
+  <div class="next">
+    <div><div class="lbl">NEXT GUIDE</div><div class="t">Beckn cancel: ending an order before fulfilment</div></div>
+    <a class="read" href="beckn-cancel-by-dheeraj-shukla.html">READ &rarr;</a>
+  </div>
+</main>
+<footer>
+  <span>&copy; 2026 DHEERAJ KUMAR SHUKLA &middot; BECKN UPDATE</span>
+  <span class="fl"><a href="index.html">Profile</a> &middot; <a href="articles.html">All guides</a> &middot; <a href="mailto:dheerajshuk@gmail.com">Contact</a></span>
+</footer>
+</body>
+</html>

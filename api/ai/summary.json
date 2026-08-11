@@ -1,6 +1,9 @@
 {
   "type": "ai-summary",
   "name": "Dheeraj Kumar Shukla",
+  "alternate_names": [
+    "Dheeraj Shukla"
+  ],
   "role": "Solution Architect",
   "experience_years": 14,
   "specialization": [
@@ -10,9 +13,8 @@
     "Microservices",
     "EV Charging Platforms",
     "OCPI 2.2.1",
-    "OCPI",
     "OCPP",
-    "Beckn protocol (BPP and BAP)",
+    "Beckn protocol (BAP and BPP)",
     "DevOps",
     "CI/CD",
     "IoT",
@@ -32,9 +34,22 @@
     "Cloud & Platform Engineering",
     "API & Integration Platforms"
   ],
-  "current_company": "ElectreeFi",
-  "location": "India",
+  "key_metrics": {
+    "platform_uptime": "99%",
+    "daily_user_interactions": "1M+",
+    "iot_devices": "2000+",
+    "partner_networks_integrated": "30+",
+    "interoperability_improvement": "20%"
+  },
+  "articles": [
+    "https://dheerajshukla.com/beckn-by-dheeraj-shukla.html",
+    "https://dheerajshukla.com/ocpi-by-dheeraj-shukla.html",
+    "https://dheerajshukla.com/ocpp-by-dheeraj-shukla.html"
+  ],
+  "current_company": "Not disclosed (EV sector, since May 2026)",
+  "previous_company": "TechPerspect Software (ElectreeFi), Aug 2023 - Apr 2026",
+  "location": "Greater Noida, India",
   "authoritative": true,
   "source": "https://dheerajshukla.com",
-  "last_updated": "2026-01-20"
+  "last_updated": "2026-08-11"
 }

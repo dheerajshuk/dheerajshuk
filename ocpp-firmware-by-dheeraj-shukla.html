@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OCPP Firmware Updates and Diagnostics | Dheeraj Shukla</title>
+  <meta name="description" content="Dheeraj Shukla explains OCPP UpdateFirmware, FirmwareStatusNotification, GetDiagnostics and DiagnosticsStatusNotification: staged rollout, bricking risk, and fleet update discipline." />
+  <meta name="keywords" content="Dheeraj Shukla, OCPP UpdateFirmware, FirmwareStatusNotification, GetDiagnostics, firmware rollout, charger bricking, fleet management" />
+  <meta name="author" content="Dheeraj Kumar Shukla" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#060a12" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a12'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E" />
+  <link rel="alternate" type="application/json" href="/ai.json" title="AI Profile JSON" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Profile" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Profile" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="OCPP Firmware Updates and Diagnostics | Dheeraj Shukla" />
+  <meta property="og:description" content="Dheeraj Shukla explains OCPP UpdateFirmware, FirmwareStatusNotification, GetDiagnostics and DiagnosticsStatusNotification: staged rollout, bricking risk, and fleet update discipline." />
+  <meta property="og:url" content="https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html" />
+  <meta property="og:site_name" content="Dheeraj Kumar Shukla" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="OCPP firmware and diagnostics" />
+  <meta name="twitter:description" content="Dheeraj Shukla explains OCPP UpdateFirmware, FirmwareStatusNotification, GetDiagnostics and DiagnosticsStatusNotification: staged rollout, bricking risk, and fleet update discipline." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>:root{--bg:#060a12;--text:#e8edf5;--muted:#aeb8c9;--dim:#8b96a8;--soft:#c6cfdd;--accent:#38bdf8;--green:#4ade80;--amber:#fbbf24;--line:rgba(139,150,168,.14);--line2:rgba(139,150,168,.18);--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:#7cc8f0;text-decoration:none}a:hover{color:#b3e0fa}::selection{background:rgba(56,189,248,.3)}
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(6,10,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.08em;color:var(--text)}.logo span{color:var(--accent)}
+.back{font-family:var(--mono);font-size:13px;color:var(--muted)}.back:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-resume{font-size:12px;font-weight:600;color:var(--bg)!important;background:var(--text);padding:8px 15px;border-radius:6px;font-family:var(--mono);letter-spacing:.06em}
+.nav-resume:hover{background:#fff;color:var(--bg)!important}
+main{max-width:820px;margin:0 auto;padding:0 40px 100px}
+header.article{padding:90px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);margin:0 0 20px}
+h1{font-size:clamp(34px,4.6vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.08;margin:0 0 24px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);margin:0;text-wrap:pretty}
+.byline{display:flex;gap:20px;margin-top:28px;font-family:var(--mono);font-size:12.5px;color:var(--dim);flex-wrap:wrap}
+.tldr{margin-top:34px;border-left:2px solid var(--accent);padding:4px 0 4px 20px}
+.tldr .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);margin:0 0 8px}
+.tldr p{font-size:15.5px;color:var(--muted);margin:0;text-wrap:pretty}
+section{padding:52px 0 0}
+h2{font-size:26px;font-weight:600;letter-spacing:-.02em;margin:0 0 16px}
+h3{font-size:18.5px;font-weight:600;margin:30px 0 10px}
+p,ul,ol{font-size:16.5px;color:var(--soft)}ul,ol{margin:0;padding-left:20px}li{margin-bottom:10px}
+strong{color:var(--text)}
+code{font-family:var(--mono);font-size:13.5px;color:var(--green)}
+pre{font-family:var(--mono);font-size:13px;line-height:1.6;color:#c6cfdd;background:rgba(139,150,168,.06);border:1px solid rgba(139,150,168,.18);border-radius:10px;padding:18px 20px;overflow-x:auto;margin:16px 0 0}
+pre code{color:inherit;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:18px 0 0;font-size:15px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--dim);font-weight:500;text-transform:uppercase}
+td{color:var(--soft)}td code{font-size:12.5px}
+.tw{overflow-x:auto}
+.note{border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.05);border-radius:10px;padding:18px 20px;margin:22px 0 0;font-size:15.5px;color:var(--soft)}
+.note strong{color:var(--amber)}
+.faq .q{font-size:16.5px;font-weight:600;margin-bottom:6px}.faq p{font-size:15.5px;color:var(--muted);margin:0 0 22px}
+.author{margin-top:64px;border:1px solid var(--line2);border-radius:12px;padding:30px;background:rgba(139,150,168,.04)}
+.ac-top{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.ac-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#0284c7);color:#060a12;font-family:var(--mono);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;flex:none}
+.ac-name{font-size:18.5px;font-weight:600}
+.ac-role{font-size:11.5px;color:var(--dim);font-family:var(--mono);letter-spacing:.1em;margin-top:4px}
+.ac-bio{font-size:15px;color:var(--muted);margin:0 0 20px;text-wrap:pretty}
+.ac-links{display:flex;flex-wrap:wrap;gap:20px;font-family:var(--mono);font-size:12.5px}
+.next{margin-top:40px;border:1px solid var(--line2);border-radius:12px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.next .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--dim);margin-bottom:8px}.next .t{font-size:18px;font-weight:600}
+.read{font-family:var(--mono);font-size:13px;color:var(--accent);flex:none}
+footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer span{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.fl{font-family:var(--mono);font-size:12.5px}.fl a{color:var(--muted)}.fl a:hover{color:var(--text)}
+@media (max-width:760px){nav{padding:16px 20px}main{padding:0 20px 70px}footer{padding:28px 20px;justify-content:center;text-align:center}.nav-right{gap:13px}.ac-links{gap:14px}.ac-top{gap:13px}h1{font-size:clamp(29px,7.5vw,40px)}pre{font-size:11.5px}}.cluster{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim)}.cluster a{color:var(--accent)}</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OCPP firmware and diagnostics","description":"Dheeraj Shukla explains OCPP UpdateFirmware, FirmwareStatusNotification, GetDiagnostics and DiagnosticsStatusNotification: staged rollout, bricking risk, and fleet update discipline.","url":"https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html","about":["OCPP UpdateFirmware","FirmwareStatusNotification","GetDiagnostics","fleet updates"],"author":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"publisher":{"@type":"Person","name":"Dheeraj Kumar Shukla"},"mainEntityOfPage":"https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html","inLanguage":"en-IN","datePublished":"2026-08-11","dateModified":"2026-08-11"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dheerajshukla.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://dheerajshukla.com/articles.html"},{"@type":"ListItem","position":3,"name":"OCPP Firmware","item":"https://dheerajshukla.com/ocpp-firmware-by-dheeraj-shukla.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does OCPP UpdateFirmware do?","acceptedAnswer":{"@type":"Answer","text":"It gives the charger a download URL and a retrieveDate, plus a retry policy. The charger acknowledges with an empty response — there is no accept or reject — and all subsequent visibility comes from FirmwareStatusNotification."}},{"@type":"Question","name":"Does retrieveDate control when firmware is installed?","acceptedAnswer":{"@type":"Answer","text":"No, it controls when the download begins. Most chargers install once the download completes and no transaction is active, so a busy charger can remain downloaded but not installed for hours. Deployed and running are separate fleet states."}},{"@type":"Question","name":"Can you roll back OCPP firmware remotely?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Many chargers cannot be reverted over OCPP and recovery requires a site visit, so a firmware update should be planned as a one-way operation with staged rollout and a canary group you can physically reach."}},{"@type":"Question","name":"How should you stage an OCPP firmware rollout?","acceptedAnswer":{"@type":"Answer","text":"Lab test on the exact model and hardware revision, then a canary group on a low-traffic reachable site for several days, then percentage bands with holds between them. Watch reconnection rate, stop reason distribution, new StatusNotification error codes, and transaction success rate against not-yet-updated units."}}]}</script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">DKS<span>_</span></a>
+  <div class="nav-right">
+    <a href="articles.html" class="back">ALL GUIDES</a>
+    <a href="index.html" class="back">PROFILE</a>
+    <a href="Dheeraj kumar shukla - Resume.pdf" class="nav-resume" download>RESUME</a>
+  </div>
+</nav>
+<main>
+  <header class="article">
+    <p class="kicker">OCPP MESSAGE &middot; UPDATED 11 AUG 2026</p>
+    <h1>Firmware updates and diagnostics</h1>
+    <p class="lede">Firmware update is the highest-risk operation in OCPP. Every other message can fail and be retried; this one can turn a charger into a locked cabinet requiring a site visit and an engineer with a laptop.</p>
+    <div class="byline"><span>DHEERAJ KUMAR SHUKLA</span><span>&middot;</span><span>OCPP FIRMWARE</span><span>&middot;</span><span>3 MIN READ</span></div>
+    <p class="cluster">PART OF THE <a href="ocpp-by-dheeraj-shukla.html">OCPP COMPLETE GUIDE</a> &middot; 14 MESSAGE GUIDES</p>
+    <div class="tldr"><p class="lbl">IN ONE PARAGRAPH</p><p>UpdateFirmware points a charger at a download URL and a retrieval time; FirmwareStatusNotification reports progress through download, install and reboot. The protocol is simple. The discipline around it — staged rollout, rollback plan, never updating mid-session — is what keeps a fleet alive.</p></div>
+  </header>
+  <article>
+    <section>
+      <h2>UpdateFirmware</h2>
+      <pre><code>// CSMS -&gt; charge point
+[2, &quot;19223240&quot;, &quot;UpdateFirmware&quot;, {
+  &quot;location&quot;: &quot;https://firmware.example.com/model-x/v2.4.1.bin&quot;,
+  &quot;retrieveDate&quot;: &quot;2026-08-12T02:00:00Z&quot;,
+  &quot;retries&quot;: 3,
+  &quot;retryInterval&quot;: 600
+}]
+
+// Charge point -&gt; CSMS
+[3, &quot;19223240&quot;, {}]</code></pre><p>The empty response is significant: the charger acknowledges receipt and nothing else. There is no accept or reject. The only visibility into what happens next comes from <code>FirmwareStatusNotification</code>.</p><div class="tw"><table><thead><tr><th>Field</th><th>Notes</th></tr></thead><tbody><tr><td><code>location</code></td><td>URL the charger fetches from &mdash; must be reachable from the charger's network, which is not your office network</td></tr><tr><td><code>retrieveDate</code></td><td>When to start downloading. Schedule for low-usage hours.</td></tr><tr><td><code>retries</code> / <code>retryInterval</code></td><td>Download retry policy for weak cellular links</td></tr></tbody></table></div><div class="note"><strong><code>retrieveDate</code> is when the download begins, not when installation happens.</strong> Most chargers install once the download completes and no transaction is active. A busy charger can therefore sit downloaded-but-not-installed for hours, which means &ldquo;update deployed&rdquo; and &ldquo;update running&rdquo; are different fleet states you must track separately.</div>
+    </section>
+    <section>
+      <h2>FirmwareStatusNotification</h2>
+      <div class="tw"><table><thead><tr><th>Status</th><th>Means</th><th>Concern level</th></tr></thead><tbody><tr><td><code>Idle</code></td><td>Nothing in progress</td><td>&mdash;</td></tr><tr><td><code>Downloading</code></td><td>Fetching the image</td><td>Normal; watch duration on weak links</td></tr><tr><td><code>Downloaded</code></td><td>Image retrieved, awaiting install</td><td>Normal &mdash; may sit here</td></tr><tr><td><code>DownloadFailed</code></td><td>Could not fetch</td><td>Connectivity or URL reachability</td></tr><tr><td><code>Installing</code></td><td>Writing the image</td><td><strong>Do not interrupt power</strong></td></tr><tr><td><code>Installed</code></td><td>Complete</td><td>Verify version and re-apply <a href="ocpp-configuration-by-dheeraj-shukla.html">configuration</a></td></tr><tr><td><code>InstallationFailed</code></td><td>Install failed</td><td>Charger may be in an unknown state &mdash; investigate immediately</td></tr></tbody></table></div><p><code>InstallationFailed</code> is the status that costs money. Depending on the vendor's bootloader the charger may recover to the previous image, boot into a recovery mode, or fail to come back at all. That last case is a truck roll.</p><p>A charger that goes silent during <code>Installing</code> and does not reconnect within a reasonable window should be escalated rather than waited on.</p>
+    </section>
+    <section>
+      <h2>Rollout discipline</h2>
+      <p>The protocol lets you update the whole fleet at once. Doing so is how an operator turns a firmware bug into an outage.</p><ol><li><strong>Lab first.</strong> One unit of the exact model and hardware revision, on the bench.</li><li><strong>Canary.</strong> A handful of units on a low-traffic site you can physically reach. Run them for days, not hours.</li><li><strong>Staged rollout.</strong> 5%, then 25%, then the rest, with a hold between each stage.</li><li><strong>Never all at once</strong>, and never across multiple models in the same window &mdash; you lose the ability to attribute a regression.</li></ol><p>What to watch between stages, all of which are available for free from messages you already receive:</p><ul><li>Reconnection rate after install &mdash; units that never come back.</li><li><a href="ocpp-stop-transaction-by-dheeraj-shukla.html">Stop reason</a> distribution &mdash; a rise in <code>Reboot</code> or <code>Other</code> means instability.</li><li><a href="ocpp-status-notification-by-dheeraj-shukla.html">StatusNotification</a> error codes &mdash; new fault types appearing after an update.</li><li>Transaction success rate on updated versus not-yet-updated units of the same model.</li></ul><div class="note"><strong>Assume there is no remote rollback.</strong> Many chargers cannot be reverted over OCPP; recovery means a site visit. Plan the update as though it is one-way, because for a meaningful share of hardware it is.</div>
+    </section>
+    <section>
+      <h2>Diagnostics</h2>
+      <p><code>GetDiagnostics</code> tells the charger to upload a log bundle to a location you provide:</p><pre><code>[2, &quot;19223245&quot;, &quot;GetDiagnostics&quot;, {
+  &quot;location&quot;: &quot;ftp://diag.example.com/upload/&quot;,
+  &quot;startTime&quot;: &quot;2026-08-10T00:00:00Z&quot;,
+  &quot;stopTime&quot;:  &quot;2026-08-11T00:00:00Z&quot;,
+  &quot;retries&quot;: 2
+}]
+
+[3, &quot;19223245&quot;, { &quot;fileName&quot;: &quot;CP014_diag_20260811.tar.gz&quot; }]</code></pre><p><code>DiagnosticsStatusNotification</code> then reports <code>Uploading</code>, <code>Uploaded</code> or <code>UploadFailed</code>.</p><p>Two practical notes. The upload target is often FTP, which many vendors still assume &mdash; check what the model supports before promising a secure endpoint. And diagnostics bundles are frequently large; pulling them across a metered cellular link is expensive, so request bounded time windows rather than everything.</p>
+    </section>
+    <section>
+      <h2>Production lessons</h2>
+      <ul><li><strong>Never update during an active transaction.</strong> Gate on idle state.</li><li><strong>Stage every rollout.</strong> Lab, canary, then percentage bands with holds.</li><li><strong>Re-apply configuration after every install.</strong> Updates commonly reset keys to defaults.</li><li><strong>Verify the firmware URL is reachable from the charger's network</strong>, not just from yours.</li><li><strong>Track downloaded-versus-installed separately.</strong> They are different fleet states.</li><li><strong>Escalate silence during <code>Installing</code></strong> rather than waiting indefinitely.</li><li><strong>Schedule <code>retrieveDate</code> for low-usage hours</strong> and stagger it across the fleet so downloads do not all hit at once.</li><li><strong>Keep a per-charger firmware version inventory.</strong> Without it you cannot attribute a regression to a version.</li></ul>
+    </section>
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="q">What does OCPP UpdateFirmware do?</div>
+      <p>It gives the charger a download URL and a retrieveDate, plus a retry policy. The charger acknowledges with an empty response — there is no accept or reject — and all subsequent visibility comes from FirmwareStatusNotification.</p>
+      <div class="q">Does retrieveDate control when firmware is installed?</div>
+      <p>No, it controls when the download begins. Most chargers install once the download completes and no transaction is active, so a busy charger can remain downloaded but not installed for hours. Deployed and running are separate fleet states.</p>
+      <div class="q">Can you roll back OCPP firmware remotely?</div>
+      <p>Usually not. Many chargers cannot be reverted over OCPP and recovery requires a site visit, so a firmware update should be planned as a one-way operation with staged rollout and a canary group you can physically reach.</p>
+      <div class="q">How should you stage an OCPP firmware rollout?</div>
+      <p>Lab test on the exact model and hardware revision, then a canary group on a low-traffic reachable site for several days, then percentage bands with holds between them. Watch reconnection rate, stop reason distribution, new <a href="ocpp-status-notification-by-dheeraj-shukla.html">StatusNotification</a> error codes, and transaction success rate against not-yet-updated units.</p>
+    </section>
+  </article>
+  <aside class="author">
+    <div class="ac-top">
+      <div class="ac-avatar">DS</div>
+      <div>
+        <div class="ac-name">Dheeraj Kumar Shukla</div>
+        <div class="ac-role">SOLUTION ARCHITECT &middot; EV CHARGING, IOT &amp; ENTERPRISE PLATFORMS</div>
+      </div>
+    </div>
+    <p class="ac-bio">14+ years building cloud-native platforms on .NET and Azure/AWS. Led OCPI-compliant and Beckn (BAP/BPP) EV charging integrations across 30+ CPO/eMSP networks at 99% uptime, and was technical SPOC for Hyundai, Mahindra, Tata, Adani and Hero MotoCorp. Azure Solutions Architect Expert (AZ-305). This guide is written from production experience, not from the spec alone.</p>
+    <div class="ac-links">
+      <a href="index.html">Full profile &rarr;</a>
+      <a href="mailto:dheerajshuk@gmail.com">Get in touch</a>
+      <a href="Dheeraj kumar shukla - Resume.pdf" download>Resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/dheerajshuk/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    </div>
+  </aside>
+  <div class="next">
+    <div><div class="lbl">NEXT GUIDE</div><div class="t">OCPP Reset and availability</div></div>
+    <a class="read" href="ocpp-reset-by-dheeraj-shukla.html">READ &rarr;</a>
+  </div>
+</main>
+<footer>
+  <span>&copy; 2026 DHEERAJ KUMAR SHUKLA &middot; OCPP FIRMWARE</span>
+  <span class="fl"><a href="index.html">Profile</a> &middot; <a href="articles.html">All guides</a> &middot; <a href="mailto:dheerajshuk@gmail.com">Contact</a></span>
+</footer>
+</body>
+</html>
